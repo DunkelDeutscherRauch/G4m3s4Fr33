@@ -2,4 +2,6 @@
     <string name="app_name">G4m3s4Fr33</string>
     <string name="bob">Bob</string>
     <string name="api_by_www_freetogame_com">Api by: www.freetogame.com</string>
+    <string name="home_btn_games_text">Games</string>
+    <string name="home_btn_favorites_text">Favorites</string>
 </resources>
