@@ -68,9 +68,9 @@ dependencies {
    // implementation("io.coil-kt:coil:2.5.0")
 
     //Room
-  //  implementation("androidx.room:room-runtime:$roomVersion")
-  //  ksp("androidx.room:room-compiler:$roomVersion")
-   // implementation("androidx.room:room-ktx:$roomVersion")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
 
     //Okhttp
   //  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")

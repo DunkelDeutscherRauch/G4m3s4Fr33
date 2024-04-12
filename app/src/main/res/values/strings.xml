@@ -4,4 +4,6 @@
     <string name="api_by_www_freetogame_com">Api by: www.freetogame.com</string>
     <string name="home_btn_games_text">Games</string>
     <string name="home_btn_favorites_text">Favorites</string>
+    <string name="edit">Edit</string>
+    <string name="profile_name_nickname_text">Name / Nickname</string>
 </resources>
