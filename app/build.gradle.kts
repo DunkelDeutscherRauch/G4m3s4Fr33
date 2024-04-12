@@ -60,19 +60,19 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Retrofit und Moshi
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0:$retrofitVersion")
-    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
+   // implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+   // implementation("com.squareup.retrofit2:converter-moshi:2.9.0:$retrofitVersion")
+   // implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
 
     // Coil
-    implementation("io.coil-kt:coil:2.5.0")
+   // implementation("io.coil-kt:coil:2.5.0")
 
     //Room
-    implementation("androidx.room:room-runtime:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
-    implementation("androidx.room:room-ktx:$roomVersion")
+  //  implementation("androidx.room:room-runtime:$roomVersion")
+  //  ksp("androidx.room:room-compiler:$roomVersion")
+   // implementation("androidx.room:room-ktx:$roomVersion")
 
     //Okhttp
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+  //  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
 }

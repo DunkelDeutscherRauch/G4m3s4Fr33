@@ -1,6 +1,8 @@
 package com.example.g4m3s4fr33
 
+import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -17,6 +19,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         handleOnBackPressed()
+
+        binding.ivToolbar.setOnClickListener {
+            Toast.makeText(
+                this,
+                "It Workes",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+        }
 
     }
 
