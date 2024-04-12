@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -22,6 +24,15 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnGames.setOnClickListener {
+            findNavController().navigate(R.id.profileFragment)
+        }
+
+        binding.btnFavorites.setOnClickListener {
+            findNavController().navigate(R.id.f)
+        }
+
     }
 
 

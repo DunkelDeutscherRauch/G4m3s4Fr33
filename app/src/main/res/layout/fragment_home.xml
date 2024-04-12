@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="Ich habe keine Ahnung. Hier soll halt Text stehen. Weil ich denke, dass Text hier voll schon und so ist. Und nun ist meine Zeile (schon lange) viel zu lang und deswegen schreibe ich jetzt auch nichts mehr...oder so!"
         android:textColor="@color/mySilver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -30,7 +30,7 @@
         android:contentDescription="@string/bob" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivHome" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnGames" />
 
     <TextView
         android:id="@+id/tvApiHome"
