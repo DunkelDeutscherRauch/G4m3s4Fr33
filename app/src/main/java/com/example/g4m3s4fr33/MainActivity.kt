@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.ivToolbar.setOnClickListener {
             Toast.makeText(
                 this,
-                "It Workes",
+                "Have a nice day!",
                 Toast.LENGTH_SHORT
             )
                 .show()
@@ -39,4 +39,5 @@ class MainActivity : AppCompatActivity() {
         }
         onBackPressedDispatcher.addCallback(callback)
     }
+
 }
