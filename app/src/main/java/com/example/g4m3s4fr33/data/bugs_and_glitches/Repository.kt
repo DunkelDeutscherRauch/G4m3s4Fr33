@@ -4,11 +4,11 @@ package com.example.g4m3s4fr33.data.bugs_and_glitches
 import com.example.g4m3s4fr33.data.local.CheezzyDatabase
 import com.example.g4m3s4fr33.data.model.NoLifer
 
-class Repository (private val database: CheezzyDatabase) {
+class Repository(private val database: CheezzyDatabase) {
 
     val user = database.noLiferDao.getUser()
 
-   suspend fun upsertUser(user: NoLifer) {
+    suspend fun upsertUser(user: NoLifer) {
         database.noLiferDao.upsetUser(user)
     }
 
@@ -19,7 +19,6 @@ class Repository (private val database: CheezzyDatabase) {
     suspend fun updateUserImage(userImage: String) {
         database.noLiferDao.updateUserImage(userImage)
     }
-
 
 
 }

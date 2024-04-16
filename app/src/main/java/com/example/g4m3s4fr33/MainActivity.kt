@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.ivToolbar.setOnClickListener {
-           findNavController(R.id.fragmentContainerView).navigate(R.id.profileFragment)
+            findNavController(R.id.fragmentContainerView).navigate(R.id.profileFragment)
         }
 
     }

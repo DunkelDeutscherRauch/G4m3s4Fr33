@@ -59,12 +59,13 @@ class ProfileFragment : Fragment() {
             }
 
         binding.btnEditUserPic.setOnClickListener {
-            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            val intent =
+                Intent(Intent.ACTION_OPEN_DOCUMENT, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             changeImage.launch(intent)
         }
 
         binding.btnSaveUser.setOnClickListener {
-            if (binding.etProfileName.text!!.isNotBlank()){
+            if (binding.etProfileName.text!!.isNotBlank()) {
                 viewModel.updateUserName(binding.etProfileName.text.toString())
             }
         }
