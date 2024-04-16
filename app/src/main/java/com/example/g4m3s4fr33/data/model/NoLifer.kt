@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "kek_table")
 data class NoLifer(
-    @PrimaryKey(autoGenerate = true)
-    val idn: Int = 0,
-    val name: String = "User",
+    @PrimaryKey
+    val id: Int = 0,
+    val name: String = "",
     val userImage: String = ""
 )

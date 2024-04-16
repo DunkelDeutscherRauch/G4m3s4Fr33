@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.data.local.user
+package com.example.g4m3s4fr33.data.local
 
 import android.content.Context
 import androidx.room.Database

@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.data.local.user
+package com.example.g4m3s4fr33.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -14,7 +14,13 @@ interface CheezzyDatabaseDao {
     fun getUser(): LiveData<NoLifer>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun upsetUser(noLifer: NoLifer)
+    suspend fun upsetUser(noLifer: NoLifer)
+
+    @Query("UPDATE kek_table SET name= :name WHERE ID = 0")
+    suspend fun updateUserName(name: String)
+
+    @Query("UPDATE kek_table SET userImage= :userImage WHERE ID = 0")
+    suspend fun updateUserImage(userImage: String)
 
 
 

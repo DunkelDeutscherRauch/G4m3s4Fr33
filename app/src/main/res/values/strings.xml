@@ -5,6 +5,6 @@
     <string name="home_btn_games_text">Games</string>
     <string name="home_btn_favorites_text">Favorites</string>
     <string name="edit">Edit</string>
-    <string name="profile_name_nickname_text">Name / Nickname</string>
     <string name="save">Save</string>
+    <string name="name_nickname">Name / Nickname</string>
 </resources>
