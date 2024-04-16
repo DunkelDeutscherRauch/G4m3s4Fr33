@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun handleOnBackPressed() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

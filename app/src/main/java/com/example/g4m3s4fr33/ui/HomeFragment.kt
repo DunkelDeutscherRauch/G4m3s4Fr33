@@ -25,6 +25,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // TODO Change to GamesListFragment as soon it exists in the navGraph
         binding.btnGames.setOnClickListener {
             findNavController().navigate(R.id.profileFragment)
         }

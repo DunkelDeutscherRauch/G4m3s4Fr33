@@ -22,6 +22,4 @@ interface CheezzyDatabaseDao {
     @Query("UPDATE kek_table SET userImage= :userImage WHERE ID = 0")
     suspend fun updateUserImage(userImage: String)
 
-
-
 }
