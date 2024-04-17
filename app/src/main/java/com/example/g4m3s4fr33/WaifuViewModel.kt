@@ -23,7 +23,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun upsertUser(user: NoLifer) {
+    private fun upsertUser(user: NoLifer) {
         viewModelScope.launch {
             repository.upsertUser(user)
         }
