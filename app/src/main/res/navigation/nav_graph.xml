@@ -16,4 +16,8 @@
         android:id="@+id/favoritesFragment"
         android:name="com.example.g4m3s4fr33.ui.FavoritesFragment"
         android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/gamesListFragment"
+        android:name="com.example.g4m3s4fr33.ui.GamesListFragment"
+        android:label="GamesListFragment" />
 </navigation>
