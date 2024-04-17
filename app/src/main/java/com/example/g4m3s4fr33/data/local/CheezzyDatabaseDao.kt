@@ -5,7 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.g4m3s4fr33.data.model.NoLifer
+import com.example.g4m3s4fr33.data.model.user.NoLifer
 
 @Dao
 interface CheezzyDatabaseDao {

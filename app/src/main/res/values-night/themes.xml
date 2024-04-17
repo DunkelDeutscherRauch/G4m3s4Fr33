@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.G4m3s4Fr33" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your dark theme here. -->
+        <!-- There is no dark theme, lul! -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>

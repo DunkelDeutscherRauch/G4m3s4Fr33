@@ -46,7 +46,6 @@ android {
 
 dependencies {
 
-    val retrofitVersion = "2.9.0"
     val roomVersion = "2.6.1"
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -60,9 +59,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     //Retrofit und Moshi
-    //implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    //implementation("com.squareup.retrofit2:converter-moshi:2.9.0:$retrofitVersion")
-    //implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
 
     //Coil
     implementation("io.coil-kt:coil:2.5.0")
@@ -73,6 +72,6 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
 
     //Okhttp
-  //  implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
 }

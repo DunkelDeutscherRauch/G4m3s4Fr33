@@ -31,12 +31,9 @@
 
     <Button
         android:id="@+id/btnGames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonStyle"
         android:layout_marginTop="32dp"
         android:text="@string/home_btn_games_text"
-        android:backgroundTint="@color/imBlue"
-        android:textColor="@color/mySilver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,12 +41,9 @@
 
     <Button
         android:id="@+id/btnFavorites"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonStyle"
         android:layout_marginTop="32dp"
         android:text="@string/home_btn_favorites_text"
-        android:textColor="@color/mySilver"
-        android:backgroundTint="@color/imBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

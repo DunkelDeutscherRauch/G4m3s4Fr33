@@ -24,6 +24,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:hint="@string/name_nickname"
+        android:textColorHint="@color/mySilver"
         android:inputType="textPersonName"
         android:textColor="@color/mySilver"
         android:textAlignment="center"

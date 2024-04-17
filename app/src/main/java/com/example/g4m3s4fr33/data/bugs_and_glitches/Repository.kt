@@ -2,7 +2,7 @@ package com.example.g4m3s4fr33.data.bugs_and_glitches
 
 
 import com.example.g4m3s4fr33.data.local.CheezzyDatabase
-import com.example.g4m3s4fr33.data.model.NoLifer
+import com.example.g4m3s4fr33.data.model.user.NoLifer
 
 class Repository(private val database: CheezzyDatabase) {
 

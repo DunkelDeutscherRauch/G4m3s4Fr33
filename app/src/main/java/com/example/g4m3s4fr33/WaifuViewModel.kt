@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.g4m3s4fr33.data.bugs_and_glitches.Repository
 import com.example.g4m3s4fr33.data.local.CheezzyDatabase
-import com.example.g4m3s4fr33.data.model.NoLifer
+import com.example.g4m3s4fr33.data.model.user.NoLifer
 import kotlinx.coroutines.launch
 
 

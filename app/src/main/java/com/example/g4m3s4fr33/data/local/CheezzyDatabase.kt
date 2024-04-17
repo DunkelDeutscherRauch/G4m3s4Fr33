@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.g4m3s4fr33.data.model.NoLifer
+import com.example.g4m3s4fr33.data.model.user.NoLifer
 
 @Database(entities = [NoLifer::class], version = 1)
 abstract class CheezzyDatabase : RoomDatabase() {
