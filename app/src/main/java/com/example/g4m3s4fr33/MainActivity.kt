@@ -1,6 +1,8 @@
 package com.example.g4m3s4fr33
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -25,12 +27,22 @@ class MainActivity : AppCompatActivity() {
         handleOnBackPressed()
 
         viewModel.user.observe(this) {
-            if (it.userImage.isBlank()) {
-                binding.ivToolbar.load(R.drawable.test_frog)
-            } else {
-                binding.ivToolbar.load(it.userImage)
-            }
+           try {
+                if (it.userImage.isBlank()) {
+                   binding.ivToolbar.setImageResource(R.drawable.test_frog)
+                } else {
+                    binding.ivToolbar.load(it.userImage)
+                }
+           } catch (e: Exception) {
+               Toast.makeText(
+                  this,
+                   "An unexpected error occurred!",
+                    Toast.LENGTH_LONG
+                )
+                    .show()
 
+               e.message?.let { it1 -> Log.e("Ωlul", it1) }
+            }
         }
 
         binding.ivToolbar.setOnClickListener {

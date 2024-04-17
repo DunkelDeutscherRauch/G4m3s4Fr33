@@ -37,7 +37,7 @@ class ProfileFragment : Fragment() {
             if (it.userImage.isNotBlank()) {
                 binding.ivProfilePic.load(it.userImage)
             } else {
-                binding.ivProfilePic.load(R.drawable.test_frog)
+                binding.ivProfilePic.setImageResource(R.drawable.test_frog)
             }
         }
 
