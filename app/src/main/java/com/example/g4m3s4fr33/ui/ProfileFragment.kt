@@ -34,10 +34,10 @@ class ProfileFragment : Fragment() {
 
         viewModel.user.observe(viewLifecycleOwner) {
             binding.etProfileName.setText(it.name)
-            if (it.userImage.isNotBlank()) {
-                binding.ivProfilePic.load(it.userImage)
-            } else {
+            if (it.userImage.isBlank()) {
                 binding.ivProfilePic.setImageResource(R.drawable.test_frog)
+            } else {
+                binding.ivProfilePic.load(it.userImage)
             }
         }
 

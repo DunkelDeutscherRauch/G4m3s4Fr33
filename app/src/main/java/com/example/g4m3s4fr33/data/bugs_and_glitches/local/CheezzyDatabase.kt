@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.data.local
+package com.example.g4m3s4fr33.data.bugs_and_glitches.local
 
 import android.content.Context
 import androidx.room.Database
@@ -17,7 +17,7 @@ abstract class CheezzyDatabase : RoomDatabase() {
 
             synchronized(CheezzyDatabase::class.java) {
 
-                if (!::INSTANCE.isInitialized) {
+                if (!Companion::INSTANCE.isInitialized) {
 
                     INSTANCE = Room.databaseBuilder(
                         context,
