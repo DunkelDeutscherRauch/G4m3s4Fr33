@@ -3,6 +3,7 @@ package com.example.g4m3s4fr33.data.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.databinding.GameListItemBinding
 
@@ -25,7 +26,9 @@ class PlugAndPlayAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val gameAddiction = tryHardList[position]
 
-        // TODO
+        holder.binding.ivGameListItem.load(gameAddiction.thumbnail)
+        holder.binding.tvGameListItem.text = gameAddiction.title
+
 
     }
 

@@ -29,7 +29,7 @@ private val retrofit = Retrofit.Builder()
     .client(httpClient)
     .build()
 
-// TODO
+
 interface FreeTwoPlayMMOApiService {
 
     @GET("games")

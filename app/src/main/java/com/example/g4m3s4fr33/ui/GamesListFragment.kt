@@ -27,7 +27,9 @@ class GamesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO
+        viewModel.gameList.observe(viewLifecycleOwner) {
+            binding.rvGameList.adapter = PlugAndPlayAdapter(it)
+        }
 
     }
 

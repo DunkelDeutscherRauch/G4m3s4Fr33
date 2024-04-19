@@ -34,14 +34,8 @@ class MainActivity : AppCompatActivity() {
                     binding.ivToolbar.load(it.userImage)
                 }
            } catch (e: Exception) {
-               Toast.makeText(
-                  this,
-                   "An unexpected error occurred!",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
+               Log.e("Ωlul", "$e")
 
-               e.message?.let { it1 -> Log.e("Ωlul", it1) }
             }
         }
 
