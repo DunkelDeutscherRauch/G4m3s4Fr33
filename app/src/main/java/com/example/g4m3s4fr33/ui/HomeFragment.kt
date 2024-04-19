@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        // TODO PLS change here 4 testing DetailFragment
         binding.btnGames.setOnClickListener {
             findNavController().navigate(R.id.gamesListFragment)
         }

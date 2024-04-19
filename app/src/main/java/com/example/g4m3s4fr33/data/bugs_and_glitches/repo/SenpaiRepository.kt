@@ -9,14 +9,15 @@ import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 
 class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
 
-    private var _gamesList = MutableLiveData<List<IWantToPlayUnrealTournament>>()
-    val gamesList: LiveData<List<IWantToPlayUnrealTournament>>
-        get() = _gamesList
+    private var _gameList = MutableLiveData<List<IWantToPlayUnrealTournament>>()
+    val gameList: LiveData<List<IWantToPlayUnrealTournament>>
+        get() = _gameList
 
     suspend fun getGameList() {
         try {
             val result = mmoApi.retrofitService.getGameList()
-            _gamesList.postValue(result)
+            _gameList.postValue(result)
+            Log.i("Ωlul","It works")
         } catch (e: Exception) {
             Log.e("Ωlul", "$e")
         }

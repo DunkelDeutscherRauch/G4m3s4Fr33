@@ -8,6 +8,7 @@ import com.example.g4m3s4fr33.data.bugs_and_glitches.local.CheezzyDatabase
 import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApi
 import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.SenpaiRepository
 import com.example.g4m3s4fr33.data.model.user.NoLifer
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
@@ -17,7 +18,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     private val senpaiRepository = SenpaiRepository(FreeTwoPlayMMOApi)
 
     val user = userRepository.user
-    val gameList = senpaiRepository.gamesList
+    val gameList = senpaiRepository.gameList
 
     init {
         user.observeForever {
@@ -46,7 +47,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun getGameList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameList()
         }
     }
