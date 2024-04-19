@@ -19,6 +19,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     val user = userRepository.user
     val gameList = senpaiRepository.gameList
+    val gameDetail = senpaiRepository.gameDetail
 
     init {
         user.observeForever {
@@ -27,6 +28,8 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
            }
         }
     }
+
+    // local user stuff
 
     private fun upsertUser(user: NoLifer) {
         viewModelScope.launch {
@@ -46,9 +49,17 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    // ApiStuff
+
     fun getGameList() {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameList()
+        }
+    }
+
+    fun getGameDetail(gameId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameDetail(gameId)
         }
     }
 

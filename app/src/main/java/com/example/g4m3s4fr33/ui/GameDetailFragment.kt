@@ -3,11 +3,13 @@ package com.example.g4m3s4fr33.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import coil.load
 import com.example.g4m3s4fr33.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentGameDetailBinding
 
@@ -28,6 +30,24 @@ class GameDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val gameId = arguments?.getInt("gameId")
+
+        viewModel.getGameDetail(gameId!!)
+
+        viewModel.gameDetail.observe(viewLifecycleOwner) {
+            binding.imageView.load(viewModel.gameDetail.value!!.thumbnail)
+        }
+
+
+        binding.button.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse(viewModel.gameDetail.value!!.url)
+                )
+            )
+        }
+
     }
 
     /*
@@ -37,7 +57,7 @@ class GameDetailFragment : Fragment() {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://www.freetogame.com/open/genshin-impact")
+                    Uri.parse("$")
                 )
             )
         } */

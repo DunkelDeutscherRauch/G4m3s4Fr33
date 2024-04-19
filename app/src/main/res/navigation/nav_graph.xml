@@ -19,9 +19,17 @@
     <fragment
         android:id="@+id/gamesListFragment"
         android:name="com.example.g4m3s4fr33.ui.GameListFragment"
-        android:label="GamesListFragment" />
+        android:label="GamesListFragment" >
+        <action
+            android:id="@+id/action_gamesListFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gameDetailFragment"
         android:name="com.example.g4m3s4fr33.ui.GameDetailFragment"
-        android:label="GameDetailFragment" />
+        android:label="GameDetailFragment" >
+        <argument
+            android:name="gameId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
