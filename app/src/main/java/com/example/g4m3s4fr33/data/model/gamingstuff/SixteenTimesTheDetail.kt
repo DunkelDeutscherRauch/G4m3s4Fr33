@@ -24,6 +24,7 @@ data class SixteenTimesTheDetail(
    maybe it workz^^
    @Jason(name= "minimum_system_requirements")
    val minimumSystemRequirements: SystemRequirements,
+   // maybe - dunno yet
    val screenshots: List<Screenshot>
     */
 
