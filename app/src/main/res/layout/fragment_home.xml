@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Ich habe keine Ahnung. Hier soll halt Text stehen. Weil ich denke, dass Text hier voll schon und so ist. Und nun ist meine Zeile (schon lange) viel zu lang und deswegen schreibe ich jetzt auch nichts mehr...oder so!"
+        android:text="@string/i_dont_know"
         android:textColor="@color/mySilver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

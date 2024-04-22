@@ -5,27 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <at.blogc.android.views.ExpandableTextView
+        android:id="@+id/expTVDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:padding="16dp"
+        android:text="@string/i_dont_know"
+        app:animation_duration="750"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/tvSeeMoreOrLess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/see_more"
+        android:textColor="@color/imBlue"
+        app:layout_constraintStart_toStartOf="@+id/expTVDescription"
+        app:layout_constraintTop_toBottomOf="@+id/expTVDescription" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="365dp"
         android:layout_height="206dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/bob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/test_frog_four"
-        android:contentDescription="@string/bob" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/bob"
-        android:textColor="@color/mySilver"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:srcCompat="@drawable/test_frog_four" />
 
     <Button
         android:id="@+id/button"
@@ -34,6 +50,7 @@
         android:layout_marginBottom="32dp"
         android:text="@string/go_to_homepage"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSeeMoreOrLess"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

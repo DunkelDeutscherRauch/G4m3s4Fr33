@@ -8,4 +8,7 @@
     <string name="save">Save</string>
     <string name="name_nickname">Name / Nickname</string>
     <string name="go_to_homepage">Go to homepage</string>
+    <string name="i_dont_know">Ich habe keine Ahnung. Hier soll halt Text stehen. Weil ich denke, dass Text hier voll schon und so ist. Und nun ist meine Zeile (schon lange) viel zu lang und deswegen schreibe ich jetzt auch nichts mehr...oder so!</string>
+    <string name="see_more">see more</string>
+    <string name="see_less">see less</string>
 </resources>
