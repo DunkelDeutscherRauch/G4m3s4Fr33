@@ -32,19 +32,19 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     // local user stuff
 
     private fun upsertUser(user: NoLifer) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             userRepository.upsertUser(user)
         }
     }
 
     fun updateUserName(name: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             userRepository.updateUserName(name)
         }
     }
 
     fun updateUserImage(userImage: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             userRepository.updateUserImage(userImage)
         }
     }

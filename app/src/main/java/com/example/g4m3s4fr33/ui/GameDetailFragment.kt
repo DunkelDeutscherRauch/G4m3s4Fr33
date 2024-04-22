@@ -39,27 +39,25 @@ class GameDetailFragment : Fragment() {
         val expandableTextView = binding.expTVDescription
         val toggle = binding.tvSeeMoreOrLess
 
-        expandableTextView.setAnimationDuration(750L)
-        expandableTextView.setInterpolator(OvershootInterpolator())
-
         viewModel.gameDetail.observe(viewLifecycleOwner) {
             binding.imageView.load(viewModel.gameDetail.value!!.thumbnail)
-
             binding.expTVDescription.text = viewModel.gameDetail.value!!.descriptionLong
-            binding.tvSeeMoreOrLess.setOnClickListener {
 
-                if (expandableTextView.isExpanded) {
-                    expandableTextView.collapse()
-                    toggle.setText(R.string.see_more)
+        }
 
-                } else {
-                    expandableTextView.expand()
-                    toggle.setText(R.string.see_less)
-                }
+        binding.tvSeeMoreOrLess.setOnClickListener {
+
+            expandableTextView.setAnimationDuration(750L)
+            expandableTextView.setInterpolator(OvershootInterpolator())
+
+            if (expandableTextView.isExpanded) {
+                expandableTextView.collapse()
+                toggle.setText(R.string.see_more)
+
+            } else {
+                expandableTextView.expand()
+                toggle.setText(R.string.see_less)
             }
-
-
-
         }
 
         binding.button.setOnClickListener {
@@ -72,17 +70,4 @@ class GameDetailFragment : Fragment() {
         }
 
     }
-
-    /*
-        opens a link on buttonclick
-
-        binding.button.setOnClickListener {
-            startActivity(
-                Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse("$")
-                )
-            )
-        } */
-
 }

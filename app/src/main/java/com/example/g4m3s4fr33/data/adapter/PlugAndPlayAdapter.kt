@@ -36,7 +36,6 @@ class PlugAndPlayAdapter(
         holder.binding.tvGameListItem.text = gameAddiction.title
 
 
-        // TODO
         holder.binding.root.setOnClickListener {
             holder.itemView.findNavController().navigate(
                 GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
