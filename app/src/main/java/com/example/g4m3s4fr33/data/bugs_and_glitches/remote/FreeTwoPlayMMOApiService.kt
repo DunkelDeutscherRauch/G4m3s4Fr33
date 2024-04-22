@@ -11,6 +11,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import java.util.concurrent.TimeUnit
 
 const val BASE_URL = "https://www.freetogame.com/api/"
 
@@ -24,7 +25,10 @@ private val moshi = Moshi.Builder()
 
 private val httpClient = OkHttpClient.Builder()
     .addInterceptor(logger)
+    .connectTimeout(30, TimeUnit.SECONDS)
+    .readTimeout(30, TimeUnit.SECONDS)
     .build()
+
 
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))

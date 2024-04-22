@@ -34,18 +34,18 @@ class GameDetailFragment : Fragment() {
 
         val gameId = arguments?.getInt("gameId")
 
+        viewModel.getGameDetail(gameId!!)
+
         val expandableTextView = binding.expTVDescription
         val toggle = binding.tvSeeMoreOrLess
-
-        viewModel.getGameDetail(gameId!!)
 
         expandableTextView.setAnimationDuration(750L)
         expandableTextView.setInterpolator(OvershootInterpolator())
 
         viewModel.gameDetail.observe(viewLifecycleOwner) {
             binding.imageView.load(viewModel.gameDetail.value!!.thumbnail)
-            binding.expTVDescription.text = viewModel.gameDetail.value!!.descriptionLong
 
+            binding.expTVDescription.text = viewModel.gameDetail.value!!.descriptionLong
             binding.tvSeeMoreOrLess.setOnClickListener {
 
                 if (expandableTextView.isExpanded) {
