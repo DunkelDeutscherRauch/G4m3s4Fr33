@@ -36,6 +36,7 @@ class GameDetailFragment : Fragment() {
 
         viewModel.gameDetail.observe(viewLifecycleOwner) {
             binding.imageView.load(viewModel.gameDetail.value!!.thumbnail)
+            binding.textView4.text = viewModel.gameDetail.value!!.descriptionLong
         }
 
 
