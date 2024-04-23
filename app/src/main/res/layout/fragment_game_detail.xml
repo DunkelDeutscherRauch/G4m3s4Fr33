@@ -9,55 +9,189 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <at.blogc.android.views.ExpandableTextView
-        android:id="@+id/expTVDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:textColor="@color/mySilver"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:padding="16dp"
-        android:text="@string/i_dont_know"
-        app:animation_duration="750"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <TextView
+            android:id="@+id/tvGameDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/bob"
+            android:textColor="@color/mySilver"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvSeeMoreOrLess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/see_more"
-        android:textColor="@color/imBlue"
-        app:layout_constraintStart_toStartOf="@+id/expTVDescription"
-        app:layout_constraintTop_toBottomOf="@+id/expTVDescription" />
+        <ImageView
+            android:id="@+id/ivGameDetailPic"
+            android:layout_width="365dp"
+            android:layout_height="206dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/bob"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGameDetailTitle"
+            app:srcCompat="@drawable/test_frog_four" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="365dp"
-        android:layout_height="206dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/bob"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/test_frog_four" />
+        <TextView
+            android:id="@+id/tvGameDetailShortDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/bob"
+            android:textColor="@color/mySilver"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivGameDetailPic" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="@string/go_to_homepage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvSeeMoreOrLess"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tvGameDetailStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/game_detail_status"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailShortDescription" />
+
+        <TextView
+            android:id="@+id/tvGameDetailGenre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/game_detail_genre"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/tvGameDetailPlatform"
+            app:layout_constraintStart_toEndOf="@+id/tvGameDetailStatus"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailShortDescription" />
+
+        <TextView
+            android:id="@+id/tvGameDetailPlatform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/game_detail_platform"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailShortDescription" />
+
+        <at.blogc.android.views.ExpandableTextView
+            android:id="@+id/expTVDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/i_dont_know"
+            android:textColor="@color/mySilver"
+            app:animation_duration="750"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailGenre" />
+
+        <TextView
+            android:id="@+id/tvSeeMoreOrLess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@color/vwBlackMetallic"
+            android:text="@string/show_more"
+            android:textSize="12sp"
+            android:textColor="@color/imBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expTVDescription" />
+
+        <TextView
+            android:id="@+id/tvGameDetailPublisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/game_detail_publisher"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+
+        <TextView
+            android:id="@+id/tvGameDetailDev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/game_detail_dev"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@+id/tvGameDetailRelease"
+            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintStart_toEndOf="@+id/tvGameDetailPublisher"
+            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+
+        <TextView
+            android:id="@+id/tvGameDetailRelease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/game_detail_release"
+            android:textColor="@color/mySilver"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+
+        <at.blogc.android.views.ExpandableTextView
+            android:id="@+id/expTVDescriptionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/game_detail_sys_req"
+            android:textColor="@color/mySilver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailDev" />
+
+        <TextView
+            android:id="@+id/tvSeeMoreOrLessTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/show_more"
+            android:textColor="@color/imBlue"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expTVDescriptionTwo" />
+
+        <Button
+            android:id="@+id/btnGameDetailHomePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/go_to_homepage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSeeMoreOrLessTwo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

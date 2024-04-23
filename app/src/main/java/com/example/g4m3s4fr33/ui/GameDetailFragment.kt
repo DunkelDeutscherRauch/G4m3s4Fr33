@@ -3,7 +3,6 @@ package com.example.g4m3s4fr33.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +23,7 @@ class GameDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentGameDetailBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -37,8 +36,16 @@ class GameDetailFragment : Fragment() {
         viewModel.getGameDetail(gameId!!)
 
         viewModel.gameDetail.observe(viewLifecycleOwner) {
-            binding.imageView.load(it.thumbnail)
-            binding.expTVDescription.text = it.descriptionLong
+            binding.tvGameDetailTitle.text = it.title
+            binding.tvGameDetailShortDescription.text = it.descriptionShort
+            binding.expTVDescription.text = getString(R.string.game_detail_description, it.descriptionLong)
+            binding.tvGameDetailStatus.text = getString(R.string.game_detail_status, it.status)
+            binding.tvGameDetailGenre.text = getString(R.string.game_detail_genre, it.genre)
+            binding.tvGameDetailPlatform.text = getString(R.string.game_detail_platform, it.platform)
+            binding.tvGameDetailPublisher.text = getString(R.string.game_detail_publisher, it.publisher)
+            binding.tvGameDetailDev.text = getString(R.string.game_detail_dev, it.developer)
+            binding.tvGameDetailRelease.text = getString(R.string.game_detail_release, it.release)
+            binding.ivGameDetailPic.load(it.thumbnail)
 
         }
 
@@ -52,15 +59,15 @@ class GameDetailFragment : Fragment() {
 
             if (expandableTextView.isExpanded) {
                 expandableTextView.collapse()
-                toggle.setText(R.string.see_more)
+                toggle.setText(R.string.show_more)
 
             } else {
                 expandableTextView.expand()
-                toggle.setText(R.string.see_less)
+                toggle.setText(R.string.show_less)
             }
         }
 
-        binding.button.setOnClickListener {
+        binding.btnGameDetailHomePage.setOnClickListener {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,

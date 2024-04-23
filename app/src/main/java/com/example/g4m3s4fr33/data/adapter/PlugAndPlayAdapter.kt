@@ -32,9 +32,8 @@ class PlugAndPlayAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val gameAddiction = tryHardList[position]
 
-        holder.binding.ivGameListItem.load(gameAddiction.thumbnail)
         holder.binding.tvGameListItem.text = gameAddiction.title
-
+        holder.binding.ivGameListItem.load(gameAddiction.thumbnail)
 
         holder.binding.root.setOnClickListener {
             holder.itemView.findNavController().navigate(
