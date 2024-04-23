@@ -94,7 +94,7 @@
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:text="@string/i_dont_know"
+            android:text="@string/game_detail_description"
             android:textColor="@color/mySilver"
             app:animation_duration="750"
             app:layout_constraintEnd_toEndOf="parent"
