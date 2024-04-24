@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.btnFavorites.setOnClickListener {
-            findNavController().navigate(R.id.favoritesFragment)
+            findNavController().navigate(R.id.favoriteFragment)
         }
 
     }

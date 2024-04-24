@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.g4m3s4fr33.databinding.FragmentFavoritesBinding
 
-class FavoritesFragment : Fragment() {
+class FavoriteFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoritesBinding
 
