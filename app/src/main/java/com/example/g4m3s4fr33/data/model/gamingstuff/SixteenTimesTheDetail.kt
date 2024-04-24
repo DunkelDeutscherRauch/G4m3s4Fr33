@@ -23,9 +23,6 @@ data class SixteenTimesTheDetail(
    val minimumSystemRequirements: SystemRequirements
 
    /*
-   //maybe it workz^^
-   @Json(name= "minimum_system_requirements")
-   val minimumSystemRequirements: SystemRequirements,
    // maybe - dunno yet
    val screenshots: List<Screenshot>
     */
@@ -41,8 +38,7 @@ data class SystemRequirements(
 )
 
 /*
-we will see^^
-
+//we will see^^
 data class Screenshot(
     val id: Int,
     val image: String
