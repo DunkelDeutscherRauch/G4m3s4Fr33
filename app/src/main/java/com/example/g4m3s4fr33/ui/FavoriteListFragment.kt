@@ -1,6 +1,7 @@
 package com.example.g4m3s4fr33.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,9 +29,16 @@ class FavoriteListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // TODO this i get
         viewModel.rageQuitList.observe(viewLifecycleOwner) {
-            binding.rvFavList.adapter = RageQuitAdapter(it)
+            Log.i("Ωlul", "gameIDList in FavListFrag: $it")
+            viewModel.getGameDetailList(it)
+        }
 
+        // TODO this not :(
+        viewModel.gameDetailList.observe(viewLifecycleOwner) {
+            Log.i("Ωlul", "gamelist in FavListFrag: $it")
+            binding.rvFavList.adapter = RageQuitAdapter(it)
         }
 
     }

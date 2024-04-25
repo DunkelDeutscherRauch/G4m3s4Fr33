@@ -12,7 +12,7 @@ import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 import com.example.g4m3s4fr33.databinding.FavoriteListItemBinding
 
 class RageQuitAdapter(
-    val rageQuitList: List<Int>,
+    private val rageQuitList: List<SixteenTimesTheDetail>,
 ) : RecyclerView.Adapter<RageQuitAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FavoriteListItemBinding) :
@@ -27,11 +27,12 @@ class RageQuitAdapter(
        return rageQuitList.size
     }
 
+    // TODO should work but i dont get the needed List (see viewmodel and senpairepo)
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        // TODO --> getting the right ID´s but i have to figure out how i get the game-detail´s instead of the gameId
-        val brokenDiscID = rageQuitList[position]
+        val brokenDisc = rageQuitList[position]
 
-        holder.binding.tvFavListItem.text = brokenDiscID.toString()
+        holder.binding.tvFavListItem.text = brokenDisc.title
+        holder.binding.ivFavListItem.load(brokenDisc.thumbnail)
 
     }
 

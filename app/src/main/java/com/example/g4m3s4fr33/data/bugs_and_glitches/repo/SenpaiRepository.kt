@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApi
-import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApiService
 import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 
@@ -44,9 +43,22 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
         }
     }
 
-    suspend fun getGameDetailList(gameIdList: List<Int>) {
-        // TODO
+    suspend fun getGameDetailList(gameIdList: List<Int>): List<SixteenTimesTheDetail> {
+        val gameDetailList = mutableListOf<SixteenTimesTheDetail>()
+
+        for (gameId in gameIdList) {
+            try {
+                val result = mmoApi.retrofitService.getGameDetail(gameId)
+                gameDetailList.add(result)
+                Log.i("Ωlul","SenpaiRepository givz me data: $result")
+            } catch (e: Exception) {
+                Log.e("Ωlul","$e")
+            }
+        }
+        Log.i("Ωlul", "$gameDetailList")
+        return gameDetailList
 
     }
+
 }
 
