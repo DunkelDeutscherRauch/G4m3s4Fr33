@@ -18,11 +18,17 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
     val gameDetail: LiveData<SixteenTimesTheDetail>
         get() = _gameDetail
 
+    // TODO guess i need it
+
+    private var _gameDetailList = MutableLiveData<List<SixteenTimesTheDetail>>()
+    val gameDetailList: LiveData<List<SixteenTimesTheDetail>>
+        get() = _gameDetailList
+
     suspend fun getGameList() {
         try {
             val result = mmoApi.retrofitService.getGameList()
             _gameList.postValue(result)
-            Log.i("Ωlul","Me gez gamez!")
+            Log.i("Ωlul", "Me gez gamez!")
         } catch (e: Exception) {
             Log.e("Ωlul", "$e")
         }
@@ -32,10 +38,15 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
         try {
             val result = mmoApi.retrofitService.getGameDetail(gameId)
             _gameDetail.postValue(result)
-            Log.i("Ωlul","Me gez detailz!")
+            Log.i("Ωlul", "Me gez detailz!")
         } catch (e: Exception) {
             Log.e("Ωlul", "$e")
         }
     }
 
+    suspend fun getGameDetailList(gameIdList: List<Int>) {
+        // TODO
+
+    }
 }
+

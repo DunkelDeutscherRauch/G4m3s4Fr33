@@ -22,6 +22,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     val rageQuitList = noLiferRepository.rageQuitList
     val gameList = senpaiRepository.gameList
     val gameDetail = senpaiRepository.gameDetail
+    val gameDetailList = senpaiRepository.gameDetailList
 
     init {
         user.observeForever {
@@ -68,6 +69,12 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun getGameDetail(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameDetail(gameId)
+        }
+    }
+
+    fun getGameDetailList(gameIdList: List<Int>) {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameDetailList(gameIdList)
         }
     }
 

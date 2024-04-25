@@ -30,6 +30,7 @@ class FavoriteListFragment : Fragment() {
 
         viewModel.rageQuitList.observe(viewLifecycleOwner) {
             binding.rvFavList.adapter = RageQuitAdapter(it)
+
         }
 
     }
