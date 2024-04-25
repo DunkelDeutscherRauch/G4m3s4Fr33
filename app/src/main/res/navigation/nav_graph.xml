@@ -29,7 +29,7 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/favoriteFragment"
-        android:name="com.example.g4m3s4fr33.ui.FavoriteFragment"
-        android:label="FavoriteFragment" />
+        android:id="@+id/favoriteListFragment"
+        android:name="com.example.g4m3s4fr33.ui.FavoriteListFragment"
+        android:label="FavoriteListFragment" />
 </navigation>

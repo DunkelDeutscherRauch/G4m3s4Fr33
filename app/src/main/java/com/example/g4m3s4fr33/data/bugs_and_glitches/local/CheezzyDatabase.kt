@@ -5,8 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.g4m3s4fr33.data.model.user.NoLifer
+import com.example.g4m3s4fr33.data.model.user.RageQuit
 
-@Database(entities = [NoLifer::class], version = 1)
+@Database(entities = [NoLifer::class, RageQuit::class], version = 1)
 abstract class CheezzyDatabase : RoomDatabase() {
     abstract val noLiferDao: CheezzyDatabaseDao
 

@@ -34,6 +34,15 @@
             app:layout_constraintTop_toBottomOf="@id/tvGameDetailTitle"
             app:srcCompat="@drawable/test_frog_four" />
 
+        <Button
+            android:id="@+id/btnGameDetailAddToFav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_to_favorites"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivGameDetailPic"
+            app:layout_constraintEnd_toEndOf="@+id/ivGameDetailPic" />
+
         <TextView
             android:id="@+id/tvGameDetailShortDescription"
             android:layout_width="match_parent"

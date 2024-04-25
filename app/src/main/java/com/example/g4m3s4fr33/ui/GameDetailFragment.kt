@@ -62,6 +62,10 @@ class GameDetailFragment : Fragment() {
 
         }
 
+        binding.btnGameDetailAddToFav.setOnClickListener {
+            viewModel.addFavGame(viewModel.gameDetail.value!!.id)
+        }
+
         binding.tvSeeMoreOrLess.setOnClickListener {
             superExpandableBrothers(binding.expTVDescription, binding.tvSeeMoreOrLess)
         }

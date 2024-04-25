@@ -22,4 +22,10 @@ interface CheezzyDatabaseDao {
     @Query("UPDATE kek_table SET userImage= :userImage WHERE ID = 0")
     suspend fun updateUserImage(userImage: String)
 
+    @Query("SELECT gameId FROM rage_quit_table WHERE userId = 0")
+    fun getFavGames(): LiveData<List<Int>>
+
+    @Query("INSERT INTO rage_quit_table VALUES (:gameId,0)")
+    suspend fun addFavGame(gameId: Int)
+
 }
