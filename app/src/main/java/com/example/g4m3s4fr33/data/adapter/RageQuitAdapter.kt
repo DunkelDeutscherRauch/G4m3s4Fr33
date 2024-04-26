@@ -27,7 +27,6 @@ class RageQuitAdapter(
        return rageQuitList.size
     }
 
-    // TODO should work but i dont get the needed List (see viewmodel and senpairepo)
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val brokenDisc = rageQuitList[position]
 
