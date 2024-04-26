@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
 import com.example.g4m3s4fr33.R
-import com.example.g4m3s4fr33.WaifuViewModel
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

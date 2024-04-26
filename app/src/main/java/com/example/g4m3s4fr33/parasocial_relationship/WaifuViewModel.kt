@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33
+package com.example.g4m3s4fr33.parasocial_relationship
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

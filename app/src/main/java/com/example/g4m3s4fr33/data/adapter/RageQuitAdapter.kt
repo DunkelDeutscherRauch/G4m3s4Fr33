@@ -1,13 +1,10 @@
 package com.example.g4m3s4fr33.data.adapter
 
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.example.g4m3s4fr33.WaifuViewModel
-import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 import com.example.g4m3s4fr33.databinding.FavoriteListItemBinding
 

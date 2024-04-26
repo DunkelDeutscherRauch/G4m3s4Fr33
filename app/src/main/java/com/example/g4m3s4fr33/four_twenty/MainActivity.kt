@@ -1,14 +1,15 @@
-package com.example.g4m3s4fr33
+package com.example.g4m3s4fr33.four_twenty
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import coil.load
+import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.ActivityMainBinding
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 
 class MainActivity : AppCompatActivity() {

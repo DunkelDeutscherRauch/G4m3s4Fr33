@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import com.example.g4m3s4fr33.WaifuViewModel
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.data.adapter.PlugAndPlayAdapter
 import com.example.g4m3s4fr33.databinding.FragmentGameListBinding
 

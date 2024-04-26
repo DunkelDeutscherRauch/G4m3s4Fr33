@@ -13,7 +13,7 @@ import androidx.fragment.app.activityViewModels
 import at.blogc.android.views.ExpandableTextView
 import coil.load
 import com.example.g4m3s4fr33.R
-import com.example.g4m3s4fr33.WaifuViewModel
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentGameDetailBinding
 
 class GameDetailFragment : Fragment() {
