@@ -13,15 +13,16 @@ class RageQuitAdapter(
 ) : RecyclerView.Adapter<RageQuitAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FavoriteListItemBinding) :
-    RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val binding = FavoriteListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FavoriteListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
-       return rageQuitList.size
+        return rageQuitList.size
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {

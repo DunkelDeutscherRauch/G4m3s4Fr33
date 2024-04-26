@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         handleOnBackPressed()
 
         viewModel.user.observe(this) {
-           try {
+            try {
                 if (it.userImage.isBlank()) {
-                   binding.ivToolbar.setImageResource(R.drawable.test_frog)
+                    binding.ivToolbar.setImageResource(R.drawable.test_frog)
                 } else {
                     binding.ivToolbar.load(it.userImage)
                 }
-           } catch (e: Exception) {
-               Log.e("Ωlul", "$e")
+            } catch (e: Exception) {
+                Log.e("Ωlul", "$e")
 
             }
         }

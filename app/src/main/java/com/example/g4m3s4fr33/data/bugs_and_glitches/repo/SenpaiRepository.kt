@@ -50,9 +50,9 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
             try {
                 val result = mmoApi.retrofitService.getGameDetail(gameId)
                 gameDetailList.add(result)
-                Log.i("Ωlul","SenpaiRepository givz me data: $result")
+                Log.i("Ωlul", "SenpaiRepository givz me data: $result")
             } catch (e: Exception) {
-                Log.e("Ωlul","$e")
+                Log.e("Ωlul", "$e")
             }
         }
         Log.i("Ωlul", "$gameDetailList")

@@ -3,11 +3,10 @@ package com.example.g4m3s4fr33.parasocial_relationship
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.NoLiferRepository
 import com.example.g4m3s4fr33.data.bugs_and_glitches.local.CheezzyDatabase
 import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApi
+import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.NoLiferRepository
 import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.SenpaiRepository
-import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 import com.example.g4m3s4fr33.data.model.user.NoLifer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,9 +25,9 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         user.observeForever {
-           if (it == null) {
-               upsertUser(NoLifer())
-           }
+            if (it == null) {
+                upsertUser(NoLifer())
+            }
         }
     }
 
@@ -78,7 +77,6 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
 
     }
-
 
 
 }
