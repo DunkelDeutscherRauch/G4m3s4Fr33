@@ -71,12 +71,14 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
             senpaiRepository.getGameDetail(gameId)
         }
     }
-    //TODO something is wrong here!!!
+
     fun getGameDetailList(gameIdList: List<Int>) {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameDetailList(gameIdList)
         }
 
     }
+
+
 
 }

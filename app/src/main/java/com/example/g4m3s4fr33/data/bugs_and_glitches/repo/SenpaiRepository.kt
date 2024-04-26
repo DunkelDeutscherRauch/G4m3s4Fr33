@@ -43,7 +43,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
         }
     }
 
-    suspend fun getGameDetailList(gameIdList: List<Int>): List<SixteenTimesTheDetail> {
+    suspend fun getGameDetailList(gameIdList: List<Int>) {
         val gameDetailList = mutableListOf<SixteenTimesTheDetail>()
 
         for (gameId in gameIdList) {
@@ -56,7 +56,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
             }
         }
         Log.i("Ωlul", "$gameDetailList")
-        return gameDetailList
+        _gameDetailList.postValue(gameDetailList)
 
     }
 

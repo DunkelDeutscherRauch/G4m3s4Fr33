@@ -29,15 +29,13 @@ class FavoriteListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO this i get
+
         viewModel.rageQuitList.observe(viewLifecycleOwner) {
-            Log.i("Ωlul", "gameIDList in FavListFrag: $it")
             viewModel.getGameDetailList(it)
         }
 
-        // TODO this not :(
+
         viewModel.gameDetailList.observe(viewLifecycleOwner) {
-            Log.i("Ωlul", "gamelist in FavListFrag: $it")
             binding.rvFavList.adapter = RageQuitAdapter(it)
         }
 
