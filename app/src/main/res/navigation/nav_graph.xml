@@ -31,5 +31,20 @@
     <fragment
         android:id="@+id/favoriteListFragment"
         android:name="com.example.g4m3s4fr33.ui.FavoriteListFragment"
-        android:label="FavoriteListFragment" />
+        android:label="FavoriteListFragment" >
+        <action
+            android:id="@+id/action_favoriteListFragment_to_favoriteDetailFragment"
+            app:destination="@id/favoriteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteDetailFragment"
+        android:name="com.example.g4m3s4fr33.ui.FavoriteDetailFragment"
+        android:label="FavoriteDetailFragment" >
+        <argument
+            android:name="gameId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_favoriteDetailFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
 </navigation>
