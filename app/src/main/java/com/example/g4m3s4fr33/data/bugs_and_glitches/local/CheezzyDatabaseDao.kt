@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.g4m3s4fr33.data.model.user.NoLifer
+import com.example.g4m3s4fr33.data.model.user.RageQuit
 
 @Dao
 interface CheezzyDatabaseDao {
@@ -30,5 +31,8 @@ interface CheezzyDatabaseDao {
 
     @Query("DELETE FROM rage_quit_table WHERE gameId= :gameId")
     suspend fun deleteFavGame(gameId: Int)
+
+    @Query("SELECT * FROM rage_quit_table WHERE gameId= :gameId")
+    suspend fun getSelectedFavGame(gameId: Int): List<RageQuit>
 
 }

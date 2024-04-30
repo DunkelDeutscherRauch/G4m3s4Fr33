@@ -21,4 +21,5 @@
     <string name="game_detail_sys_req">Minimum System Requirements:\n\nOS: %1$s\nProcessor: %2$s\nMemory: %3$s\nGraphics: %4$s\nStorage: %5$s</string>
     <string name="add_to_favorites">Add</string>
     <string name="remove_from_favorites">Remove</string>
+    <string name="added_to_favorites">Added</string>
 </resources>

@@ -21,6 +21,15 @@ class GameDetailFragment : Fragment() {
     private lateinit var binding: FragmentGameDetailBinding
     private val viewModel: WaifuViewModel by activityViewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val gameId = arguments?.getInt("gameId")
+
+        viewModel.getGameDetail(gameId!!)
+        viewModel.isGameFav(gameId)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -33,9 +42,16 @@ class GameDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val gameId = arguments?.getInt("gameId")
+        viewModel.isFavGame.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.btnGameDetailAddToFav.isClickable = false
+                binding.btnGameDetailAddToFav.setText(R.string.added_to_favorites)
+            } else {
+                binding.btnGameDetailAddToFav.isClickable = true
+                binding.btnGameDetailAddToFav.setText(R.string.add_to_favorites)
+            }
 
-        viewModel.getGameDetail(gameId!!)
+        }
 
         viewModel.gameDetail.observe(viewLifecycleOwner) {
             binding.tvGameDetailTitle.text = it.title
@@ -52,11 +68,11 @@ class GameDetailFragment : Fragment() {
             binding.tvGameDetailRelease.text = getString(R.string.game_detail_release, it.release)
             binding.expTVDescriptionTwo.text = getString(
                 R.string.game_detail_sys_req,
-                it.minimumSystemRequirements?.os ?: "-",
-                it.minimumSystemRequirements?.processor ?: "-",
-                it.minimumSystemRequirements?.memory ?: "-",
-                it.minimumSystemRequirements?.graphics ?: "-",
-                it.minimumSystemRequirements?.storage ?: "-"
+                it.minimumSystemRequirements?.os ?: "N/A",
+                it.minimumSystemRequirements?.processor ?: "N/A",
+                it.minimumSystemRequirements?.memory ?: "N/A",
+                it.minimumSystemRequirements?.graphics ?: "N/A",
+                it.minimumSystemRequirements?.storage ?: "N/A"
             )
             binding.ivGameDetailPic.load(it.thumbnail)
 
@@ -86,18 +102,16 @@ class GameDetailFragment : Fragment() {
     }
 
     private fun superExpandableBrothers(expandableTextView: ExpandableTextView, toggle: TextView) {
-
         expandableTextView.setAnimationDuration(750L)
         expandableTextView.setInterpolator(OvershootInterpolator())
 
         if (expandableTextView.isExpanded) {
             expandableTextView.collapse()
             toggle.setText(R.string.show_more)
-
         } else {
             expandableTextView.expand()
             toggle.setText(R.string.show_less)
         }
-    }
 
+    }
 }

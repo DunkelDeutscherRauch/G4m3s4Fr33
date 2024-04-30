@@ -19,6 +19,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     val user = noLiferRepository.user
     val rageQuitList = noLiferRepository.rageQuitList
+    val isFavGame = noLiferRepository.isGameFav
     val gameList = senpaiRepository.gameList
     val gameDetail = senpaiRepository.gameDetail
     val gameDetailList = senpaiRepository.gameDetailList
@@ -54,12 +55,20 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun addFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.addFavGame(gameId)
+            isGameFav(gameId)
         }
     }
 
     fun deleteFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.deleteFavGame(gameId)
+            isGameFav(gameId)
+        }
+    }
+
+    fun isGameFav(gameId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            noLiferRepository.isSelectedGameFav(gameId)
         }
     }
 
