@@ -20,7 +20,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     val user = noLiferRepository.user
     val rageQuitList = noLiferRepository.rageQuitList
     val isFavGame = noLiferRepository.isGameFav
-    val dateGameAdded = noLiferRepository.favGame
+    val favGame = noLiferRepository.favGame
     val gameList = senpaiRepository.gameList
     val gameDetail = senpaiRepository.gameDetail
     val gameDetailList = senpaiRepository.gameDetailList
@@ -73,7 +73,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getDateGameAdded(gameId: Int) {
+    fun getFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.getFavGame(gameId)
         }

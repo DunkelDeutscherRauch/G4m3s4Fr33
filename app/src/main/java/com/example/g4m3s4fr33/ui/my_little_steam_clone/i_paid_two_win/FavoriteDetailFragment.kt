@@ -23,7 +23,7 @@ class FavoriteDetailFragment : Fragment() {
         val gameId = arguments?.getInt("gameId")
 
         viewModel.getGameDetail(gameId!!)
-        viewModel.getDateGameAdded(gameId)
+        viewModel.getFavGame(gameId)
 
     }
 
@@ -39,7 +39,7 @@ class FavoriteDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.dateGameAdded.observe(viewLifecycleOwner) {
+        viewModel.favGame.observe(viewLifecycleOwner) {
             binding.tvGameFavDateAdded.text = getString(R.string.date_game_added_to_favorites, it.first().dateGameAdded)
         }
 
