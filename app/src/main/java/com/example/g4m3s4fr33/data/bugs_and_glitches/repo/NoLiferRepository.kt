@@ -41,8 +41,8 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
     }
 
     suspend fun isSelectedGameFav(gameId: Int) {
-        val myContance = database.noLiferDao.getSelectedFavGame(gameId).isNotEmpty()
-        _isGameFav.postValue(myContance)
+        val doIHaveAnArrowInMyKnee = database.noLiferDao.getSelectedFavGame(gameId).isNotEmpty()
+        _isGameFav.postValue(doIHaveAnArrowInMyKnee)
     }
 
     suspend fun getFavGame(gameId: Int) {
