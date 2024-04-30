@@ -35,7 +35,7 @@ class FavoriteListFragment : Fragment() {
 
 
         viewModel.gameDetailList.observe(viewLifecycleOwner) {
-            binding.rvFavList.adapter = RageQuitAdapter(it)
+            binding.rvFavList.adapter = RageQuitAdapter(it, viewModel)
         }
 
     }

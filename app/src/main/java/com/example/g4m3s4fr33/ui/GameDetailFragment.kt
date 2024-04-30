@@ -52,11 +52,11 @@ class GameDetailFragment : Fragment() {
             binding.tvGameDetailRelease.text = getString(R.string.game_detail_release, it.release)
             binding.expTVDescriptionTwo.text = getString(
                 R.string.game_detail_sys_req,
-                it.minimumSystemRequirements.os,
-                it.minimumSystemRequirements.processor,
-                it.minimumSystemRequirements.memory,
-                it.minimumSystemRequirements.graphics,
-                it.minimumSystemRequirements.storage
+                it.minimumSystemRequirements?.os ?: "-",
+                it.minimumSystemRequirements?.processor ?: "-",
+                it.minimumSystemRequirements?.memory ?: "-",
+                it.minimumSystemRequirements?.graphics ?: "-",
+                it.minimumSystemRequirements?.storage ?: "-"
             )
             binding.ivGameDetailPic.load(it.thumbnail)
 

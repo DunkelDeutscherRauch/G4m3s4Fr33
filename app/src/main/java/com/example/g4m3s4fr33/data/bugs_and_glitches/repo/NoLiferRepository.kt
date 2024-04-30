@@ -23,7 +23,10 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
 
     suspend fun addFavGame(gameId: Int) {
         database.noLiferDao.addFavGame(gameId)
+    }
 
+    suspend fun deleteFavGame(gameId: Int) {
+        database.noLiferDao.deleteFavGame(gameId)
     }
 
 

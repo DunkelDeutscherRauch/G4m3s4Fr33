@@ -57,6 +57,12 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun deleteFavGame(gameId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            noLiferRepository.deleteFavGame(gameId)
+        }
+    }
+
     // ApiStuff
 
     fun getGameList() {

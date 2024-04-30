@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 import com.example.g4m3s4fr33.databinding.FavoriteListItemBinding
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class RageQuitAdapter(
     private val rageQuitList: List<SixteenTimesTheDetail>,
+    private val viewModel: WaifuViewModel
 ) : RecyclerView.Adapter<RageQuitAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(val binding: FavoriteListItemBinding) :
@@ -30,6 +32,10 @@ class RageQuitAdapter(
 
         holder.binding.tvFavListItem.text = brokenDisc.title
         holder.binding.ivFavListItem.load(brokenDisc.thumbnail)
+
+        holder.binding.btnFavListItem.setOnClickListener {
+            viewModel.deleteFavGame(brokenDisc.id)
+        }
 
     }
 

@@ -17,8 +17,6 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
     val gameDetail: LiveData<SixteenTimesTheDetail>
         get() = _gameDetail
 
-    // TODO guess i need it
-
     private var _gameDetailList = MutableLiveData<List<SixteenTimesTheDetail>>()
     val gameDetailList: LiveData<List<SixteenTimesTheDetail>>
         get() = _gameDetailList

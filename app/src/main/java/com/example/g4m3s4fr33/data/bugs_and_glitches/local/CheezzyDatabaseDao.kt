@@ -28,6 +28,7 @@ interface CheezzyDatabaseDao {
     @Query("INSERT INTO rage_quit_table VALUES (:gameId,0)")
     suspend fun addFavGame(gameId: Int)
 
-    //TODO need a delete function here!
+    @Query("DELETE FROM rage_quit_table WHERE gameId= :gameId")
+    suspend fun deleteFavGame(gameId: Int)
 
 }

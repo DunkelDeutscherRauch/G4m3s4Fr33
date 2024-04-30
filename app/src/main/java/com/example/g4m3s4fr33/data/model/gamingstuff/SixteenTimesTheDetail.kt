@@ -20,13 +20,7 @@ data class SixteenTimesTheDetail(
     @Json(name = "release_date")
     val release: String,
     @Json(name = "minimum_system_requirements")
-    val minimumSystemRequirements: SystemRequirements
-
-    /*
-    // TODO --> maybe - dunno yet
-    val screenshots: List<Screenshot>
-     */
-
+    val minimumSystemRequirements: SystemRequirements? = null
 )
 
 data class SystemRequirements(
@@ -37,11 +31,3 @@ data class SystemRequirements(
     val storage: String
 )
 
-/*
-// TODO --> we will see^^
-data class Screenshot(
-    val id: Int,
-    val image: String
-)
-
- */
