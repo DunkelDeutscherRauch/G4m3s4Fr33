@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.ui
+package com.example.g4m3s4fr33.ui.other_fancy_stuff
 
 import android.os.Bundle
 import android.view.LayoutInflater

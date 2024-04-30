@@ -9,8 +9,11 @@
         android:id="@+id/tvFavDetailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/bob"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/mySilver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,12 +30,12 @@
         android:contentDescription="@string/bob" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvGameFavDateAdded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
-        android:text="@string/bob"
+        android:text="@string/date_game_added_to_favorites"
         android:textColor="@color/mySilver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivFavDetail" />
@@ -46,7 +49,17 @@
         android:text="@string/bob"
         android:textColor="@color/mySilver"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/tvGameFavDateAdded" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/bob"
+        android:textColor="@color/mySilver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
         android:id="@+id/btnFavGameRemove"

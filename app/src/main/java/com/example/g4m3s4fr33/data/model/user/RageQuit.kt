@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class RageQuit(
     @PrimaryKey
     val gameId: Int,
+    val dateGameAdded: String,
     val userId: Int
 )

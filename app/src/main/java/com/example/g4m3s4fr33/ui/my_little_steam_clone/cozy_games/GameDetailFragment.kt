@@ -1,8 +1,9 @@
-package com.example.g4m3s4fr33.ui
+package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,10 @@ import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentGameDetailBinding
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.util.Calendar
+import java.util.Locale
 
 class GameDetailFragment : Fragment() {
 
@@ -79,7 +84,12 @@ class GameDetailFragment : Fragment() {
         }
 
         binding.btnGameDetailAddToFav.setOnClickListener {
-            viewModel.addFavGame(viewModel.gameDetail.value!!.id)
+            val calendar = Calendar.getInstance()
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
+            val date = dateFormat.format(calendar.time)
+
+            viewModel.addFavGame(viewModel.gameDetail.value!!.id, date.toString())
+
         }
 
         binding.tvSeeMoreOrLess.setOnClickListener {

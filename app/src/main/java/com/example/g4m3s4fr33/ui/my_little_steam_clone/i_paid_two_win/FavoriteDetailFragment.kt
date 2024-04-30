@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.ui
+package com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,6 +23,7 @@ class FavoriteDetailFragment : Fragment() {
         val gameId = arguments?.getInt("gameId")
 
         viewModel.getGameDetail(gameId!!)
+        viewModel.getDateGameAdded(gameId)
 
     }
 
@@ -38,9 +39,14 @@ class FavoriteDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.dateGameAdded.observe(viewLifecycleOwner) {
+            binding.tvGameFavDateAdded.text = getString(R.string.date_game_added_to_favorites, it.first().dateGameAdded)
+        }
+
         viewModel.gameDetail.observe(viewLifecycleOwner) {
             binding.tvFavDetailTitle.text = it.title
             binding.ivFavDetail.load(it.thumbnail)
+
         }
 
         binding.btnFavGameRemove.setOnClickListener {

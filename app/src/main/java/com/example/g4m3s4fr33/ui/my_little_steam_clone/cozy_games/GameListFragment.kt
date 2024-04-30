@@ -1,4 +1,4 @@
-package com.example.g4m3s4fr33.ui
+package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
-import com.example.g4m3s4fr33.data.adapter.RageQuitAdapter
-import com.example.g4m3s4fr33.databinding.FragmentFavoriteListBinding
+import com.example.g4m3s4fr33.data.adapter.PlugAndPlayAdapter
+import com.example.g4m3s4fr33.databinding.FragmentGameListBinding
 
+class GameListFragment : Fragment() {
 
-class FavoriteListFragment : Fragment() {
-
-    private lateinit var binding: FragmentFavoriteListBinding
+    private lateinit var binding: FragmentGameListBinding
     private val viewModel: WaifuViewModel by activityViewModels()
 
     override fun onCreateView(
@@ -21,21 +20,17 @@ class FavoriteListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentFavoriteListBinding.inflate(layoutInflater, container, false)
+        binding = FragmentGameListBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getGameList()
 
-        viewModel.rageQuitList.observe(viewLifecycleOwner) {
-            viewModel.getGameDetailList(it)
-        }
-
-
-        viewModel.gameDetailList.observe(viewLifecycleOwner) {
-            binding.rvFavList.adapter = RageQuitAdapter(it, viewModel)
+        viewModel.gameList.observe(viewLifecycleOwner) {
+            binding.rvGameList.adapter = PlugAndPlayAdapter(it)
         }
 
     }

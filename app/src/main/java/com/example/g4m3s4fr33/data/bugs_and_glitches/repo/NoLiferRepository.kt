@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.g4m3s4fr33.data.bugs_and_glitches.local.CheezzyDatabase
 import com.example.g4m3s4fr33.data.model.user.NoLifer
+import com.example.g4m3s4fr33.data.model.user.RageQuit
 
 class NoLiferRepository(private val database: CheezzyDatabase) {
 
@@ -14,6 +15,10 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
     private var _isGameFav = MutableLiveData<Boolean>()
     val isGameFav: LiveData<Boolean>
         get() = _isGameFav
+
+    private var _favGame = MutableLiveData<List<RageQuit>>()
+    val favGame: LiveData<List<RageQuit>>
+        get() = _favGame
 
     suspend fun upsertUser(user: NoLifer) {
         database.noLiferDao.upsetUser(user)
@@ -27,8 +32,8 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
         database.noLiferDao.updateUserImage(userImage)
     }
 
-    suspend fun addFavGame(gameId: Int) {
-        database.noLiferDao.addFavGame(gameId)
+    suspend fun addFavGame(gameId: Int, dateGameAdded: String) {
+        database.noLiferDao.addFavGame(gameId, dateGameAdded)
     }
 
     suspend fun deleteFavGame(gameId: Int) {
@@ -38,6 +43,11 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
     suspend fun isSelectedGameFav(gameId: Int) {
         val myContance = database.noLiferDao.getSelectedFavGame(gameId).isNotEmpty()
         _isGameFav.postValue(myContance)
+    }
+
+    suspend fun getFavGame(gameId: Int) {
+        val myFavGame = database.noLiferDao.getSelectedFavGame(gameId)
+        _favGame.postValue(myFavGame)
     }
 
 }

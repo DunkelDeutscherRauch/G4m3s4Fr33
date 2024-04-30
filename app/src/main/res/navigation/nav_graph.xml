@@ -6,15 +6,15 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.g4m3s4fr33.ui.HomeFragment"
+        android:name="com.example.g4m3s4fr33.ui.other_fancy_stuff.HomeFragment"
         android:label="HomeFragment" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.g4m3s4fr33.ui.ProfileFragment"
+        android:name="com.example.g4m3s4fr33.ui.other_fancy_stuff.ProfileFragment"
         android:label="ProfileFragment" />
     <fragment
         android:id="@+id/gamesListFragment"
-        android:name="com.example.g4m3s4fr33.ui.GameListFragment"
+        android:name="com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games.GameListFragment"
         android:label="GamesListFragment" >
         <action
             android:id="@+id/action_gamesListFragment_to_gameDetailFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameDetailFragment"
-        android:name="com.example.g4m3s4fr33.ui.GameDetailFragment"
+        android:name="com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games.GameDetailFragment"
         android:label="GameDetailFragment" >
         <argument
             android:name="gameId"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteListFragment"
-        android:name="com.example.g4m3s4fr33.ui.FavoriteListFragment"
+        android:name="com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win.FavoriteListFragment"
         android:label="FavoriteListFragment" >
         <action
             android:id="@+id/action_favoriteListFragment_to_favoriteDetailFragment"
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteDetailFragment"
-        android:name="com.example.g4m3s4fr33.ui.FavoriteDetailFragment"
+        android:name="com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win.FavoriteDetailFragment"
         android:label="FavoriteDetailFragment" >
         <argument
             android:name="gameId"
