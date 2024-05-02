@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -37,29 +36,44 @@
         android:layout_marginTop="16dp"
         android:text="@string/date_game_added_to_favorites"
         android:textColor="@color/mySilver"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivFavDetail" />
 
-    <TextView
-        android:id="@+id/textView5"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/etFavDetailPlayTime"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
-        android:text="@string/bob"
+        android:hint="@string/playtime_in_hours"
         android:textColor="@color/mySilver"
+        android:textColorHint="@color/mySilver"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGameFavDateAdded" />
 
+    <Button
+        android:id="@+id/btnFavDetailSaveTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/save"
+        app:layout_constraintStart_toEndOf="@+id/etFavDetailPlayTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameFavDateAdded" />
+
     <TextView
+        android:id="@+id/tvFavDetailRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:text="@string/bob"
         android:textColor="@color/mySilver"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/etFavDetailPlayTime" />
 
     <Button
         android:id="@+id/btnFavGameRemove"

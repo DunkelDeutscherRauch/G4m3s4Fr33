@@ -49,4 +49,8 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
         _favGame.postValue(myFavGame)
     }
 
+    suspend fun updateHoursPlayed(hoursPlayed: Int, gameId: Int) {
+        database.noLiferDao.updateHoursPlayed(hoursPlayed,gameId)
+    }
+
 }

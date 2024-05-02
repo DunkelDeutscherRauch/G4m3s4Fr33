@@ -8,5 +8,7 @@ data class RageQuit(
     @PrimaryKey
     val gameId: Int,
     val dateGameAdded: String,
-    val userId: Int
+    val hoursPlayed: Int,
+    val userId: Int,
+
 )

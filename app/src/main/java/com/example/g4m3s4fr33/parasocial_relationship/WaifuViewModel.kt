@@ -3,6 +3,7 @@ package com.example.g4m3s4fr33.parasocial_relationship
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.data.bugs_and_glitches.local.CheezzyDatabase
 import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApi
 import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.NoLiferRepository
@@ -66,7 +67,6 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun deleteFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.deleteFavGame(gameId)
-            isGameFav(gameId)
         }
     }
 
@@ -79,6 +79,12 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun getFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.getFavGame(gameId)
+        }
+    }
+
+    fun updateHoursPlayed(hoursPlayed: Int, gameId: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            noLiferRepository.updateHoursPlayed(hoursPlayed, gameId)
         }
     }
 
@@ -111,6 +117,22 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         val date = dateFormat.format(calendar.time)
 
         return date.toString()
+    }
+
+    fun gimmeRank(playtime: Int): Int {
+       return when(playtime) {
+             0 -> {
+                R.string.unranked
+            }
+
+           in 1..24 -> {
+               R.string.rank_noob
+           }
+
+           else -> {
+               R.string.rank_rookie
+           }
+       }
     }
 
 

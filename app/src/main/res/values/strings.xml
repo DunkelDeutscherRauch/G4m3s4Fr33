@@ -25,4 +25,9 @@
     <string name="go_to_game_details">Go to Details</string>
     <string name="back_to_favorites">Back to favorites</string>
     <string name="date_game_added_to_favorites">Game added at: %1$s</string>
+    <string name="rank_noob">Rank: <font color='red'>Noob</font></string>
+    <string name="rank_rookie">Rank: <font color='yellow'> Rookie</font></string>
+    <string name="playtime_in_hours">Enter your Playtime here</string>
+    <string name="unranked">Not Ranked</string>
+    <string name="played_hours">Played %1$s hours</string>
 </resources>

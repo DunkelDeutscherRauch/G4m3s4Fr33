@@ -26,7 +26,7 @@ interface CheezzyDatabaseDao {
     @Query("SELECT gameId FROM rage_quit_table WHERE userId = 0")
     fun getFavGames(): LiveData<List<Int>>
 
-    @Query("INSERT INTO rage_quit_table VALUES (:gameId,:dateGameAdded,0)")
+    @Query("INSERT INTO rage_quit_table VALUES (:gameId,:dateGameAdded,0,0)")
     suspend fun addFavGame(gameId: Int, dateGameAdded: String)
 
     @Query("DELETE FROM rage_quit_table WHERE gameId= :gameId")
@@ -34,5 +34,8 @@ interface CheezzyDatabaseDao {
 
     @Query("SELECT * FROM rage_quit_table WHERE gameId= :gameId")
     suspend fun getSelectedFavGame(gameId: Int): List<RageQuit>
+
+    @Query("UPDATE rage_quit_table SET hoursPlayed= :hoursPlayed WHERE gameId= :gameId")
+    suspend fun updateHoursPlayed(hoursPlayed: Int, gameId: Int)
 
 }
