@@ -64,6 +64,8 @@ class ProfileFragment : Fragment() {
             changeImage.launch(intent)
         }
 
+        // TODO --> implement custom popup here!
+
         binding.btnSaveUser.setOnClickListener {
             if (binding.etProfileName.text!!.isNotBlank()) {
                 viewModel.updateUserName(binding.etProfileName.text.toString())

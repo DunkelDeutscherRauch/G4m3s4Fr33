@@ -1,9 +1,12 @@
 package com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -12,18 +15,20 @@ import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentFavoriteDetailBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
+import kotlin.properties.Delegates
 
 class FavoriteDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoriteDetailBinding
+    private var gameId by Delegates.notNull<Int>()
     private val viewModel: WaifuViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val gameId = arguments?.getInt("gameId")
+        gameId = arguments?.getInt("gameId")!!
 
-        viewModel.getGameDetail(gameId!!)
+        viewModel.getGameDetail(gameId)
         viewModel.getFavGame(gameId)
 
     }
@@ -70,62 +75,67 @@ class FavoriteDetailFragment : Fragment() {
 
         }
 
-        // TODO - maybe a popup would fix problem - see bottom
+        /*
+        TODO --> replace popup with customized popup!
+             --> maybe replace etFavDetailPlaytime with TextView or
+             --> set android:focusableInTouchMode="false" in XML on etFavDetailPlaytime + remove Button
+         */
 
         binding.btnFavDetailSaveTime.setOnClickListener {
-            if (binding.etFavDetailPlayTime.text!!.isNotBlank()) {
-                viewModel.updateHoursPlayed(
-                    binding.etFavDetailPlayTime.text.toString().toInt(),
-                    viewModel.gameDetail.value!!.id
-                )
-                binding.tvFavDetailRank.setText(
-                    viewModel.gimmeRank(
-                        binding.etFavDetailPlayTime.text.toString().toInt()
+            val alertDialogBuilder = AlertDialog.Builder(requireContext())
+            alertDialogBuilder.setTitle("TODO - Just for Testing :D ")
+            alertDialogBuilder.setMessage("Please enter your playtime")
+
+            val input = EditText(requireContext())
+            input.inputType = InputType.TYPE_CLASS_NUMBER
+            alertDialogBuilder.setView(input)
+
+            alertDialogBuilder.setPositiveButton("Save") { _, _ ->
+                val userInput = input.text.toString()
+
+                if (input.text.isNotBlank()) {
+                    viewModel.updateHoursPlayed(
+                        userInput.toInt(),
+                        gameId
                     )
-                )
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Please enter a Number!",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
+                    binding.tvFavDetailRank.setText(
+                        viewModel.gimmeRank(
+                            userInput.toInt()
+                        )
+                    )
+                    binding.etFavDetailPlayTime.setText(
+                        getString(
+                            R.string.played_hours,
+                            userInput
+                        )
+                    )
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "You failed badly! Please try again!",
+                        Toast.LENGTH_LONG
+                    )
+                        .show()
+                }
             }
+
+            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                dialog.cancel()
+            }
+            alertDialogBuilder.show()
         }
 
         binding.btnFavGameRemove.setOnClickListener {
-            viewModel.deleteFavGame(viewModel.gameDetail.value!!.id)
+            viewModel.deleteFavGame(gameId)
             findNavController().navigateUp()
         }
 
         binding.btnFavDetailToDetails.setOnClickListener {
             findNavController().navigate(
                 FavoriteDetailFragmentDirections.actionFavoriteDetailFragmentToGameDetailFragment(
-                    viewModel.gameDetail.value!!.id
+                    gameId
                 )
             )
         }
     }
-
-    /*
-    TODO - see TODO above
-    val alertDialogBuilder = AlertDialog.Builder(this)
-alertDialogBuilder.setTitle("Placeholder")
-alertDialogBuilder.setMessage("Placeholder")
-
-val input = EditText(this)
-alertDialogBuilder.setView(input)
-
-alertDialogBuilder.setPositiveButton("OK") { dialog, which ->
-    val userInput = input.text.toString()
-    // TODO - use the input for funny thinks, see TODO above
-}
-
-alertDialogBuilder.setNegativeButton("Placeholder") { dialog, which ->
-    dialog.cancel()
-}
-
-alertDialogBuilder.show()
-     */
-
 }
