@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.databinding.GameListItemBinding
-import com.example.g4m3s4fr33.ui.GameListFragmentDirections
+import com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games.GameListFragmentDirections
 
 
 class PlugAndPlayAdapter(
@@ -35,7 +35,7 @@ class PlugAndPlayAdapter(
 
         holder.binding.root.setOnClickListener {
             holder.itemView.findNavController().navigate(
-                GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
+               GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
             )
         }
 

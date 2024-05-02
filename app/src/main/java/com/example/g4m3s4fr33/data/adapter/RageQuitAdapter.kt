@@ -9,7 +9,7 @@ import coil.load
 import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
 import com.example.g4m3s4fr33.databinding.FavoriteListItemBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
-import com.example.g4m3s4fr33.ui.FavoriteListFragmentDirections
+import com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win.FavoriteListFragmentDirections
 
 class RageQuitAdapter(
     private val rageQuitList: List<SixteenTimesTheDetail>,
