@@ -3,7 +3,6 @@ package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,12 +13,8 @@ import androidx.fragment.app.activityViewModels
 import at.blogc.android.views.ExpandableTextView
 import coil.load
 import com.example.g4m3s4fr33.R
-import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentGameDetailBinding
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.util.Calendar
-import java.util.Locale
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class GameDetailFragment : Fragment() {
 
