@@ -15,18 +15,20 @@ import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentGameDetailBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
+import kotlin.properties.Delegates
 
 class GameDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentGameDetailBinding
+    private var gameId by Delegates.notNull<Int>()
     private val viewModel: WaifuViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val gameId = arguments?.getInt("gameId")
+        gameId = arguments?.getInt("gameId")!!
 
-        viewModel.getGameDetail(gameId!!)
+        viewModel.getGameDetail(gameId)
         viewModel.isGameFav(gameId)
     }
 
@@ -79,7 +81,7 @@ class GameDetailFragment : Fragment() {
         }
 
         binding.btnGameDetailAddToFav.setOnClickListener {
-            viewModel.addFavGame(viewModel.gameDetail.value!!.id)
+            viewModel.addFavGame(gameId)
         }
 
         binding.tvSeeMoreOrLess.setOnClickListener {
