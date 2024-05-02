@@ -10,6 +10,9 @@ import com.example.g4m3s4fr33.data.bugs_and_glitches.repo.SenpaiRepository
 import com.example.g4m3s4fr33.data.model.user.NoLifer
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 class WaifuViewModel(application: Application) : AndroidViewModel(application) {
@@ -53,9 +56,9 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun addFavGame(gameId: Int, dateGameAdded: String) {
+    fun addFavGame(gameId: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            noLiferRepository.addFavGame(gameId, dateGameAdded)
+            noLiferRepository.addFavGame(gameId, gimmeDate())
             isGameFav(gameId)
         }
     }
@@ -98,6 +101,16 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
             senpaiRepository.getGameDetailList(gameIdList)
         }
 
+    }
+
+    // other stuff
+
+    private fun gimmeDate(): String {
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
+        val date = dateFormat.format(calendar.time)
+
+        return date.toString()
     }
 
 

@@ -84,12 +84,7 @@ class GameDetailFragment : Fragment() {
         }
 
         binding.btnGameDetailAddToFav.setOnClickListener {
-            val calendar = Calendar.getInstance()
-            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
-            val date = dateFormat.format(calendar.time)
-
-            viewModel.addFavGame(viewModel.gameDetail.value!!.id, date.toString())
-
+            viewModel.addFavGame(viewModel.gameDetail.value!!.id)
         }
 
         binding.tvSeeMoreOrLess.setOnClickListener {
