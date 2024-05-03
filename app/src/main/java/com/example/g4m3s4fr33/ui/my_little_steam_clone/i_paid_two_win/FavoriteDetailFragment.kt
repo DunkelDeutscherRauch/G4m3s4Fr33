@@ -63,7 +63,7 @@ class FavoriteDetailFragment : Fragment() {
 
             binding.tvFavDetailRank.setText(
                 if (binding.etFavDetailPlayTime.text!!.isNotBlank()) {
-                    viewModel.gimmeRank(it.first().hoursPlayed.toString().toInt())
+                    viewModel.gimmeRank(it.first().hoursPlayed)
                 } else {
                     viewModel.gimmeRank(0)
                 }
