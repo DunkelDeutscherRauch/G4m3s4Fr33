@@ -81,8 +81,8 @@ class FavoriteDetailFragment : Fragment() {
         /*
         TODO --> replace popup with customized popup!
              --> maybe replace etFavDetailPlaytime with TextView or
-             --> set android:focusableInTouchMode="false" in XML on etFavDetailPlaytime + remove Button
-             --> okay i´ve gained some xperience with it...it´s not final yet, think we need an layout XML 4 it
+             --> seems quite good but review it when time
+
          */
 
         binding.etFavDetailPlayTime.setOnClickListener {
