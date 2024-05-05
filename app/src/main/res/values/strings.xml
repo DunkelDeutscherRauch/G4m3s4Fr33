@@ -31,4 +31,8 @@
     <string name="enter_playtime_in_hours">Please enter your playtime in hours here!</string>
     <string name="unranked">Not Ranked</string>
     <string name="played_hours">Played %1$s hours</string>
+    <string name="rank_causal_gamer">Rank: <font color='green'>Causal Gamer</font></string>
+    <string name="rank_pro_Gamer">Rank: <font color='#0087FF'>Pro Gamer</font></string>
+   <!-- <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
+   <!-- <string name="rank_masterchief">Rank: <font color='placeholder'>Masterchief</font></string> -->
 </resources>

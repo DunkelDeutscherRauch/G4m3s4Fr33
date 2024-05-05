@@ -121,7 +121,8 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     fun gimmeRank(playtime: Int): Int {
        return when(playtime) {
-             0 -> {
+
+           0 -> {
                 R.string.unranked
             }
 
@@ -129,8 +130,22 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
                R.string.rank_noob
            }
 
-           else -> {
+           in 25..49 -> {
                R.string.rank_rookie
+           }
+
+           in 50..99 -> {
+               R.string.rank_causal_gamer
+           }
+
+           in 100..249 -> {
+               R.string.rank_pro_Gamer
+           }
+
+           // TODO more to come here :D
+
+           else -> {
+               R.string.unranked
            }
        }
     }
