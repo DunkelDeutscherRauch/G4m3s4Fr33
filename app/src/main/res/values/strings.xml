@@ -27,7 +27,8 @@
     <string name="date_game_added_to_favorites">Game added at: %1$s</string>
     <string name="rank_noob">Rank: <font color='red'>Noob</font></string>
     <string name="rank_rookie">Rank: <font color='yellow'> Rookie</font></string>
-    <string name="playtime_in_hours">Enter your playtime in hours here</string>
+    <string name="playtime_in_hours">Your playtime</string>
+    <string name="enter_playtime_in_hours">Please enter your playtime in hours here!</string>
     <string name="unranked">Not Ranked</string>
     <string name="played_hours">Played %1$s hours</string>
 </resources>

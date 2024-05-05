@@ -3,6 +3,7 @@ package com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.InputType
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentFavoriteDetailBinding
+import com.example.g4m3s4fr33.databinding.MyCustomAlertDialogBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import kotlin.properties.Delegates
 
@@ -83,29 +85,21 @@ class FavoriteDetailFragment : Fragment() {
              --> okay i´ve gained some xperience with it...it´s not final yet, think we need an layout XML 4 it
          */
 
-        binding.btnFavDetailSaveTime.setOnClickListener {
+        binding.etFavDetailPlayTime.setOnClickListener {
+
+            val dialogBinding = MyCustomAlertDialogBinding.inflate(layoutInflater)
             val alertDialogBuilder = AlertDialog.Builder(requireContext(),R.style.MyDialogTheme)
 
-            val input = EditText(requireContext())
-            input.inputType = InputType.TYPE_CLASS_NUMBER
-
-            context?.let {
-                val color = ContextCompat.getColor(it, R.color.vwBlackMetallic)
-                input.setTextColor(color)
-                input.setHintTextColor(color)
-            }
-
-            input.hint = getString(R.string.playtime_in_hours)
-            input.textAlignment = EditText.TEXT_ALIGNMENT_CENTER
-            alertDialogBuilder.setView(input)
+            alertDialogBuilder.setView(dialogBinding.root)
 
             alertDialogBuilder.setPositiveButton("Save") { _, _ ->
-                val userInput = input.text.toString()
+                val userInput = dialogBinding.etAlertDialog.text.toString()
 
-                if (input.text.isNotBlank()) {
+                if (userInput.isNotBlank()) {
                     viewModel.updateHoursPlayed(
                         userInput.toInt(),
                         gameId
+
                     )
                     binding.tvFavDetailRank.setText(
                         viewModel.gimmeRank(
