@@ -135,5 +135,4 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
        }
     }
 
-
 }
