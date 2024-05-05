@@ -19,4 +19,21 @@
         <item name="cornerRadius">96dp</item>
         <item name="elevation">8dp</item>
     </style>
+    <style name="MyDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:backgroundTint">@color/imBlue</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/positiveButtonText</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/negativeButtonText</item>
+    </style>
+    <style name="positiveButtonText">
+        <item name="android:textColor">@color/vwBlackMetallic</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/mySilver</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    <style name="negativeButtonText">
+        <item name="android:textColor">@color/vwBlackMetallic</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/mySilver</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
 </resources>

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -79,15 +80,21 @@ class FavoriteDetailFragment : Fragment() {
         TODO --> replace popup with customized popup!
              --> maybe replace etFavDetailPlaytime with TextView or
              --> set android:focusableInTouchMode="false" in XML on etFavDetailPlaytime + remove Button
+             --> okay i´ve gained some xperience with it...it´s not final yet, think we need an layout XML 4 it
          */
 
         binding.btnFavDetailSaveTime.setOnClickListener {
-            val alertDialogBuilder = AlertDialog.Builder(requireContext())
-            alertDialogBuilder.setTitle("TODO - Just for Testing :D ")
-            alertDialogBuilder.setMessage("Please enter your playtime")
+            val alertDialogBuilder = AlertDialog.Builder(requireContext(),R.style.MyDialogTheme)
 
             val input = EditText(requireContext())
             input.inputType = InputType.TYPE_CLASS_NUMBER
+
+            context?.let {
+                val color = ContextCompat.getColor(it, R.color.vwBlackMetallic)
+                input.setTextColor(color)
+                input.setHintTextColor(color)
+            }
+
             input.hint = getString(R.string.playtime_in_hours)
             input.textAlignment = EditText.TEXT_ALIGNMENT_CENTER
             alertDialogBuilder.setView(input)
