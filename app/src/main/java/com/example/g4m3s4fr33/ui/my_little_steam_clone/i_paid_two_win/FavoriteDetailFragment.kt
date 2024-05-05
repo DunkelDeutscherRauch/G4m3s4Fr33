@@ -95,19 +95,21 @@ class FavoriteDetailFragment : Fragment() {
                     viewModel.updateHoursPlayed(
                         userInput.toInt(),
                         gameId
-
                     )
+
                     binding.tvFavDetailRank.setText(
                         viewModel.gimmeRank(
                             userInput.toInt()
                         )
                     )
+
                     binding.etFavDetailPlayTime.setText(
                         getString(
                             R.string.played_hours,
                             userInput
                         )
                     )
+
                 } else {
                     Toast.makeText(
                         requireContext(),
