@@ -1,22 +1,21 @@
 package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
-import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.SnapHelper
 import com.example.g4m3s4fr33.R
-import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.data.adapter.PlugAndPlayAdapter
 import com.example.g4m3s4fr33.databinding.FragmentGameListBinding
-import com.example.g4m3s4fr33.databinding.MyCustomAlertDialogBinding
-import com.example.g4m3s4fr33.databinding.MyCustomSearchDialogBinding
+import com.example.g4m3s4fr33.four_twenty.MainActivity
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class GameListFragment : Fragment() {
 
@@ -41,7 +40,17 @@ class GameListFragment : Fragment() {
             binding.rvGameList.adapter = PlugAndPlayAdapter(it)
         }
 
-        binding.btnOpenSearchDialog.setOnClickListener {
+        val inputCategory = binding.etSearchDialogCategory
+        val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
+        Log.i("Ωlul", "My Search Dialog in Fragment: $categories")
+
+        ArrayAdapter((activity as MainActivity), android.R.layout.simple_list_item_1, categories
+        ).also { adapter ->
+            inputCategory.setAdapter(adapter) }
+
+        // TODO remove and replace directly here cause AutoComplete does not work in alertDialog
+
+        /*binding.btnOpenSearchDialog.setOnClickListener {
 
             val dialogBinding = MyCustomSearchDialogBinding.inflate(layoutInflater)
             val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
@@ -52,41 +61,64 @@ class GameListFragment : Fragment() {
                 val checkBoxAll = dialogBinding.cbSearchDialogPlatformAll
                 val checkBoxBrowser = dialogBinding.cbSearchDialogPlatformBrowser
                 val checkBoxPC = dialogBinding.cbSearchDialogPlatformPC
-                val inputCategory = dialogBinding.etSearchDialogCategory
 
-                // TODO --> GameListByPlatform works :D --> but maybe a radioGroup is better here
+                    // TODO --> GameListByPlatform works :D --> but maybe a radioGroup is better here
 
-                viewModel.getGameListByPlatform(platformFilter(checkBoxAll, checkBoxBrowser, checkBoxPC))
+                    viewModel.getGameListByPlatform(
+                        platformFilter(
+                            checkBoxAll,
+                            checkBoxBrowser,
+                            checkBoxPC
+                        )
+                    )
+                    viewModel.getGameListByCategory(getCategory(inputCategory))
 
 
+                }
 
+                alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                    dialog.cancel()
+                }
+                alertDialogBuilder.show()
 
-            }
-
-            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
-                dialog.cancel()
-            }
-            alertDialogBuilder.show()
+            }*/
 
         }
 
-    }
+        private fun platformFilter(
+            checkBoxAll: CheckBox,
+            checkBoxBrowser: CheckBox,
+            checkBoxPC: CheckBox
+        ): String {
 
-    private fun platformFilter(checkBoxAll: CheckBox, checkBoxBrowser: CheckBox, checkBoxPC: CheckBox): String {
+            var platform = ""
 
-        var platform = ""
+            if (checkBoxAll.isChecked && !(checkBoxBrowser.isChecked || checkBoxPC.isChecked)) {
+                platform = "all"
+            } else if (checkBoxBrowser.isChecked && !(checkBoxAll.isChecked || checkBoxPC.isChecked)) {
+                platform = "browser"
+            } else if (checkBoxPC.isChecked && !(checkBoxAll.isChecked || checkBoxBrowser.isChecked)) {
+                platform = "pc"
+            } else {
+                Toast.makeText(
+                    requireContext(),
+                    "Please select only one platform option",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            return platform
 
-        if (checkBoxAll.isChecked && !(checkBoxBrowser.isChecked||checkBoxPC.isChecked)) {
-            platform = "all"
-        } else if (checkBoxBrowser.isChecked && !(checkBoxAll.isChecked||checkBoxPC.isChecked)) {
-            platform = "browser"
-        } else if (checkBoxPC.isChecked && !(checkBoxAll.isChecked||checkBoxBrowser.isChecked)) {
-            platform = "pc"
-        } else {
-            Toast.makeText(requireContext(),"Please select only one platform option",Toast.LENGTH_LONG).show()
         }
-        return platform
 
+
+    private fun getCategory(editText: AutoCompleteTextView): String {
+        var category = ""
+
+            if (editText.text.isNotBlank()) {
+                category = editText.text.toString()
+            }
+
+        return category
     }
 
 
