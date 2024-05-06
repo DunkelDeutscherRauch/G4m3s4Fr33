@@ -48,7 +48,11 @@ class GameListFragment : Fragment() {
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
-        // TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> sounds like fun, i guess? oO
+        /*
+        TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> sounds like fun, i guess? oO
+        TODO getGameList is sorted by relevance by default - so default-value for the option is 'relevance'
+        TODO default-value for platform is 'all'
+         */
 
         /*binding.btnOpenSearchDialog.setOnClickListener {
 
