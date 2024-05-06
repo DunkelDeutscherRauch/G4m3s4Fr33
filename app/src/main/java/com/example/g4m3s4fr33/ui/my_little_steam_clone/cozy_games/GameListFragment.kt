@@ -48,7 +48,7 @@ class GameListFragment : Fragment() {
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
-        // TODO remove and replace directly here cause AutoComplete does not work in alertDialog
+        // TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> sounds like fun, i guess? oO
 
         /*binding.btnOpenSearchDialog.setOnClickListener {
 
