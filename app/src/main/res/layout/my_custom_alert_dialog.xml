@@ -29,6 +29,8 @@
             android:id="@+id/etAlertDialog"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:background="@drawable/edit_text_shape"
+            android:padding="8dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:hint="@string/playtime_in_hours"
