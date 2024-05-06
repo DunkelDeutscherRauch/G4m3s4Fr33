@@ -2,9 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:strokeColor="@color/mySilver"
-    app:strokeWidth="2dp">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,6 +13,7 @@
             android:id="@+id/tvAlertDialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/text_view_shape"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
@@ -42,6 +41,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAlertDialog" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/myDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/imBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
