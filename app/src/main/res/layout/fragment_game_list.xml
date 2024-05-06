@@ -16,6 +16,7 @@
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/mySilver"
+        android:textColorHint="@color/mySilver"
         app:layout_constraintBottom_toTopOf="@id/rvGameList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

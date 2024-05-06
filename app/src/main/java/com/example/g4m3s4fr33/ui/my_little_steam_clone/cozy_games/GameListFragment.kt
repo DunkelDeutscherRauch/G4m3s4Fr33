@@ -44,7 +44,7 @@ class GameListFragment : Fragment() {
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
         Log.i("Ωlul", "My Search Dialog in Fragment: $categories")
 
-        ArrayAdapter((activity as MainActivity), android.R.layout.simple_list_item_1, categories
+        ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, categories
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
@@ -63,6 +63,7 @@ class GameListFragment : Fragment() {
                 val checkBoxPC = dialogBinding.cbSearchDialogPlatformPC
 
                     // TODO --> GameListByPlatform works :D --> but maybe a radioGroup is better here
+                    // TODO --> getGameListByCategory should work
 
                     viewModel.getGameListByPlatform(
                         platformFilter(
