@@ -3,6 +3,7 @@ package com.example.g4m3s4fr33.data.bugs_and_glitches.repo
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.map
 import com.example.g4m3s4fr33.data.bugs_and_glitches.remote.FreeTwoPlayMMOApi
 import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.data.model.gamingstuff.SixteenTimesTheDetail
@@ -26,6 +27,26 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
             val result = mmoApi.retrofitService.getGameList()
             _gameList.postValue(result)
             Log.i("Ωlul", "Me gez gamez!")
+        } catch (e: Exception) {
+            Log.e("Ωlul", "$e")
+        }
+    }
+
+    suspend fun getGameListByCategory(category: String) {
+        try {
+            val result = mmoApi.retrofitService.getGameListByCategory(category)
+            _gameList.postValue(result)
+            Log.i("Ωlul", "Me gez gamez by $category!")
+        } catch (e: Exception) {
+            Log.e("Ωlul", "$e")
+        }
+    }
+
+    suspend fun getGameListByPlatform(platform: String) {
+        try {
+            val result = mmoApi.retrofitService.getGameListByCategory(platform)
+            _gameList.postValue(result)
+            Log.i("Ωlul", "Me gez gamez by $platform!")
         } catch (e: Exception) {
             Log.e("Ωlul", "$e")
         }

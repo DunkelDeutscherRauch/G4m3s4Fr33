@@ -41,6 +41,12 @@ interface FreeTwoPlayMMOApiService {
     @GET("games")
     suspend fun getGameList(): List<IWantToPlayUnrealTournament>
 
+    @GET("games")
+    suspend fun getGameListByCategory(@Query("category") category: String): List<IWantToPlayUnrealTournament>
+
+    @GET("games")
+    suspend fun getGameListByPlatform(@Query("platform") platform: String): List<IWantToPlayUnrealTournament>
+
     @GET("game")
     suspend fun getGameDetail(@Query("id") gameId: Int): SixteenTimesTheDetail
 

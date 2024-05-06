@@ -2,6 +2,7 @@ package com.example.g4m3s4fr33.parasocial_relationship
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.map
 import androidx.lifecycle.viewModelScope
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.data.bugs_and_glitches.local.CheezzyDatabase
@@ -108,6 +109,8 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         }
 
     }
+
+    // TODO we need a searchfunction here, and the functions for gameByCategory an gameByplatform - see senpaiRepository!
 
     // other stuff
 
