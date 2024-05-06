@@ -44,7 +44,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
 
     suspend fun getGameListByPlatform(platform: String) {
         try {
-            val result = mmoApi.retrofitService.getGameListByCategory(platform)
+            val result = mmoApi.retrofitService.getGameListByPlatform(platform)
             _gameList.postValue(result)
             Log.i("Ωlul", "Me gez gamez by $platform!")
         } catch (e: Exception) {

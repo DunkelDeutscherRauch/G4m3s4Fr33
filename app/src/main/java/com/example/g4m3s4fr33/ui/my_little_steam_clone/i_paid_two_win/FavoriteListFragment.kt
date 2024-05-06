@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.data.adapter.RageQuitAdapter
 import com.example.g4m3s4fr33.databinding.FragmentFavoriteListBinding
@@ -28,16 +30,13 @@ class FavoriteListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         viewModel.rageQuitList.observe(viewLifecycleOwner) {
             viewModel.getGameDetailList(it)
         }
 
-
         viewModel.gameDetailList.observe(viewLifecycleOwner) {
             binding.rvFavList.adapter = RageQuitAdapter(it, viewModel)
         }
-
     }
 
 }

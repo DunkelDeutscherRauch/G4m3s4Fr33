@@ -25,6 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:layout_marginTop="16dp"
+            android:checked="true"
+            android:buttonTint="@color/imBlue"
             android:text="All"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSearchDialogPlatform" />
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:buttonTint="@color/imBlue"
             android:text="Browser"
             app:layout_constraintEnd_toStartOf="@+id/cbSearchDialogPlatformPC"
             app:layout_constraintStart_toEndOf="@+id/cbSearchDialogPlatformAll"
@@ -45,6 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="42dp"
+            android:buttonTint="@color/imBlue"
             android:text="PC"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSearchDialogPlatform" />

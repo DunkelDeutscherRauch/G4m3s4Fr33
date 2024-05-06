@@ -110,7 +110,19 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
-    // TODO we need a searchfunction here, and the functions for gameByCategory an gameByplatform - see senpaiRepository!
+    fun getGameListByPlatform(platform: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameListByPlatform(platform)
+        }
+    }
+
+    fun getGameListByCategory(category: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameListByCategory(category)
+        }
+    }
+
+    // TODO we need a searchfunction!!!
 
     // other stuff
 
