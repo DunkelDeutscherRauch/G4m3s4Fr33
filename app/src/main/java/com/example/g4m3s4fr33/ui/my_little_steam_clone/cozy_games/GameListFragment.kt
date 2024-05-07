@@ -42,22 +42,22 @@ class GameListFragment : Fragment() {
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
-        ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, categories
+        ArrayAdapter(
+            requireContext(), android.R.layout.simple_list_item_1, categories
         ).also { adapter ->
-            inputCategory.setAdapter(adapter) }
-
-        binding.btnSearchDialogSearch.setOnClickListener {
-            viewModel.category = inputCategory.text.toString()
-
-            viewModel.getGameListByFilter()
-
+            inputCategory.setAdapter(adapter)
         }
 
-        /*
+        binding.btnSearchDialogSearch.setOnClickListener {
 
-       TODO need a reset function for the filter <(°.°)>
+            if (inputCategory.text.isNotBlank()) {
+                viewModel.category = inputCategory.text.toString()
+            } else {
+                viewModel.category = categories.toList().random()
+            }
 
-         */
+            viewModel.getGameListByFilter()
+        }
 
         binding.btnOpenSearchDialog.setOnClickListener {
 
@@ -66,43 +66,43 @@ class GameListFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
-            alertDialogBuilder.setPositiveButton("GO!") { _, _ ->
+            alertDialogBuilder.setPositiveButton("Apply") { _, _ ->
 
                 viewModel.platform = platformFilter(dialogBinding.rgSearchDialogFilterByPlatform)
                 viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
-                }
-
-                alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
-                    dialog.cancel()
-                }
-
-                alertDialogBuilder.show()
             }
 
+            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                dialog.cancel()
+            }
+
+            alertDialogBuilder.show()
         }
 
-       private fun platformFilter(radioGroup: RadioGroup): String {
+    }
 
-           return when(radioGroup.checkedRadioButtonId) {
+    private fun platformFilter(radioGroup: RadioGroup): String {
 
-               R.id.rbSearchDialogFilterByPlatformAll -> {
-                   "all"
-               }
+        return when (radioGroup.checkedRadioButtonId) {
 
-               R.id.rbSearchDialogFilterByPlatformBrowser -> {
-                   "browser"
-               }
+            R.id.rbSearchDialogFilterByPlatformAll -> {
+                "all"
+            }
 
-               else -> {
-                   "pc"
-               }
-           }
+            R.id.rbSearchDialogFilterByPlatformBrowser -> {
+                "browser"
+            }
 
+            else -> {
+                "pc"
+            }
         }
+
+    }
 
     private fun postal(radioGroup: RadioGroup): String {
 
-        return when(radioGroup.checkedRadioButtonId) {
+        return when (radioGroup.checkedRadioButtonId) {
 
             R.id.rbSearchDialogSortByRelevance -> {
                 "relevance"
