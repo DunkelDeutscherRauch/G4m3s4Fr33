@@ -26,9 +26,9 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
     val gameMapForAutoComplete: List<Pair<Int, String>> = gameListForAutoComplete.map { game ->
         Pair(game.id, game.title)
     }
-    private var gameNameListForAutoComplete: MutableList<String> = mutableListOf()
+    var gameNameListForAutoComplete: MutableList<String> = getGameNameList()
 
-    fun getGameNameList(): List<String> {
+    private fun getGameNameList(): MutableList<String> {
     for (gamePair in gameMapForAutoComplete) {
         gameNameListForAutoComplete.add(gamePair.second)
     }

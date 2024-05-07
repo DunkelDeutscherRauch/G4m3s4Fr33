@@ -47,6 +47,8 @@ class GameListFragment : Fragment() {
             inputCategory.setAdapter(adapter)
         }
 
+        // TODO see ViewModel --> need to implement gameMapForAutoComplete and gameNameListForAutoComplete here
+
         binding.btnSearchDialogSearch.setOnClickListener {
 
             if (inputCategory.text.isNotBlank()) {
