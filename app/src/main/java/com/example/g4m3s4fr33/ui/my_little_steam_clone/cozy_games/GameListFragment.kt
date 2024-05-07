@@ -1,20 +1,19 @@
 package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.CheckBox
-import android.widget.Toast
+import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.data.adapter.PlugAndPlayAdapter
 import com.example.g4m3s4fr33.databinding.FragmentGameListBinding
-import com.example.g4m3s4fr33.four_twenty.MainActivity
+import com.example.g4m3s4fr33.databinding.MyCustomSearchDialogBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class GameListFragment : Fragment() {
@@ -42,21 +41,18 @@ class GameListFragment : Fragment() {
 
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
-        Log.i("Ωlul", "My Search Dialog in Fragment: $categories")
 
         ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, categories
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
-
         /*
-        TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> sounds like fun, i guess? oO
-        TODO getGameList is sorted by relevance by default - so default-value for the option is 'relevance'
-        TODO default-value for platform is 'all'
+        TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> done, need another button or TextView
+        TODO --> getGameListByFilter in ViewModel, need to implement AutocompleteTextView for category search, function?
         TODO see variables for category, platform and sortBy in ViewModel
          */
 
-        /*binding.btnOpenSearchDialog.setOnClickListener {
+        binding.btnOpenSearchDialog.setOnClickListener {
 
             val dialogBinding = MyCustomSearchDialogBinding.inflate(layoutInflater)
             val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
@@ -64,70 +60,59 @@ class GameListFragment : Fragment() {
             alertDialogBuilder.setView(dialogBinding.root)
 
             alertDialogBuilder.setPositiveButton("GO!") { _, _ ->
-                val checkBoxAll = dialogBinding.cbSearchDialogPlatformAll
-                val checkBoxBrowser = dialogBinding.cbSearchDialogPlatformBrowser
-                val checkBoxPC = dialogBinding.cbSearchDialogPlatformPC
 
-                    // TODO --> GameListByPlatform works :D --> but maybe a radioGroup is better here
-                    // TODO --> getGameListByCategory should work
-                    // TODO --> getGameListByFilter in ViewModel
-
-                    viewModel.getGameListByPlatform(
-                        platformFilter(
-                            checkBoxAll,
-                            checkBoxBrowser,
-                            checkBoxPC
-                        )
-                    )
-                    viewModel.getGameListByCategory(getCategory(inputCategory))
-
-
+                viewModel.platform = platformFilter(dialogBinding.rgSearchDialogFilterByPlatform)
+                viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
                 }
 
                 alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
                     dialog.cancel()
                 }
-                alertDialogBuilder.show()
 
-            }*/
+                alertDialogBuilder.show()
+            }
 
         }
 
-        /*private fun platformFilter(
-            checkBoxAll: CheckBox,
-            checkBoxBrowser: CheckBox,
-            checkBoxPC: CheckBox
-        ): String {
+       private fun platformFilter(radioGroup: RadioGroup): String {
 
-            var platform = ""
+           return when(radioGroup.checkedRadioButtonId) {
 
-            if (checkBoxAll.isChecked && !(checkBoxBrowser.isChecked || checkBoxPC.isChecked)) {
-                platform = "all"
-            } else if (checkBoxBrowser.isChecked && !(checkBoxAll.isChecked || checkBoxPC.isChecked)) {
-                platform = "browser"
-            } else if (checkBoxPC.isChecked && !(checkBoxAll.isChecked || checkBoxBrowser.isChecked)) {
-                platform = "pc"
-            } else {
-                Toast.makeText(
-                    requireContext(),
-                    "Please select only one platform option",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-            return platform
+               R.id.rbSearchDialogFilterByPlatformAll -> {
+                   "all"
+               }
 
-        }*/
+               R.id.rbSearchDialogFilterByPlatformBrowser -> {
+                   "browser"
+               }
 
+               else -> {
+                   "pc"
+               }
+           }
 
-    /*private fun getCategory(editText: AutoCompleteTextView): String {
-        var category = ""
+        }
 
-            if (editText.text.isNotBlank()) {
-                category = editText.text.toString()
+    private fun postal(radioGroup: RadioGroup): String {
+
+        return when(radioGroup.checkedRadioButtonId) {
+
+            R.id.rbSearchDialogSortByRelevance -> {
+                "relevance"
             }
 
-        return category
-    }*/
+            R.id.rbSearchDialogSortByAlphabet -> {
+                "alphabetical"
+            }
 
+            R.id.rbSearchDialogSortByRelease -> {
+                "release-date"
+            }
+
+            else -> {
+                "popularity"
+            }
+        }
+    }
 
 }

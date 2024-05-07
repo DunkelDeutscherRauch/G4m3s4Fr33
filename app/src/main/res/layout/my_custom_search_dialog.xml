@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -33,30 +32,76 @@
                 android:id="@+id/rbSearchDialogFilterByPlatformAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob" />
+                android:text="@string/bob"
+                android:checked="true"
+                android:buttonTint="@color/imBlue" />
 
             <RadioButton
-                android:id="@+id/rbFilterByPlatformBrowser"
+                android:id="@+id/rbSearchDialogFilterByPlatformBrowser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob" />
+                android:text="@string/bob"
+                android:buttonTint="@color/imBlue" />
 
             <RadioButton
-                android:id="@+id/rbFilterByPlatformPC"
+                android:id="@+id/rbSearchDialogFilterByPlatformPC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob" />
+                android:text="@string/bob"
+                android:buttonTint="@color/imBlue" />
 
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvSearchDialogSortOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="TextView"
-            tools:layout_editor_absoluteX="177dp"
-            tools:layout_editor_absoluteY="123dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgSearchDialogFilterByPlatform" />
 
+        <RadioGroup
+            android:id="@+id/rgSearchDialogSortOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSearchDialogSortOptions">
+
+            <RadioButton
+                android:id="@+id/rbSearchDialogSortByRelevance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bob"
+                android:checked="true"
+                android:buttonTint="@color/imBlue" />
+
+            <RadioButton
+                android:id="@+id/rbSearchDialogSortByAlphabet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bob"
+                android:buttonTint="@color/imBlue" />
+
+            <RadioButton
+                android:id="@+id/rbSearchDialogSortByRelease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bob"
+                android:buttonTint="@color/imBlue" />
+
+            <RadioButton
+                android:id="@+id/rbSearchDialogSortByPopularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bob"
+                android:buttonTint="@color/imBlue" />
+
+        </RadioGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
