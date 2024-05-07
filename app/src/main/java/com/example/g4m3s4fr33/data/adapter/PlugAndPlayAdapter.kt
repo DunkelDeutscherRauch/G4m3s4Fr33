@@ -38,9 +38,6 @@ class PlugAndPlayAdapter(
                GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
             )
         }
-
-
     }
-
 
 }

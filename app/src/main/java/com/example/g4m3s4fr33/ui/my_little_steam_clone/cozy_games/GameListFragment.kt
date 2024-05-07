@@ -35,6 +35,7 @@ class GameListFragment : Fragment() {
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
+
         viewModel.getGameList()
 
         viewModel.gameList.observe(viewLifecycleOwner) {
