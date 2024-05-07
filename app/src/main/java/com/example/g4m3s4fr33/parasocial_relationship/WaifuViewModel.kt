@@ -30,6 +30,10 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     val gameDetail = senpaiRepository.gameDetail
     val gameDetailList = senpaiRepository.gameDetailList
 
+    var platform = "all"
+    var category = ""
+    var sortBy = "relevance"
+
     init {
         user.observeForever {
             if (it == null) {
@@ -110,6 +114,15 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
+    fun getGameListByFilter() {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameListByFilter(platform, category, sortBy)
+        }
+
+    }
+
+    // TODO remove ByCategory and ByPlatform as soon as ByFilter is implemented
+
     fun getGameListByPlatform(platform: String) {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameListByPlatform(platform)
@@ -121,8 +134,6 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
             senpaiRepository.getGameListByCategory(category)
         }
     }
-
-    // TODO we need a searchfunction!!!
 
     // other stuff
 

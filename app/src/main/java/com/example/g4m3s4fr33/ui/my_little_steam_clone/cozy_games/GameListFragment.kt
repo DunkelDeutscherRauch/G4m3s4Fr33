@@ -48,10 +48,12 @@ class GameListFragment : Fragment() {
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
+
         /*
         TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> sounds like fun, i guess? oO
         TODO getGameList is sorted by relevance by default - so default-value for the option is 'relevance'
         TODO default-value for platform is 'all'
+        TODO see variables for category, platform and sortBy in ViewModel
          */
 
         /*binding.btnOpenSearchDialog.setOnClickListener {
@@ -68,6 +70,7 @@ class GameListFragment : Fragment() {
 
                     // TODO --> GameListByPlatform works :D --> but maybe a radioGroup is better here
                     // TODO --> getGameListByCategory should work
+                    // TODO --> getGameListByFilter in ViewModel
 
                     viewModel.getGameListByPlatform(
                         platformFilter(
@@ -90,7 +93,7 @@ class GameListFragment : Fragment() {
 
         }
 
-        private fun platformFilter(
+        /*private fun platformFilter(
             checkBoxAll: CheckBox,
             checkBoxBrowser: CheckBox,
             checkBoxPC: CheckBox
@@ -113,10 +116,10 @@ class GameListFragment : Fragment() {
             }
             return platform
 
-        }
+        }*/
 
 
-    private fun getCategory(editText: AutoCompleteTextView): String {
+    /*private fun getCategory(editText: AutoCompleteTextView): String {
         var category = ""
 
             if (editText.text.isNotBlank()) {
@@ -124,7 +127,7 @@ class GameListFragment : Fragment() {
             }
 
         return category
-    }
+    }*/
 
 
 }
