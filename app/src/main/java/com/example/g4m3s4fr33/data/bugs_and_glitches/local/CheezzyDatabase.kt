@@ -16,12 +16,12 @@ abstract class CheezzyDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): CheezzyDatabase {
 
-            synchronized(CheezzyDatabase::class.java) {
+            synchronized(this) {
 
-                if (!Companion::INSTANCE.isInitialized) {
+                if (!this::INSTANCE.isInitialized) {
 
                     INSTANCE = Room.databaseBuilder(
-                        context,
+                        context.applicationContext,
                         CheezzyDatabase::class.java,
                         "kek_database"
 
