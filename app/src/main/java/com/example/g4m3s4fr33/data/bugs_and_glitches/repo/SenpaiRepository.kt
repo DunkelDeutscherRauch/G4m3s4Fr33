@@ -22,6 +22,19 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
     val gameDetailList: LiveData<List<SixteenTimesTheDetail>>
         get() = _gameDetailList
 
+    private val gameListForAutoComplete = gameList.value ?: emptyList()
+    val gameMapForAutoComplete: List<Pair<Int, String>> = gameListForAutoComplete.map { game ->
+        Pair(game.id, game.title)
+    }
+    private var gameNameListForAutoComplete: MutableList<String> = mutableListOf()
+
+    fun getGameNameList(): List<String> {
+    for (gamePair in gameMapForAutoComplete) {
+        gameNameListForAutoComplete.add(gamePair.second)
+    }
+     return gameNameListForAutoComplete
+}
+
     suspend fun getGameList() {
         try {
             val result = mmoApi.retrofitService.getGameList()

@@ -29,6 +29,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     val gameList = senpaiRepository.gameList
     val gameDetail = senpaiRepository.gameDetail
     val gameDetailList = senpaiRepository.gameDetailList
+    val gameMapForAutoComplete = senpaiRepository.gameMapForAutoComplete
 
     var platform = "all"
     var category = ""

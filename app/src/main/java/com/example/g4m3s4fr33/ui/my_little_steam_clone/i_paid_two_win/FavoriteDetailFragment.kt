@@ -74,13 +74,6 @@ class FavoriteDetailFragment : Fragment() {
 
         }
 
-        /*
-        TODO --> replace popup with customized popup!
-             --> maybe replace etFavDetailPlaytime with TextView or
-             --> seems quite good but review it when time
-
-         */
-
         binding.etFavDetailPlayTime.setOnClickListener {
 
             val dialogBinding = MyCustomAlertDialogBinding.inflate(layoutInflater)
