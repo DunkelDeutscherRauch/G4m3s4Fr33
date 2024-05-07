@@ -22,9 +22,14 @@
     <style name="MyDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="android:backgroundTint">@color/vwBlackMetallic</item>
         <item name="android:buttonBarPositiveButtonStyle">@style/positiveButtonText</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/neutralButtonText</item>
         <item name="android:buttonBarNegativeButtonStyle">@style/negativeButtonText</item>
     </style>
     <style name="positiveButtonText">
+        <item name="android:textColor">@color/imBlue</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    <style name="neutralButtonText">
         <item name="android:textColor">@color/imBlue</item>
         <item name="cornerRadius">8dp</item>
     </style>

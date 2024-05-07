@@ -32,14 +32,14 @@ class GameListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val inputCategory = binding.etSearchDialogCategory
+        val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
+
         viewModel.getGameList()
 
         viewModel.gameList.observe(viewLifecycleOwner) {
             binding.rvGameList.adapter = PlugAndPlayAdapter(it)
         }
-
-        val inputCategory = binding.etSearchDialogCategory
-        val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
         ArrayAdapter(
             requireContext(), android.R.layout.simple_list_item_1, categories
@@ -59,16 +59,19 @@ class GameListFragment : Fragment() {
         }
 
         binding.btnOpenSearchDialog.setOnClickListener {
-
             val dialogBinding = MyCustomSearchDialogBinding.inflate(layoutInflater)
             val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
 
             alertDialogBuilder.setView(dialogBinding.root)
 
             alertDialogBuilder.setPositiveButton("Apply") { _, _ ->
-
                 viewModel.platform = platformer(dialogBinding.rgSearchDialogFilterByPlatform)
                 viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
+            }
+
+            alertDialogBuilder.setNeutralButton("Reset") { _, _ ->
+                viewModel.getGameList()
+                binding.etSearchDialogCategory.text.clear()
             }
 
             alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
