@@ -8,30 +8,40 @@
     <AutoCompleteTextView
         android:id="@+id/etSearchDialogCategory"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:completionThreshold="1"
         android:ems="10"
-        android:hint="category"
+        android:hint="search for category"
         android:inputType="text"
         android:textAlignment="center"
         android:textColor="@color/mySilver"
         android:textColorHint="@color/mySilver"
         app:layout_constraintBottom_toTopOf="@id/rvGameList"
-        app:layout_constraintEnd_toStartOf="@+id/btnOpenSearchDialog"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSearchDialogSearch"
+        app:layout_constraintStart_toEndOf="@+id/btnOpenSearchDialog"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSearchDialogSearch"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="GO!"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnOpenSearchDialog"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Filter"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView

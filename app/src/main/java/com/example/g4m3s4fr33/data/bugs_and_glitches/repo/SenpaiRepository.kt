@@ -44,7 +44,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
 
     // TODO remove ByCategory and ByPlatform as soon as ByFilter is implemented
 
-    suspend fun getGameListByCategory(category: String) {
+    /*suspend fun getGameListByCategory(category: String) {
         try {
             val result = mmoApi.retrofitService.getGameListByCategory(category)
             _gameList.postValue(result)
@@ -62,7 +62,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
         } catch (e: Exception) {
             Log.e("Ωlul", "$e")
         }
-    }
+    }*/
 
     suspend fun getGameDetail(gameId: Int) {
         try {

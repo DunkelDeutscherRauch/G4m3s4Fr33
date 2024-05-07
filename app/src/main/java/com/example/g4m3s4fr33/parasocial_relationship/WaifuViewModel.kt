@@ -123,7 +123,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     // TODO remove ByCategory and ByPlatform as soon as ByFilter is implemented
 
-    fun getGameListByPlatform(platform: String) {
+    /*fun getGameListByPlatform(platform: String) {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameListByPlatform(platform)
         }
@@ -133,7 +133,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameListByCategory(category)
         }
-    }
+    }*/
 
     // other stuff
 

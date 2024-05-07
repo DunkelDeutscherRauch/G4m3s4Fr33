@@ -46,10 +46,17 @@ class GameListFragment : Fragment() {
         ).also { adapter ->
             inputCategory.setAdapter(adapter) }
 
+        binding.btnSearchDialogSearch.setOnClickListener {
+            viewModel.category = inputCategory.text.toString()
+
+            viewModel.getGameListByFilter()
+
+        }
+
         /*
-        TODO searchBar in GameListFragment, all filter/sort options in AlertDialog --> done, need another button or TextView
-        TODO --> getGameListByFilter in ViewModel, need to implement AutocompleteTextView for category search, function?
-        TODO see variables for category, platform and sortBy in ViewModel
+
+       TODO need a reset function for the filter <(°.°)>
+
          */
 
         binding.btnOpenSearchDialog.setOnClickListener {
