@@ -19,6 +19,9 @@
     <string name="home_btn_favorites_text">Favorites</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="cancel">Cancel</string>
     <string name="go_to_homepage">Go to homepage</string>
     <string name="show_more">show more</string>
     <string name="show_less">show less</string>

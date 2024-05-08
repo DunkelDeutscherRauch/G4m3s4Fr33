@@ -30,9 +30,9 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     val gameDetail = senpaiRepository.gameDetail
     val gameDetailList = senpaiRepository.gameDetailList
 
-    var platform = "all"
+    var platform = ""
     var category = ""
-    var sortBy = "relevance"
+    var sortBy = ""
 
     init {
         user.observeForever {

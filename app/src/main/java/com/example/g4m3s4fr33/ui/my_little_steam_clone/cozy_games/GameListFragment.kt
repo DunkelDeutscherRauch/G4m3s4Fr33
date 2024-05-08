@@ -2,6 +2,7 @@ package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,8 @@ class GameListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // TODO buttons´s and textView in layout
+
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
@@ -50,12 +53,13 @@ class GameListFragment : Fragment() {
         binding.btnSearchDialogSearch.setOnClickListener {
 
             if (inputCategory.text.isNotBlank()) {
-                viewModel.category = inputCategory.text.toString()
+                viewModel.category = inputCategory.text.toString().lowercase()
             } else {
                 viewModel.category = categories.toList().random()
             }
 
             viewModel.getGameListByFilter()
+
         }
 
         binding.btnOpenSearchDialog.setOnClickListener {
@@ -64,17 +68,17 @@ class GameListFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
-            alertDialogBuilder.setPositiveButton("Apply") { _, _ ->
+            alertDialogBuilder.setPositiveButton(getString(R.string.apply)) { _, _ ->
                 viewModel.platform = platformer(dialogBinding.rgSearchDialogFilterByPlatform)
                 viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
             }
 
-            alertDialogBuilder.setNeutralButton("Reset") { _, _ ->
+            alertDialogBuilder.setNeutralButton(getString(R.string.reset)) { _, _ ->
                 viewModel.getGameList()
                 binding.etSearchDialogCategory.text.clear()
             }
 
-            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+            alertDialogBuilder.setNegativeButton(R.string.cancel) { dialog, _ ->
                 dialog.cancel()
             }
 
@@ -83,22 +87,20 @@ class GameListFragment : Fragment() {
 
     }
 
-    // TODO --> replace hardcoded text with string resource
-
     private fun platformer(radioGroup: RadioGroup): String {
 
         return when (radioGroup.checkedRadioButtonId) {
 
             R.id.rbSearchDialogFilterByPlatformAll -> {
-                "all"
+                getString(R.string.all).lowercase()
             }
 
             R.id.rbSearchDialogFilterByPlatformBrowser -> {
-                "browser"
+                getString(R.string.browser).lowercase()
             }
 
             else -> {
-                "pc"
+                getString(R.string.pc).lowercase()
             }
         }
 
@@ -109,19 +111,19 @@ class GameListFragment : Fragment() {
         return when (radioGroup.checkedRadioButtonId) {
 
             R.id.rbSearchDialogSortByRelevance -> {
-                "relevance"
+                getString(R.string.relevance).lowercase()
             }
 
             R.id.rbSearchDialogSortByAlphabet -> {
-                "alphabetical"
+                getString(R.string.alphabetical).lowercase()
             }
 
             R.id.rbSearchDialogSortByRelease -> {
-                "release-date"
+                getString(R.string.release_date).lowercase()
             }
 
             else -> {
-                "popularity"
+                getString(R.string.popularity).lowercase()
             }
         }
     }
