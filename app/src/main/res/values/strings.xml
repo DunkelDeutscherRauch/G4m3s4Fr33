@@ -33,7 +33,16 @@
     <string name="played_hours">Played %1$s hours</string>
     <string name="rank_causal_gamer">Rank: <font color='green'>Causal Gamer</font></string>
     <string name="rank_pro_Gamer">Rank: <font color='#0087FF'>Pro Gamer</font></string>
-   <!-- <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
+    <string name="filter_by_platform">Filter by platform</string>
+    <string name="all">All</string>
+    <string name="browser">Browser</string>
+    <string name="pc">PC</string>
+    <string name="sort_by">Sort by</string>
+    <string name="relevance">Relevance</string>
+    <string name="alphabetical">Alphabetical</string>
+    <string name="release_date">Release-date</string>
+    <string name="popularity">Popularity</string>
+    <!-- <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
    <!-- <string name="rank_masterchief">Rank: <font color='placeholder'>Masterchief</font></string> -->
     <string-array name="game_categories">
         <item>mmorpg</item>

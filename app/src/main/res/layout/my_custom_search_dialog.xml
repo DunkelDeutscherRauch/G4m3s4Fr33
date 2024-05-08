@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/vwBlackMetallic"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="@string/filter_by_platform"
+            android:textColor="@color/mySilver"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,42 +36,61 @@
                 android:id="@+id/rbSearchDialogFilterByPlatformAll"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
+                android:buttonTint="@color/imBlue"
                 android:checked="true"
-                android:buttonTint="@color/imBlue" />
+                android:text="@string/all"
+                android:textColor="@color/mySilver" />
 
             <RadioButton
                 android:id="@+id/rbSearchDialogFilterByPlatformBrowser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
-                android:buttonTint="@color/imBlue" />
+                android:buttonTint="@color/imBlue"
+                android:text="@string/browser"
+                android:textColor="@color/mySilver" />
 
             <RadioButton
                 android:id="@+id/rbSearchDialogFilterByPlatformPC"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
-                android:buttonTint="@color/imBlue" />
+                android:buttonTint="@color/imBlue"
+                android:text="@string/pc"
+                android:textColor="@color/mySilver" />
 
         </RadioGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/mySearchDialogContentDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@color/imBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgSearchDialogFilterByPlatform" />
 
         <TextView
             android:id="@+id/tvSearchDialogSortOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:layout_marginTop="8dp"
+            android:text="@string/sort_by"
+            android:textColor="@color/mySilver"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rgSearchDialogFilterByPlatform" />
+            app:layout_constraintTop_toBottomOf="@+id/mySearchDialogContentDivider" />
 
         <RadioGroup
             android:id="@+id/rgSearchDialogSortOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSearchDialogSortOptions">
@@ -76,7 +99,8 @@
                 android:id="@+id/rbSearchDialogSortByRelevance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
+                android:text="@string/relevance"
+                android:textColor="@color/mySilver"
                 android:checked="true"
                 android:buttonTint="@color/imBlue" />
 
@@ -84,24 +108,38 @@
                 android:id="@+id/rbSearchDialogSortByAlphabet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
+                android:text="@string/alphabetical"
+                android:textColor="@color/mySilver"
                 android:buttonTint="@color/imBlue" />
 
             <RadioButton
                 android:id="@+id/rbSearchDialogSortByRelease"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
+                android:text="@string/release_date"
+                android:textColor="@color/mySilver"
                 android:buttonTint="@color/imBlue" />
 
             <RadioButton
                 android:id="@+id/rbSearchDialogSortByPopularity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bob"
-                android:buttonTint="@color/imBlue" />
+                android:buttonTint="@color/imBlue"
+                android:text="@string/popularity"
+                android:textColor="@color/mySilver" />
 
         </RadioGroup>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/mySearchDialogBottomDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@color/imBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgSearchDialogSortOptions" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
