@@ -1,10 +1,8 @@
 <resources>
-    <!-- Base application theme. -->
     <style name="Base.Theme.G4m3s4Fr33" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
        <!-- TODO <item name="materialButtonStyle">@style/buttonStyle</item> -->
     </style>
-
     <style name="Theme.G4m3s4Fr33" parent="Base.Theme.G4m3s4Fr33" />
 </resources>

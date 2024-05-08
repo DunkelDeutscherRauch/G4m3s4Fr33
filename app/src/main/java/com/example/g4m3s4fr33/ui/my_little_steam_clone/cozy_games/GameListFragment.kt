@@ -45,7 +45,7 @@ class GameListFragment : Fragment() {
         }
 
         ArrayAdapter(
-            requireContext(), android.R.layout.simple_list_item_1, categories
+            requireContext(), R.layout.my_custom_drop_down_menu, categories
         ).also { adapter ->
             inputCategory.setAdapter(adapter)
         }

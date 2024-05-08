@@ -8,5 +8,6 @@ TODO —> HomeFragment
 TODO —> ProfileFragment
 TODO —> strings.xml
 TODO —> styles.xml
+TODO -> themes.xml
 TODO —> review all layouts
  */

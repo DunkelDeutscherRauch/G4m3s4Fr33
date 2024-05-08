@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- rounded corners style for imageView -->
+
     <style name="roundedImageViewRounded">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <!-- main style for button -->
+
     <!-- TODO <style name="buttonStyle" parent="Widget.MaterialComponents.Button"> -->
     <style name="buttonStyle">
         <item name="android:layout_width">match_parent</item>
@@ -19,6 +24,9 @@
         <item name="cornerRadius">96dp</item>
         <item name="elevation">8dp</item>
     </style>
+
+    <!-- main style for alertDialog -->
+
     <style name="MyDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
         <item name="android:backgroundTint">@color/vwBlackMetallic</item>
         <item name="android:buttonBarPositiveButtonStyle">@style/positiveButtonText</item>
