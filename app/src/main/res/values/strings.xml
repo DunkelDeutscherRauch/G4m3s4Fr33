@@ -3,15 +3,16 @@
 
     <string name="app_name">G4m3s4Fr33</string>
     <string name="bob">Bob</string>
+    <string name="greetings_user_default">Hello User!</string>
 
     <!-- strings for textView and editText -->
 
     <string name="name_nickname">Name / Nickname</string>
-    <string name="i_dont_know">Ich habe keine Ahnung. Hier soll halt Text stehen. Weil ich denke, dass Text hier voll schon und so ist. Und nun ist meine Zeile (schon lange) viel zu lang und deswegen schreibe ich jetzt auch nichts mehr...oder so!</string>
     <string name="playtime_in_hours">Your playtime</string>
     <string name="enter_playtime_in_hours">Please enter your playtime in hours here!</string>
     <string name="filter_by_platform">Filter by platform</string>
     <string name="sort_by">Sort by</string>
+    <string name="greetings_user">Hello %1$s!</string>
 
     <!-- strings for button -->
 

@@ -121,6 +121,12 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     }
 
+    fun getRandomGame(randomPlatform: String, randomCategory: String, randomSortBy: String ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            senpaiRepository.getGameListByFilter(randomPlatform, randomCategory, randomSortBy)
+        }
+    }
+
     // other stuff
 
     private fun gimmeDate(): String {
