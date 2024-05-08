@@ -81,6 +81,8 @@ class FavoriteDetailFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
+            // TODO review layout
+
             alertDialogBuilder.setPositiveButton("Save") { _, _ ->
                 val userInput = dialogBinding.etAlertDialog.text.toString()
 
