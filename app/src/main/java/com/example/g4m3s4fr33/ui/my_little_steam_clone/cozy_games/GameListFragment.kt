@@ -2,6 +2,7 @@ package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +36,6 @@ class GameListFragment : Fragment() {
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
-
         viewModel.getGameList()
 
         viewModel.gameList.observe(viewLifecycleOwner) {
@@ -48,7 +48,7 @@ class GameListFragment : Fragment() {
             inputCategory.setAdapter(adapter)
         }
 
-        // TODO see ViewModel --> need to implement gameMapForAutoComplete and gameNameListForAutoComplete here
+        // TODO implement a search option for name of game + need a List with all game names
 
         binding.btnSearchDialogSearch.setOnClickListener {
 
