@@ -99,11 +99,11 @@ class GameListFragment : Fragment() {
     private fun setUpPlatformButton(binding: MyCustomSearchDialogBinding) {
         when (viewModel.platform) {
 
-            "browser" -> {
+            getString(R.string.browser).lowercase() -> {
                 binding.rbSearchDialogFilterByPlatformBrowser.isChecked = true
             }
 
-            "pc" -> {
+            getString(R.string.pc).lowercase() -> {
                 binding.rbSearchDialogFilterByPlatformPC.isChecked = true
             }
 
@@ -139,15 +139,15 @@ class GameListFragment : Fragment() {
     private fun setUpSortButton(binding: MyCustomSearchDialogBinding) {
         when(viewModel.sortBy) {
 
-            "alphabetical" -> {
+            getString(R.string.alphabetical).lowercase() -> {
                 binding.rbSearchDialogSortByAlphabet.isChecked = true
             }
 
-            "release-date" -> {
+            getString(R.string.release_date).lowercase() -> {
                 binding.rbSearchDialogSortByRelease.isChecked = true
             }
 
-            "popularity" -> {
+            getString(R.string.popularity).lowercase() -> {
                 binding.rbSearchDialogSortByPopularity.isChecked = true
             }
 

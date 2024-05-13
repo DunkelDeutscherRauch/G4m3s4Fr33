@@ -25,6 +25,8 @@ class FavoriteDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // TODO review layout, maybe change layout of listItem because title could be very long
+
         gameId = arguments?.getInt("gameId")!!
 
         viewModel.getGameDetail(gameId)
@@ -80,8 +82,6 @@ class FavoriteDetailFragment : Fragment() {
             val alertDialogBuilder = AlertDialog.Builder(requireContext(),R.style.MyDialogTheme)
 
             alertDialogBuilder.setView(dialogBinding.root)
-
-            // TODO review layout
 
             alertDialogBuilder.setPositiveButton("Save") { _, _ ->
                 val userInput = dialogBinding.etAlertDialog.text.toString()
