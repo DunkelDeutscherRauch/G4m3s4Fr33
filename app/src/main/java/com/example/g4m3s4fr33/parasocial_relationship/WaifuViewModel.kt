@@ -1,6 +1,7 @@
 package com.example.g4m3s4fr33.parasocial_relationship
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.g4m3s4fr33.R
@@ -117,6 +118,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun getGameListByFilter() {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameListByFilter(platform, category, sortBy)
+            Log.i("Ωlul", "ViewModel: $platform, $category, $sortBy ")
         }
 
     }

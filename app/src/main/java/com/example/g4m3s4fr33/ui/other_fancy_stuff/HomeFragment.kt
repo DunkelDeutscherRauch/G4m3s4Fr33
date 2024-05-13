@@ -26,24 +26,16 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO implement a random game for users with no clue what to do xD
-
-        /*val category =
-            resources.getStringArray(R.array.game_categories).toList().random().lowercase()
-        val platform = listOf(getString(R.string.all), getString(R.string.browser), getString(R.string.pc)).random().lowercase()
-        val sortBy = listOf(
-            getString(R.string.relevance),
-            getString(R.string.alphabetical),
-            getString(R.string.release_date),
-            getString(R.string.popularity)
-        ).random().lowercase()*/
-
+        // TODO implement randomGame
 
         var userName: String
+        val category =
+            resources.getStringArray(R.array.game_categories).toList().random().lowercase()
+
+       // viewModel.getRandomGame()
 
         viewModel.user.observe(viewLifecycleOwner) {
             userName = it.name

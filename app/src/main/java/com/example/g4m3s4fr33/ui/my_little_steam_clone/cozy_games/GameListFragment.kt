@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -38,7 +39,11 @@ class GameListFragment : Fragment() {
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
-        viewModel.getGameList()
+        if (viewModel.category.isBlank()) {
+            viewModel.getGameList()
+        } else {
+            viewModel.getGameListByFilter()
+        }
 
         viewModel.gameList.observe(viewLifecycleOwner) {
             binding.rvGameList.adapter = PlugAndPlayAdapter(it)
@@ -76,6 +81,9 @@ class GameListFragment : Fragment() {
             alertDialogBuilder.setNeutralButton(getString(R.string.reset)) { _, _ ->
                 viewModel.getGameList()
                 binding.etSearchDialogCategory.text.clear()
+                viewModel.platform = getString(R.string.all).lowercase()
+                viewModel.category = ""
+                viewModel.sortBy = getString(R.string.relevance).lowercase()
             }
 
             alertDialogBuilder.setNegativeButton(R.string.cancel) { dialog, _ ->
@@ -99,8 +107,12 @@ class GameListFragment : Fragment() {
                 getString(R.string.browser).lowercase()
             }
 
-            else -> {
+            R.id.rbSearchDialogFilterByPlatformPC -> {
                 getString(R.string.pc).lowercase()
+            }
+
+            else -> {
+                getString(R.string.all).lowercase()
             }
         }
 
@@ -122,8 +134,12 @@ class GameListFragment : Fragment() {
                 getString(R.string.release_date).lowercase()
             }
 
-            else -> {
+            R.id.rbSearchDialogSortByPopularity -> {
                 getString(R.string.popularity).lowercase()
+            }
+
+            else -> {
+                getString(R.string.relevance).lowercase()
             }
         }
     }
