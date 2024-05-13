@@ -11,6 +11,7 @@ import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentHomeBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
+import kotlin.properties.Delegates
 
 class HomeFragment : Fragment() {
 
@@ -30,7 +31,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var userName: String
-        var gameId = 0
+        var gameId by Delegates.notNull<Int>()
         val category =
             resources.getStringArray(R.array.game_categories).toList().random().lowercase()
 
