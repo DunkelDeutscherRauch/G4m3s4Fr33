@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/imBlue"
                 android:text="@string/all"
+                android:checked="true"
                 android:textColor="@color/mySilver" />
 
             <RadioButton
@@ -99,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/relevance"
+                android:checked="true"
                 android:textColor="@color/mySilver"
                 android:buttonTint="@color/imBlue" />
 

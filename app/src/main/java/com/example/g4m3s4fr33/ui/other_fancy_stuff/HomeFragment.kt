@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.FragmentHomeBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
@@ -35,7 +36,7 @@ class HomeFragment : Fragment() {
         val category =
             resources.getStringArray(R.array.game_categories).toList().random().lowercase()
 
-       // viewModel.getRandomGame()
+      viewModel.getRandomGame(category)
 
         viewModel.user.observe(viewLifecycleOwner) {
             userName = it.name
@@ -47,6 +48,12 @@ class HomeFragment : Fragment() {
             }
 
         }
+
+        viewModel.gameList.observe(viewLifecycleOwner) {
+            binding.imageView.load(it.first().thumbnail)
+            Log.i("Ωlul", it.first().thumbnail)
+        }
+
 
         binding.btnGames.setOnClickListener {
             findNavController().navigate(R.id.gamesListFragment)

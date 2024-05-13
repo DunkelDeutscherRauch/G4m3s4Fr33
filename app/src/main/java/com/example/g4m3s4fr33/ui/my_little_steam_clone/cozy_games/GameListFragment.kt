@@ -74,7 +74,7 @@ class GameListFragment : Fragment() {
             alertDialogBuilder.setView(dialogBinding.root)
 
             alertDialogBuilder.setPositiveButton(getString(R.string.apply)) { _, _ ->
-                viewModel.platform = platformer(dialogBinding.rgSearchDialogFilterByPlatform)
+                platformerTwo(dialogBinding)
                 viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
             }
 
@@ -92,6 +92,28 @@ class GameListFragment : Fragment() {
 
             alertDialogBuilder.show()
         }
+
+    }
+
+    private fun platformerTwo(binding: MyCustomSearchDialogBinding) {
+
+        binding.rgSearchDialogFilterByPlatform.setOnCheckedChangeListener{group, checkedID ->
+            when (viewModel.platform) {
+                "all" -> {
+                    binding.rbSearchDialogFilterByPlatformAll.isChecked = true
+                    // radioGroup.check(R.id.rbSearchDialogFilterByPlatformAll)
+                    viewModel.platform = "all"
+                }
+
+                "browser" -> {
+                    binding.rbSearchDialogFilterByPlatformBrowser.isChecked = true
+                    //radioGroup.check(R.id.rbSearchDialogFilterByPlatformBrowser)
+                    viewModel.platform = "browser"
+                }
+
+            }
+        }
+
 
     }
 
