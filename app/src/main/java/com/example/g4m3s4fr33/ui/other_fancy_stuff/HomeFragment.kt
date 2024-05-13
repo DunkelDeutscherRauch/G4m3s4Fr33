@@ -1,7 +1,6 @@
 package com.example.g4m3s4fr33.ui.other_fancy_stuff
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,13 +29,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO implement randomGame
-
         var userName: String
+        var gameId = 0
         val category =
             resources.getStringArray(R.array.game_categories).toList().random().lowercase()
 
-      viewModel.getRandomGame(category)
+        viewModel.getRandomGame(category)
 
         viewModel.user.observe(viewLifecycleOwner) {
             userName = it.name
@@ -50,10 +48,18 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.gameList.observe(viewLifecycleOwner) {
-            binding.imageView.load(it.first().thumbnail)
-            Log.i("Ωlul", it.first().thumbnail)
+            val randomGame = it.random()
+            binding.ivHome.load(randomGame.thumbnail)
+            gameId = randomGame.id
         }
 
+        binding.ivHome.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(
+                    gameId
+                )
+            )
+        }
 
         binding.btnGames.setOnClickListener {
             findNavController().navigate(R.id.gamesListFragment)
@@ -62,8 +68,6 @@ class HomeFragment : Fragment() {
         binding.btnFavorites.setOnClickListener {
             findNavController().navigate(R.id.favoriteListFragment)
         }
-
     }
-
 
 }

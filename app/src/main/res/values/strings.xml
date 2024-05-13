@@ -16,8 +16,8 @@
 
     <!-- strings for button -->
 
-    <string name="home_btn_games_text">Games</string>
-    <string name="home_btn_favorites_text">Favorites</string>
+    <string name="home_btn_games_text">All Games</string>
+    <string name="home_btn_favorites_text">My Favorites</string>
     <string name="edit">Edit</string>
     <string name="save">Save</string>
     <string name="apply">Apply</string>

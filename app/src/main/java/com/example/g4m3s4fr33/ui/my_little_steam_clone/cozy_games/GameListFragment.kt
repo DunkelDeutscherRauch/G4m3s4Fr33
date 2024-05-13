@@ -2,12 +2,10 @@ package com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.RadioButton
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -73,8 +71,11 @@ class GameListFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
+            setUpPlatformButton(dialogBinding)
+            setUpSortButton(dialogBinding)
+
             alertDialogBuilder.setPositiveButton(getString(R.string.apply)) { _, _ ->
-                platformerTwo(dialogBinding)
+                viewModel.platform = platformer(dialogBinding.rgSearchDialogFilterByPlatform)
                 viewModel.sortBy = postal(dialogBinding.rgSearchDialogSortOptions)
             }
 
@@ -95,30 +96,25 @@ class GameListFragment : Fragment() {
 
     }
 
-    private fun platformerTwo(binding: MyCustomSearchDialogBinding) {
+    private fun setUpPlatformButton(binding: MyCustomSearchDialogBinding) {
+        when (viewModel.platform) {
 
-        binding.rgSearchDialogFilterByPlatform.setOnCheckedChangeListener{group, checkedID ->
-            when (viewModel.platform) {
-                "all" -> {
-                    binding.rbSearchDialogFilterByPlatformAll.isChecked = true
-                    // radioGroup.check(R.id.rbSearchDialogFilterByPlatformAll)
-                    viewModel.platform = "all"
-                }
+            "browser" -> {
+                binding.rbSearchDialogFilterByPlatformBrowser.isChecked = true
+            }
 
-                "browser" -> {
-                    binding.rbSearchDialogFilterByPlatformBrowser.isChecked = true
-                    //radioGroup.check(R.id.rbSearchDialogFilterByPlatformBrowser)
-                    viewModel.platform = "browser"
-                }
+            "pc" -> {
+                binding.rbSearchDialogFilterByPlatformPC.isChecked = true
+            }
 
+            else -> {
+                binding.rbSearchDialogFilterByPlatformAll.isChecked = true
             }
         }
-
 
     }
 
     private fun platformer(radioGroup: RadioGroup): String {
-
         return when (radioGroup.checkedRadioButtonId) {
 
             R.id.rbSearchDialogFilterByPlatformAll -> {
@@ -140,8 +136,29 @@ class GameListFragment : Fragment() {
 
     }
 
-    private fun postal(radioGroup: RadioGroup): String {
+    private fun setUpSortButton(binding: MyCustomSearchDialogBinding) {
+        when(viewModel.sortBy) {
 
+            "alphabetical" -> {
+                binding.rbSearchDialogSortByAlphabet.isChecked = true
+            }
+
+            "release-date" -> {
+                binding.rbSearchDialogSortByRelease.isChecked = true
+            }
+
+            "popularity" -> {
+                binding.rbSearchDialogSortByPopularity.isChecked = true
+            }
+
+            else -> {
+                binding.rbSearchDialogSortByRelevance.isChecked = true
+            }
+        }
+
+    }
+
+    private fun postal(radioGroup: RadioGroup): String {
         return when (radioGroup.checkedRadioButtonId) {
 
             R.id.rbSearchDialogSortByRelevance -> {
@@ -164,6 +181,7 @@ class GameListFragment : Fragment() {
                 getString(R.string.relevance).lowercase()
             }
         }
+
     }
 
 }

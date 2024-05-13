@@ -118,7 +118,7 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun getGameListByFilter() {
         viewModelScope.launch(Dispatchers.IO) {
             senpaiRepository.getGameListByFilter(platform, category, sortBy)
-            Log.i("Ωlul", "ViewModel: $platform, $category, $sortBy ")
+            Log.i("Ωlul", "ViewModel: $platform, $category, $sortBy")
         }
 
     }

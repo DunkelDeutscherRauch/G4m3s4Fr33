@@ -18,17 +18,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivHome"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
+        android:text="No clue what to do? Try this game!"
+        android:textColor="@color/mySilver"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHomeHeader" />
+
+
+    <ImageView
+        android:id="@+id/ivHome"
+        android:layout_width="365dp"
+        android:layout_height="206dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/bob"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHomeHeader"
-        app:srcCompat="@drawable/test_frog_two"
-        android:contentDescription="@string/bob" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/test_frog_two"/>
 
     <Button
         android:id="@+id/btnGames"
@@ -61,21 +74,5 @@
         android:textColor="@color/mySilver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No clue what to do? Try this game!"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="461dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="501dp"
-        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
