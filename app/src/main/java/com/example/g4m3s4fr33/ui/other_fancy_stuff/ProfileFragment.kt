@@ -64,7 +64,7 @@ class ProfileFragment : Fragment() {
             changeImage.launch(intent)
         }
 
-        // TODO --> implement custom popup here!
+        // TODO --> implement custom popup here! -> see below
 
         binding.btnSaveUser.setOnClickListener {
             if (binding.etProfileName.text!!.isNotBlank()) {
@@ -73,4 +73,49 @@ class ProfileFragment : Fragment() {
         }
 
     }
+
+    /*
+      val dialogBinding = MyCustomAlertDialogBinding.inflate(layoutInflater)
+            val alertDialogBuilder = AlertDialog.Builder(requireContext(),R.style.MyDialogTheme)
+
+            alertDialogBuilder.setView(dialogBinding.root)
+
+            alertDialogBuilder.setPositiveButton("Save") { _, _ ->
+                val userInput = dialogBinding.etAlertDialog.text.toString()
+
+                if (userInput.isNotBlank()) {
+                    viewModel.updateHoursPlayed(
+                        userInput.toInt(),
+                        gameId
+                    )
+
+                    binding.tvFavDetailRank.setText(
+                        viewModel.gimmeRank(
+                            userInput.toInt()
+                        )
+                    )
+
+                    binding.etFavDetailPlayTime.setText(
+                        getString(
+                            R.string.played_hours,
+                            userInput
+                        )
+                    )
+
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        "You failed badly! Please try again!",
+                        Toast.LENGTH_LONG
+                    )
+                        .show()
+                }
+            }
+
+            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+                dialog.cancel()
+            }
+            alertDialogBuilder.show()
+     */
+
 }
