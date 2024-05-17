@@ -1,12 +1,14 @@
 package com.example.g4m3s4fr33.ui.other_fancy_stuff
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -14,6 +16,7 @@ import coil.load
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentProfileBinding
+import com.example.g4m3s4fr33.databinding.MyCustomAlertDialogProfileBinding
 
 class ProfileFragment : Fragment() {
 
@@ -64,44 +67,18 @@ class ProfileFragment : Fragment() {
             changeImage.launch(intent)
         }
 
-        // TODO --> implement custom popup here! -> see below
+        binding.etProfileName.setOnClickListener {
 
-        binding.btnSaveUser.setOnClickListener {
-            if (binding.etProfileName.text!!.isNotBlank()) {
-                viewModel.updateUserName(binding.etProfileName.text.toString())
-            }
-        }
-
-    }
-
-    /*
-      val dialogBinding = MyCustomAlertDialogBinding.inflate(layoutInflater)
-            val alertDialogBuilder = AlertDialog.Builder(requireContext(),R.style.MyDialogTheme)
+            val dialogBinding = MyCustomAlertDialogProfileBinding.inflate(layoutInflater)
+            val alertDialogBuilder = AlertDialog.Builder(requireContext(), R.style.MyDialogTheme)
 
             alertDialogBuilder.setView(dialogBinding.root)
 
             alertDialogBuilder.setPositiveButton("Save") { _, _ ->
-                val userInput = dialogBinding.etAlertDialog.text.toString()
+                val userInput = dialogBinding.etAlertDialogProfile.text.toString()
 
                 if (userInput.isNotBlank()) {
-                    viewModel.updateHoursPlayed(
-                        userInput.toInt(),
-                        gameId
-                    )
-
-                    binding.tvFavDetailRank.setText(
-                        viewModel.gimmeRank(
-                            userInput.toInt()
-                        )
-                    )
-
-                    binding.etFavDetailPlayTime.setText(
-                        getString(
-                            R.string.played_hours,
-                            userInput
-                        )
-                    )
-
+                    viewModel.updateUserName(binding.etProfileName.text.toString())
                 } else {
                     Toast.makeText(
                         requireContext(),
@@ -116,6 +93,7 @@ class ProfileFragment : Fragment() {
                 dialog.cancel()
             }
             alertDialogBuilder.show()
-     */
+        }
+    }
 
 }
