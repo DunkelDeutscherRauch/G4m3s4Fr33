@@ -34,7 +34,7 @@
             android:layout_marginBottom="32dp"
             android:hint="@string/playtime_in_hours"
             android:inputType="number"
-            android:textColorHint="@color/imBlue"
+            android:textColorHint="@color/mySilver"
             android:textColor="@color/imBlue"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"

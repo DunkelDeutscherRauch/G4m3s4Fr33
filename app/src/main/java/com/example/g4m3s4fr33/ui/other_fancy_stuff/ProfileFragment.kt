@@ -78,7 +78,7 @@ class ProfileFragment : Fragment() {
                 val userInput = dialogBinding.etAlertDialogProfile.text.toString()
 
                 if (userInput.isNotBlank()) {
-                    viewModel.updateUserName(binding.etProfileName.text.toString())
+                    viewModel.updateUserName(userInput)
                 } else {
                     Toast.makeText(
                         requireContext(),
