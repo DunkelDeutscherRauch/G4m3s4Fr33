@@ -1,7 +1,6 @@
 package com.example.g4m3s4fr33.my_crunch_time
 
 /*
-TODO —> ProfileFragment (alertDialog)
 TODO —> WaifuViewModel (ranks)
 TODO —> HomeFragment (layout)
 TODO —> GameListFragment (layout)
