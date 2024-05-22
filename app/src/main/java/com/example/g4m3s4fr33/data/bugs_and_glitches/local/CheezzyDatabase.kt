@@ -25,7 +25,9 @@ abstract class CheezzyDatabase : RoomDatabase() {
                         CheezzyDatabase::class.java,
                         "kek_database"
 
-                    ).build()
+                    )
+                        .fallbackToDestructiveMigration() // just for the moment - see ToDo.kt
+                        .build()
                 }
                 return INSTANCE
 
