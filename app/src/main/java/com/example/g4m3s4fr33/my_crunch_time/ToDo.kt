@@ -18,4 +18,5 @@ TODO - cool stuff for the future (maybe) -
  -> autoComplete by name (complex)
  -> keep position in recyclerView combined with handleOnBackPressed (complex)
  -> autoMigration for RoomDB (https://developer.android.com/training/data-storage/room/migrating-db-versions?hl=de)
+ -> fix layouts for different screen sizes
  */
