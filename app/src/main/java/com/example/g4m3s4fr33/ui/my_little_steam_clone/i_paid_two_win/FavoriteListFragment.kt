@@ -1,6 +1,7 @@
 package com.example.g4m3s4fr33.ui.my_little_steam_clone.i_paid_two_win
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,8 +33,9 @@ class FavoriteListFragment : Fragment() {
             viewModel.getGameDetailList(it)
         }
 
-        viewModel.gameDetailList.observe(viewLifecycleOwner) {
+       viewModel.gameDetailList.observe(viewLifecycleOwner) {
             binding.rvFavList.adapter = RageQuitAdapter(it, viewModel)
+            Log.e("Ωlul", "FavListFrag $it")
         }
     }
 

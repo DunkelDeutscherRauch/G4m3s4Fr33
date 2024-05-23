@@ -123,7 +123,7 @@ class FavoriteDetailFragment : Fragment() {
 
         binding.btnFavGameRemove.setOnClickListener {
             viewModel.deleteFavGame(gameId)
-            findNavController().navigate(R.id.favoriteListFragment)
+            findNavController().navigateUp()
         }
 
         binding.btnFavDetailToDetails.setOnClickListener {
