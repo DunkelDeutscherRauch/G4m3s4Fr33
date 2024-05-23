@@ -121,6 +121,8 @@ class FavoriteDetailFragment : Fragment() {
             alertDialogBuilder.show()
         }
 
+        // TODO maybe remove this button
+
         binding.btnFavGameRemove.setOnClickListener {
             viewModel.deleteFavGame(gameId)
             findNavController().navigateUp()
