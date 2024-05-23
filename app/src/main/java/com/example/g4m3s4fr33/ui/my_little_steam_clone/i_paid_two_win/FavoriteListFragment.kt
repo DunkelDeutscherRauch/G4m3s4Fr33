@@ -35,8 +35,12 @@ class FavoriteListFragment : Fragment() {
 
        viewModel.gameDetailList.observe(viewLifecycleOwner) {
             binding.rvFavList.adapter = RageQuitAdapter(it, viewModel)
-            Log.e("Ωlul", "FavListFrag $it")
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.rvFavList.adapter?.notifyDataSetChanged()
     }
 
 }
