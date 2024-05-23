@@ -37,9 +37,4 @@ class FavoriteListFragment : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        binding.rvFavList.adapter?.notifyDataSetChanged()
-    }
-
 }
