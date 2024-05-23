@@ -13,6 +13,7 @@
     <string name="filter_by_platform">Filter by platform</string>
     <string name="sort_by">Sort by</string>
     <string name="greetings_user">Hello %1$s!</string>
+    <string name="please_enter_your_name_nickname_here">Please enter your Name / Nickname here!</string>
 
     <!-- strings for button -->
 
@@ -66,7 +67,6 @@
     <string name="rank_rookie">Rank: <font color='yellow'> Rookie</font></string>
     <string name="rank_causal_gamer">Rank: <font color='green'>Causal Gamer</font></string>
     <string name="rank_pro_Gamer">Rank: <font color='#0087FF'>Pro Gamer</font></string>
-    <string name="please_enter_your_name_nickname_here">Please enter your Name / Nickname here!</string>
     <!-- TODO <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
     <!-- TODO <string name="rank_masterchief">Rank: <font color='placeholder'>Masterchief</font></string> -->
 
