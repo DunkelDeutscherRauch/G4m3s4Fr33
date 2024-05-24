@@ -63,9 +63,7 @@ class SenpaiRepository(private val mmoApi: FreeTwoPlayMMOApi) {
                 Log.e("Ωlul", "$e")
             }
         }
-        Log.i("Ωlul", "$gameDetailList")
         _gameDetailList.postValue(gameDetailList)
-
     }
 
 }
