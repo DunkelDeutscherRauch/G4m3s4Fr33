@@ -17,12 +17,12 @@ class RageQuitAdapter(
     private val viewModel: WaifuViewModel
 ) : RecyclerView.Adapter<RageQuitAdapter.ItemViewHolder>() {
 
-    inner class ItemViewHolder(val binding: FavoriteListItemBinding) :
+    inner class ItemViewHolder(val binding: TestLayoutBinding) : // FavoriteListItemBinding
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val binding =
-            FavoriteListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            TestLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ItemViewHolder(binding)
     }
 
@@ -33,10 +33,10 @@ class RageQuitAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val brokenDisc = rageQuitList[position]
 
-        holder.binding.tvFavListItem.text = brokenDisc.title
-        holder.binding.ivFavListItem.load(brokenDisc.thumbnail)
+        holder.binding.textView2.text = brokenDisc.title
+        holder.binding.imageView.load(brokenDisc.thumbnail)
 
-        holder.binding.btnFavListItem.setOnClickListener {
+        holder.binding.button2.setOnClickListener {
             viewModel.deleteFavGame(brokenDisc.id)
         }
 
