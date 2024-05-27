@@ -193,8 +193,6 @@
         <Button
             android:id="@+id/btnGameDetailHomePage"
             style="@style/buttonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/go_to_homepage"
