@@ -3,9 +3,8 @@ package com.example.g4m3s4fr33.my_crunch_time
 /**
 TODO
  -> WaifuViewModel (ranks)
- —> HomeFragment (layout)
- —> GameListFragment (layout)
  —> FavoriteDetailFragment (layout)
+ -> FavoriteListItem (layout migrate vom test_layout.xml to favorite_list_item.xml)
  —> strings.xml (div. layouts)
  —> styles.xml (main button style)
  -> themes.xml (see above)

@@ -32,8 +32,6 @@ class GameListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // TODO buttons´s and textView in layout
-
         val inputCategory = binding.etSearchDialogCategory
         val categories: Array<out String> = resources.getStringArray(R.array.game_categories)
 
