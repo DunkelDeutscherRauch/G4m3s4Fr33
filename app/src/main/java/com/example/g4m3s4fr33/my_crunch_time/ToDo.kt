@@ -6,8 +6,6 @@ TODO
  —> FavoriteDetailFragment (layout)
  -> FavoriteListItem (layout migrate vom test_layout.xml to favorite_list_item.xml)
  —> strings.xml (div. layouts)
- —> styles.xml (main button style)
- -> themes.xml (see above)
  —> review all layouts
 */
 
@@ -17,5 +15,4 @@ TODO - cool stuff for the future (maybe) -
  -> autoComplete by name (complex)
  -> keep position in recyclerView combined with handleOnBackPressed (complex)
  -> autoMigration for RoomDB (https://developer.android.com/training/data-storage/room/migrating-db-versions?hl=de)
- -> fix layouts for different screen sizes
  */
