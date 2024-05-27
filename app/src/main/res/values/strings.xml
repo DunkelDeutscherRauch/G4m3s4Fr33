@@ -57,9 +57,9 @@
     <string name="game_detail_status">Status:\n%1$s</string>
     <string name="game_detail_genre">Genre:\n%1$s</string>
     <string name="game_detail_platform">Platform:\n%1$s</string>
-    <string name="game_detail_publisher">Publisher:\n%1$s</string>
-    <string name="game_detail_dev">Developer:\n%1$s</string>
-    <string name="game_detail_release">Release Date:\n%1$s</string>
+    <string name="game_detail_publisher">Publisher: %1$s</string>
+    <string name="game_detail_dev">Developer: %1$s</string>
+    <string name="game_detail_release">Release Date: %1$s</string>
     <string name="game_detail_sys_req">Minimum System Requirements:\n\nOS: %1$s\nProcessor: %2$s\nMemory: %3$s\nGraphics: %4$s\nStorage: %5$s</string>
 
    <!-- special strings for favorites -->

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -52,6 +53,7 @@
             android:id="@+id/tvGameDetailShortDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/text_view_shape"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -70,6 +72,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/game_detail_status"
+            android:textStyle="bold"
             android:textColor="@color/mySilver"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/game_detail_genre"
+            android:textStyle="bold"
             android:textColor="@color/mySilver"
             android:textAlignment="center"
             app:layout_constraintEnd_toStartOf="@+id/tvGameDetailPlatform"
@@ -94,6 +98,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="@string/game_detail_platform"
+            android:textStyle="bold"
             android:textColor="@color/mySilver"
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
@@ -135,9 +140,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/game_detail_publisher"
-            android:textColor="@color/mySilver"
             android:textAlignment="center"
+            android:textColor="@color/mySilver"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
 
@@ -145,26 +152,29 @@
             android:id="@+id/tvGameDetailDev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:text="@string/game_detail_dev"
-            android:textColor="@color/mySilver"
             android:textAlignment="center"
-            app:layout_constraintEnd_toStartOf="@+id/tvGameDetailRelease"
-            app:layout_constraintHorizontal_bias="0.54"
-            app:layout_constraintStart_toEndOf="@+id/tvGameDetailPublisher"
-            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+            android:textColor="@color/mySilver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailPublisher" />
 
         <TextView
             android:id="@+id/tvGameDetailRelease"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/game_detail_release"
-            android:textColor="@color/mySilver"
             android:textAlignment="center"
+            android:textColor="@color/mySilver"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailDev" />
 
         <at.blogc.android.views.ExpandableTextView
             android:id="@+id/expTVDescriptionTwo"
@@ -180,7 +190,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailDev" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailRelease" />
 
         <TextView
             android:id="@+id/tvSeeMoreOrLessTwo"
