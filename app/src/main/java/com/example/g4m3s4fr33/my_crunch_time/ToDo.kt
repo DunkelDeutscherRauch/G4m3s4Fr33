@@ -7,6 +7,7 @@ TODO
  -> FavoriteListItem (layout migrate vom test_layout.xml to favorite_list_item.xml)
  —> strings.xml (div. layouts)
  —> review all layouts
+ -> does it work?
 */
 
 /**
