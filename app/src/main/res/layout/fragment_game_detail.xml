@@ -129,24 +129,36 @@
             android:layout_marginTop="4dp"
             android:backgroundTint="@color/vwBlackMetallic"
             android:text="@string/show_more"
-            android:textSize="12sp"
             android:textColor="@color/imBlue"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/expTVDescription" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/myFirstGameDetailDivider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="60dp"
+            android:background="@color/imBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSeeMoreOrLess" />
 
         <TextView
             android:id="@+id/tvGameDetailPublisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:text="@string/game_detail_publisher"
             android:textAlignment="center"
             android:textColor="@color/mySilver"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSeeMoreOrLess" />
+            app:layout_constraintTop_toBottomOf="@+id/myFirstGameDetailDivider" />
 
         <TextView
             android:id="@+id/tvGameDetailDev"
@@ -176,6 +188,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvGameDetailDev" />
 
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/myFirstGameDetailDividerTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="60dp"
+            android:background="@color/imBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGameDetailRelease" />
+
         <at.blogc.android.views.ExpandableTextView
             android:id="@+id/expTVDescriptionTwo"
             android:layout_width="match_parent"
@@ -190,7 +214,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvGameDetailRelease" />
+            app:layout_constraintTop_toBottomOf="@+id/myFirstGameDetailDividerTwo" />
 
         <TextView
             android:id="@+id/tvSeeMoreOrLessTwo"
