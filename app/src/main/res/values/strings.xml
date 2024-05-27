@@ -14,6 +14,7 @@
     <string name="sort_by">Sort by</string>
     <string name="greetings_user">Hello %1$s!</string>
     <string name="please_enter_your_name_nickname_here">Please enter your Name / Nickname here!</string>
+    <string name="search_for_category">search for category</string>
 
     <!-- strings for button -->
 
@@ -32,6 +33,8 @@
     <string name="added_to_favorites">Added</string>
     <string name="go_to_game_details">Go to Details</string>
     <string name="back_to_favorites">Back to favorites</string>
+    <string name="filter">Filter</string>
+    <string name="go">GO!</string>
 
     <!-- strings for radioButton -->
 
@@ -67,6 +70,7 @@
     <string name="rank_rookie">Rank: <font color='yellow'> Rookie</font></string>
     <string name="rank_causal_gamer">Rank: <font color='green'>Causal Gamer</font></string>
     <string name="rank_pro_Gamer">Rank: <font color='#0087FF'>Pro Gamer</font></string>
+    <string name="no_clue_what_to_do_try_this_game">No clue what to do? Try this game!</string>
     <!-- TODO <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
     <!-- TODO <string name="rank_masterchief">Rank: <font color='placeholder'>Masterchief</font></string> -->
 

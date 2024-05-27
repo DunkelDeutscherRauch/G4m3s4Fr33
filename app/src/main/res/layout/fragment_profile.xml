@@ -36,6 +36,7 @@
 
     <Button
         android:id="@+id/btnEditUserPic"
+        style="@style/editButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
