@@ -14,44 +14,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/ivFavListItem"
-            android:layout_width="182.5dp"
-            android:layout_height="103dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/bob" />
-
         <TextView
-            android:id="@+id/tvFavListItem"
+            android:id="@+id/tvFavoriteListTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/text_view_shape"
             android:text="@string/bob"
             android:textColor="@color/mySilver"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnFavListItem"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toEndOf="@+id/ivFavListItem"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivFavoriteList"
+            android:layout_width="273.75dp"
+            android:layout_height="154.5dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/btnFavoriteListRemove"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteListTitle"
+            app:srcCompat="@drawable/test_frog_five"
+            android:contentDescription="@string/bob" />
+
         <Button
-            android:id="@+id/btnFavListItem"
-            style="@style/editButtonStyle"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnFavoriteListRemove"
+            style="@style/buttonStyle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="12dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:text="@string/remove_from_favorites"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
