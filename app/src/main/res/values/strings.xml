@@ -72,8 +72,9 @@
     <string name="rank_rookie">Rank: <font color='yellow'> Rookie</font></string>
     <string name="rank_causal_gamer">Rank: <font color='green'>Causal Gamer</font></string>
     <string name="rank_pro_Gamer">Rank: <font color='#0087FF'>Pro Gamer</font></string>
-    <!-- TODO <string name="rank_mvp">Rank: <font color='placeholder'>MVP</font></string> -->
-    <!-- TODO <string name="rank_masterchief">Rank: <font color='placeholder'>Masterchief</font></string> -->
+    <string name="rank_mvp">Rank: <font color='#00FFF7'>MVP</font></string>
+    <string name="rank_masterchief">Rank: <font color='#735FCC'>Master Chief</font></string>
+    <string name="rank_no_lifer">Rank: <font color='#B660CA'>No Lifer</font></string>
 
     <!-- string-array for autocompletion -->
 

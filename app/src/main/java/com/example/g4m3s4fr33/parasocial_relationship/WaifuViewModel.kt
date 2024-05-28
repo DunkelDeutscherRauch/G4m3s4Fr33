@@ -162,10 +162,16 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
                R.string.rank_pro_Gamer
            }
 
-           // TODO more to come here :D
+           in 250..499 -> {
+               R.string.rank_mvp
+           }
+
+           in 500..999 -> {
+               R.string.rank_masterchief
+           }
 
            else -> {
-               R.string.unranked
+               R.string.rank_no_lifer
            }
        }
     }
