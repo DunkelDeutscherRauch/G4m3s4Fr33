@@ -51,6 +51,7 @@
     <!-- strings with links -->
 
     <string name="api_by_www_freetogame_com">Api by: www.freetogame.com</string>
+    <string name="suno_ai_link">Klick here for <font color='red'>free</font> playlist!</string>
 
     <!-- special strings for game detail -->
 

@@ -1,7 +1,10 @@
 package com.example.g4m3s4fr33.ui.fox_girls
 
+import android.content.Intent
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +19,8 @@ class EasterEgg : Fragment() {
 
     private lateinit var binding: TestLayoutBinding
     private var mucke: MediaPlayer? = null
+    private var deathClock: CountDownTimer? = null
+    private var deathClockTower: CountDownTimer? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,17 +34,8 @@ class EasterEgg : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        endlessMucke()
-
-        binding.textView2.setBackgroundColor(
-            ContextCompat.getColor(
-                requireContext(),
-                R.color.mySilver
-            )
-        )
-
         val handler = Handler()
-        val delayMillis = 10L
+        val delayMillis = 30L
         val colors = listOf(
             R.color.testColor,
             R.color.imBlue,
@@ -47,6 +43,11 @@ class EasterEgg : Fragment() {
             R.color.white,
             R.color.vwBlackMetallic
         )
+
+        endlessMucke()
+        leDeathClock(colors)
+        leDeathClockTower()
+
         handler.postDelayed(object : Runnable {
             override fun run() {
                 val randomColor = colors.random()
@@ -60,6 +61,15 @@ class EasterEgg : Fragment() {
             }
         }, delayMillis)
 
+        binding.textView5.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://suno.com/playlist/bc9ae8b4-a9b2-43ee-975e-45adc87c684a")
+                )
+            )
+        }
+
     }
 
     private fun endlessMucke() {
@@ -72,7 +82,44 @@ class EasterEgg : Fragment() {
             mucke = null
             endlessMucke()
         }
+    }
 
+    private fun leDeathClock(colorList: List<Int>) {
+        deathClock = object : CountDownTimer(30000, 30) {
+            override fun onTick(millisUntilFinished: Long) {
+                binding.textView3.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        colorList.random()
+                    )
+                )
+                binding.textView4.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        colorList.random()
+                    )
+                )
+            }
+
+            override fun onFinish() {
+                leDeathClock(colorList)
+            }
+        }.start()
+    }
+
+    private fun leDeathClockTower() {
+        deathClockTower = object : CountDownTimer(25000, 2500) {
+            override fun onTick(millisUntilFinished: Long) {
+                val text = resources.getStringArray(R.array.game_categories).toList().random()
+                binding.textView3.text = text
+                val otherText = listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND").random()
+                binding.textView4.text = otherText
+            }
+
+            override fun onFinish() {
+                leDeathClockTower()
+            }
+        }.start()
     }
 
     override fun onDestroyView() {
@@ -80,6 +127,11 @@ class EasterEgg : Fragment() {
         mucke?.stop()
         mucke?.release()
         mucke = null
+        deathClock?.cancel()
+        deathClock = null
+        deathClockTower?.cancel()
+        deathClockTower = null
+
 
     }
 
