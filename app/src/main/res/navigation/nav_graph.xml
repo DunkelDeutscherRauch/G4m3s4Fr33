@@ -51,4 +51,8 @@
             android:id="@+id/action_favoriteDetailFragment_to_gameDetailFragment"
             app:destination="@id/gameDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/easterEgg"
+        android:name="com.example.g4m3s4fr33.ui.fox_girls.EasterEgg"
+        android:label="EasterEgg" />
 </navigation>

@@ -11,11 +11,11 @@ import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.ActivityMainBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
-
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: WaifuViewModel
+    private var clickTimer = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.tvToolbarTitle.setOnClickListener {
+            easterEgg()
+        }
+
         binding.ivToolbar.setOnClickListener {
             findNavController(R.id.fragmentContainerView).navigate(R.id.profileFragment)
         }
@@ -49,10 +53,27 @@ class MainActivity : AppCompatActivity() {
     private fun handleOnBackPressed() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                binding.fragmentContainerView.findNavController().navigateUp()
+                if (findNavController(R.id.fragmentContainerView).currentDestination?.id == R.id.easterEgg) {
+                    findNavController(R.id.fragmentContainerView).navigate(R.id.homeFragment)
+                } else {
+                    binding.fragmentContainerView.findNavController().navigateUp()
+                }
             }
         }
         onBackPressedDispatcher.addCallback(callback)
+    }
+
+    private fun easterEgg() {
+        when(clickTimer) {
+            in 0..8 -> {
+                clickTimer += 1
+                Log.wtf("Ωlul", "$clickTimer")
+            }
+            9 -> {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.easterEgg)
+                 clickTimer = 0
+            }
+        }
     }
 
 }

@@ -25,8 +25,6 @@ class FavoriteDetailFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO review layout, maybe change layout of listItem because title could be very long
-
         gameId = arguments?.getInt("gameId")!!
 
         viewModel.getGameDetail(gameId)
