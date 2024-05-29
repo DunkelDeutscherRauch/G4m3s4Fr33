@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,7 @@ class EasterEgg : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val handler = Handler(Looper.getMainLooper())
+
         val delayMillis = 30L
         val colors = listOf(
             R.color.testColor,
@@ -77,7 +79,7 @@ class EasterEgg : Fragment() {
         mucke?.start()
 
         mucke?.setOnCompletionListener {
-            mucke?.release()
+            it?.release()
             mucke = null
             endlessMucke()
         }
