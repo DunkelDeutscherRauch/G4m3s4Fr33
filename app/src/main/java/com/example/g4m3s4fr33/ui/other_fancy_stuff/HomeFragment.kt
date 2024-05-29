@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var userName: String
+        var userName: String?
         var gameId by Delegates.notNull<Int>()
         val category =
             resources.getStringArray(R.array.game_categories).toList().random().lowercase()
@@ -38,9 +38,9 @@ class HomeFragment : Fragment() {
         viewModel.getRandomGame(category)
 
         viewModel.user.observe(viewLifecycleOwner) {
-            userName = it.name
+            userName = it?.name
 
-            if (userName.isBlank()) {
+            if ((userName == null || userName!!.isBlank())) {
                 binding.tvHomeHeader.text = getString(R.string.greetings_user_default)
             } else {
                 binding.tvHomeHeader.text = getString(R.string.greetings_user, userName)

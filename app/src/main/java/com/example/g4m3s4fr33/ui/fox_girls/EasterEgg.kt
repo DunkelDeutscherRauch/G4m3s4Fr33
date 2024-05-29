@@ -98,6 +98,12 @@ class EasterEgg : Fragment() {
                         colorList.random()
                     )
                 )
+                binding.textView5.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        colorList.random()
+                    )
+                )
             }
 
             override fun onFinish() {
