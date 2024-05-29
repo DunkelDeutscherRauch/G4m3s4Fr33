@@ -6,10 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.g4m3s4fr33.R
@@ -34,7 +34,7 @@ class EasterEgg : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val handler = Handler()
+        val handler = Handler(Looper.getMainLooper())
         val delayMillis = 30L
         val colors = listOf(
             R.color.testColor,
@@ -69,7 +69,6 @@ class EasterEgg : Fragment() {
                 )
             )
         }
-
     }
 
     private fun endlessMucke() {
@@ -112,7 +111,7 @@ class EasterEgg : Fragment() {
             override fun onTick(millisUntilFinished: Long) {
                 val text = resources.getStringArray(R.array.game_categories).toList().random()
                 binding.textView3.text = text
-                val otherText = listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND").random()
+                val otherText = listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND", "KEKW").random()
                 binding.textView4.text = otherText
             }
 
@@ -131,8 +130,6 @@ class EasterEgg : Fragment() {
         deathClock = null
         deathClockTower?.cancel()
         deathClockTower = null
-
-
     }
 
 }
