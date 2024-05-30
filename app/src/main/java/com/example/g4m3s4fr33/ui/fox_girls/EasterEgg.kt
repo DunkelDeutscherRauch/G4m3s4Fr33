@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
-import android.os.HandlerThread
 import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
@@ -47,7 +46,7 @@ class EasterEgg : Fragment() {
         )
 
         endlessMucke()
-        leDeathClock(colors)
+        leDeathClock(colors, delayMillis)
         leDeathClockTower()
 
         handler.postDelayed(object : Runnable {
@@ -85,8 +84,8 @@ class EasterEgg : Fragment() {
         }
     }
 
-    private fun leDeathClock(colorList: List<Int>) {
-        deathClock = object : CountDownTimer(30000, 30) {
+    private fun leDeathClock(colorList: List<Int>, delay: Long) {
+        deathClock = object : CountDownTimer(30000, delay) {
             override fun onTick(millisUntilFinished: Long) {
                 binding.textView3.setTextColor(
                     ContextCompat.getColor(
@@ -109,7 +108,7 @@ class EasterEgg : Fragment() {
             }
 
             override fun onFinish() {
-                leDeathClock(colorList)
+                leDeathClock(colorList, delay)
             }
         }.start()
     }
@@ -119,7 +118,8 @@ class EasterEgg : Fragment() {
             override fun onTick(millisUntilFinished: Long) {
                 val text = resources.getStringArray(R.array.game_categories).toList().random()
                 binding.textView3.text = text
-                val otherText = listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND", "KEKW").random()
+                val otherText =
+                    listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND", "KEKW").random()
                 binding.textView4.text = otherText
             }
 
