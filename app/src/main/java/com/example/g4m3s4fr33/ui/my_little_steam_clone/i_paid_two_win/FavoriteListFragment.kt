@@ -10,7 +10,6 @@ import com.example.g4m3s4fr33.data.adapter.RageQuitAdapter
 import com.example.g4m3s4fr33.databinding.FragmentFavoriteListBinding
 import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
-
 class FavoriteListFragment : Fragment() {
 
     private lateinit var binding: FragmentFavoriteListBinding

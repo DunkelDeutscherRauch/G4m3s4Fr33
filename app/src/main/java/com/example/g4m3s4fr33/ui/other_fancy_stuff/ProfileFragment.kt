@@ -36,6 +36,10 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.user.observe(viewLifecycleOwner) {
+            if (it.achievement) {
+                binding.cvProfileUserAchieved.visibility = View.VISIBLE
+            }
+
             binding.etProfileName.setText(it.name)
             if (it.userImage.isBlank()) {
                 binding.ivProfilePic.setImageResource(R.drawable.test_frog)

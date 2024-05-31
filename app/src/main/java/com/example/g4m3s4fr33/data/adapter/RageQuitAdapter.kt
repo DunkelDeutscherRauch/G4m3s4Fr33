@@ -1,6 +1,5 @@
 package com.example.g4m3s4fr33.data.adapter
 
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController

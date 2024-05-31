@@ -31,6 +31,10 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
         database.noLiferDao.updateUserImage(userImage)
     }
 
+    suspend fun updateUserAchievement(achievement: Boolean) {
+        database.noLiferDao.updateUserAchievement(achievement)
+    }
+
     suspend fun addFavGame(gameId: Int, dateGameAdded: String) {
         database.noLiferDao.addFavGame(gameId, dateGameAdded)
     }
@@ -50,7 +54,7 @@ class NoLiferRepository(private val database: CheezzyDatabase) {
     }
 
     suspend fun updateHoursPlayed(hoursPlayed: Int, gameId: Int) {
-        database.noLiferDao.updateHoursPlayed(hoursPlayed,gameId)
+        database.noLiferDao.updateHoursPlayed(hoursPlayed, gameId)
     }
 
 }

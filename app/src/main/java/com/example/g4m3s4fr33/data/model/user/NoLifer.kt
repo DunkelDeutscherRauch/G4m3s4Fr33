@@ -9,4 +9,5 @@ data class NoLifer(
     val id: Int = 0,
     val name: String = "",
     val userImage: String = "",
+    val achievement: Boolean = false
 )

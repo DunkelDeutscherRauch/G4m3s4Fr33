@@ -5,6 +5,7 @@
     <string name="bob">Bob</string>
     <string name="greetings_user_default">Hello User!</string>
     <string name="toast_favorite_text">%1$s added to favorites</string>
+    <string name="toast_achievement_text">Achievement reached:\n<font color ='red'>GIGA CHAD</font></string>
 
     <!-- strings for textView and editText -->
 
@@ -17,6 +18,7 @@
     <string name="please_enter_your_name_nickname_here">Please enter your Name / Nickname here!</string>
     <string name="search_for_category">search for category</string>
     <string name="no_clue_what_to_do_try_this_game">No clue what to do? Try this game!</string>
+    <string name="achievement_profile_text">Achieved:\n<font color='red'>GIGA CHAD</font></string>
 
     <!-- strings for button -->
 
@@ -136,5 +138,8 @@
         <item>lul</item>
         <item>pwnd</item>
         <item>kekw</item>
+        <item>giga chad</item>
     </string-array>
 </resources>
+
+

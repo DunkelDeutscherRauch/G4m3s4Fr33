@@ -9,7 +9,6 @@ import com.example.g4m3s4fr33.data.model.gamingstuff.IWantToPlayUnrealTournament
 import com.example.g4m3s4fr33.databinding.GameListItemBinding
 import com.example.g4m3s4fr33.ui.my_little_steam_clone.cozy_games.GameListFragmentDirections
 
-
 class PlugAndPlayAdapter(
     private val tryHardList: List<IWantToPlayUnrealTournament>
 ) : RecyclerView.Adapter<PlugAndPlayAdapter.ItemViewHolder>() {
@@ -35,7 +34,7 @@ class PlugAndPlayAdapter(
 
         holder.binding.root.setOnClickListener {
             holder.itemView.findNavController().navigate(
-               GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
+                GameListFragmentDirections.actionGamesListFragmentToGameDetailFragment(gameAddiction.id)
             )
         }
     }

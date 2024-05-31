@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-
 class WaifuViewModel(application: Application) : AndroidViewModel(application) {
 
     private val database = getDatabase(application)
@@ -60,6 +59,12 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     fun updateUserImage(userImage: String) {
         viewModelScope.launch(Dispatchers.IO) {
             noLiferRepository.updateUserImage(userImage)
+        }
+    }
+
+    fun updateUserAchievement() {
+        viewModelScope.launch(Dispatchers.IO) {
+            noLiferRepository.updateUserAchievement(true)
         }
     }
 

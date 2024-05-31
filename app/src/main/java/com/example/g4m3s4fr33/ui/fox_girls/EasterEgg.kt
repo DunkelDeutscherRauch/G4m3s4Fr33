@@ -10,14 +10,18 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.g4m3s4fr33.R
 import com.example.g4m3s4fr33.databinding.TestLayoutBinding
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class EasterEgg : Fragment() {
 
     private lateinit var binding: TestLayoutBinding
+    private val viewModel: WaifuViewModel by activityViewModels()
     private var mucke: MediaPlayer? = null
     private var deathClock: CountDownTimer? = null
     private var deathClockTower: CountDownTimer? = null
@@ -34,8 +38,16 @@ class EasterEgg : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val handler = Handler(Looper.getMainLooper())
+        if (!viewModel.user.value!!.achievement) {
+            viewModel.updateUserAchievement()
+            Toast.makeText(
+                requireContext(),
+                R.string.toast_achievement_text,
+                Toast.LENGTH_LONG
+            ).show()
+        }
 
+        val handler = Handler(Looper.getMainLooper())
         val delayMillis = 30L
         val colors = listOf(
             R.color.testColor,
@@ -44,6 +56,9 @@ class EasterEgg : Fragment() {
             R.color.white,
             R.color.vwBlackMetallic
         )
+        val firstStringList = resources.getStringArray(R.array.game_categories).toList()
+        val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
+        val finalStringList = firstStringList + secondStringList
 
         val firstStringList = resources.getStringArray(R.array.game_categories).toList()
         val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
