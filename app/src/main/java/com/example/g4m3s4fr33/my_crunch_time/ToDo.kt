@@ -11,5 +11,6 @@ TODO - cool stuff for the future (maybe) -
  -> autoComplete by name (complex)
  -> keep position in recyclerView combined with handleOnBackPressed (complex)
  -> autoMigration for RoomDB (https://developer.android.com/training/data-storage/room/migrating-db-versions?hl=de)
- -> custom Toast (nom nom nom)
+ -> maybe(!) custom Toast (nom nom nom)
+ -> maybe(!) implement smartphone camera stroboscope-effect for even more disco :D
  */

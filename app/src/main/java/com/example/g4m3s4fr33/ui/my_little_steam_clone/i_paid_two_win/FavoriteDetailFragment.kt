@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -81,7 +80,7 @@ class FavoriteDetailFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
-            alertDialogBuilder.setPositiveButton("Save") { _, _ ->
+            alertDialogBuilder.setPositiveButton(getString(R.string.save)) { _, _ ->
                 val userInput = dialogBinding.etAlertDialog.text.toString()
 
                 if (userInput.isNotBlank()) {
@@ -104,16 +103,11 @@ class FavoriteDetailFragment : Fragment() {
                     )
 
                 } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "You failed badly! Please try again!",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
+                   viewModel.toastMaker(requireContext(), getString(R.string.sum_ting_wong))
                 }
             }
 
-            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+            alertDialogBuilder.setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
                 dialog.cancel()
             }
             alertDialogBuilder.show()

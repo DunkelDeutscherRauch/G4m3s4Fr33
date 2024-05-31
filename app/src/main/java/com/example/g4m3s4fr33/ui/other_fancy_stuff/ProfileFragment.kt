@@ -76,7 +76,7 @@ class ProfileFragment : Fragment() {
 
             alertDialogBuilder.setView(dialogBinding.root)
 
-            alertDialogBuilder.setPositiveButton("Save") { _, _ ->
+            alertDialogBuilder.setPositiveButton(getString(R.string.save)) { _, _ ->
                 val userInput = dialogBinding.etAlertDialogProfile.text.toString()
 
                 if (userInput.isNotBlank() && viewModel.user.value!!.achievement) {
@@ -89,7 +89,7 @@ class ProfileFragment : Fragment() {
                 }
             }
 
-            alertDialogBuilder.setNegativeButton("Cancel") { dialog, _ ->
+            alertDialogBuilder.setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
                 dialog.cancel()
             }
             alertDialogBuilder.show()
