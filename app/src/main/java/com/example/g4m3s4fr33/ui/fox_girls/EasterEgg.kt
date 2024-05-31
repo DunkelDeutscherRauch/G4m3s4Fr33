@@ -52,7 +52,9 @@ class EasterEgg : Fragment() {
         val finalStringList = firstStringList + secondStringList
 
         if (!viewModel.user.value!!.achievement) {
+            val improvedUserName = getString(R.string.giga_chad) + " " + viewModel.user.value!!.name
             viewModel.updateUserAchievement()
+            viewModel.updateUserName(improvedUserName)
             Toast.makeText(
                 requireContext(),
                 R.string.toast_achievement_text,

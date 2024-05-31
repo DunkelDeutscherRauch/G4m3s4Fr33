@@ -3,6 +3,7 @@
 
     <string name="app_name">G4m3s4Fr33</string>
     <string name="bob">Bob</string>
+    <string name="giga_chad">\'The Giga Chad\'</string>
     <string name="greetings_user_default">Hello User!</string>
     <string name="toast_favorite_text">%1$s added to favorites</string>
     <string name="toast_achievement_text">Achievement reached:\n<font color ='red'>GIGA CHAD</font></string>

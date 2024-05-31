@@ -80,7 +80,10 @@ class ProfileFragment : Fragment() {
             alertDialogBuilder.setPositiveButton("Save") { _, _ ->
                 val userInput = dialogBinding.etAlertDialogProfile.text.toString()
 
-                if (userInput.isNotBlank()) {
+                if (userInput.isNotBlank() && viewModel.user.value!!.achievement) {
+                    val improvedUserName = getString(R.string.giga_chad) + " " + userInput
+                    viewModel.updateUserName(improvedUserName)
+                } else if (userInput.isNotBlank() && !viewModel.user.value!!.achievement) {
                     viewModel.updateUserName(userInput)
                 } else {
                     Toast.makeText(
