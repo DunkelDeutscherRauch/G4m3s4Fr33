@@ -60,10 +60,6 @@ class EasterEgg : Fragment() {
         val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
         val finalStringList = firstStringList + secondStringList
 
-        val firstStringList = resources.getStringArray(R.array.game_categories).toList()
-        val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
-        val finalStringList = firstStringList + secondStringList
-
         endlessMucke()
         leDeathClock(colors, delayMillis)
         leDeathClockTower(finalStringList)

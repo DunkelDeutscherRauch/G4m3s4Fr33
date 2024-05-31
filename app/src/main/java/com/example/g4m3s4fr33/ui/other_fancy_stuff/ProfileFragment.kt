@@ -48,7 +48,6 @@ class ProfileFragment : Fragment() {
             }
         }
 
-
         val changeImage =
             registerForActivityResult(
                 ActivityResultContracts.StartActivityForResult()
