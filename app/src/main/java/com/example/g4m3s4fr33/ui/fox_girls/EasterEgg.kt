@@ -10,7 +10,6 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -55,11 +54,7 @@ class EasterEgg : Fragment() {
             val improvedUserName = getString(R.string.giga_chad) + " " + viewModel.user.value!!.name
             viewModel.updateUserAchievement()
             viewModel.updateUserName(improvedUserName)
-            Toast.makeText(
-                requireContext(),
-                R.string.toast_achievement_text,
-                Toast.LENGTH_LONG
-            ).show()
+            viewModel.toastMaker(requireContext(), getString(R.string.toast_achievement_text))
         }
 
         endlessMucke()

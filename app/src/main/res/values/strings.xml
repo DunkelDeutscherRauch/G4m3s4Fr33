@@ -5,8 +5,9 @@
     <string name="bob">Bob</string>
     <string name="giga_chad">\'The Giga Chad\'</string>
     <string name="greetings_user_default">Hello User!</string>
-    <string name="toast_favorite_text">%1$s added to favorites</string>
-    <string name="toast_achievement_text">Achievement reached:\n<font color ='red'>GIGA CHAD</font></string>
+    <string name="toast_favorite_text">%1$s\nadded to favorites</string>
+    <string name="toast_achievement_text">Achievement reached:\nGIGA CHAD</string>
+    <string name="sum_ting_wong">Oops! Something went wrong…</string>
 
     <!-- strings for textView and editText -->
 

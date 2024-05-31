@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import at.blogc.android.views.ExpandableTextView
@@ -83,11 +82,10 @@ class GameDetailFragment : Fragment() {
 
         binding.btnGameDetailAddToFav.setOnClickListener {
             viewModel.addFavGame(gameId)
-            Toast.makeText(
+            viewModel.toastMaker(
                 requireContext(),
-                getString(R.string.toast_favorite_text, viewModel.gameDetail.value!!.title),
-                Toast.LENGTH_LONG
-            ).show()
+                getString(R.string.toast_favorite_text, viewModel.gameDetail.value!!.title)
+            )
         }
 
         binding.tvSeeMoreOrLess.setOnClickListener {

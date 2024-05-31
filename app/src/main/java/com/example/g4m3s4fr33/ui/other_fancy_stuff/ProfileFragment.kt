@@ -8,15 +8,14 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import coil.load
 import com.example.g4m3s4fr33.R
-import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 import com.example.g4m3s4fr33.databinding.FragmentProfileBinding
 import com.example.g4m3s4fr33.databinding.MyCustomAlertDialogProfileBinding
+import com.example.g4m3s4fr33.parasocial_relationship.WaifuViewModel
 
 class ProfileFragment : Fragment() {
 
@@ -86,12 +85,7 @@ class ProfileFragment : Fragment() {
                 } else if (userInput.isNotBlank() && !viewModel.user.value!!.achievement) {
                     viewModel.updateUserName(userInput)
                 } else {
-                    Toast.makeText(
-                        requireContext(),
-                        "You failed badly! Please try again!",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
+                    viewModel.toastMaker(requireContext(), getString(R.string.sum_ting_wong))
                 }
             }
 

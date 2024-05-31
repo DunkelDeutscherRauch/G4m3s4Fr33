@@ -1,7 +1,13 @@
 package com.example.g4m3s4fr33.parasocial_relationship
 
 import android.app.Application
+import android.content.Context
+import android.text.Layout
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.AlignmentSpan
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.g4m3s4fr33.R
@@ -145,40 +151,51 @@ class WaifuViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun gimmeRank(playtime: Int): Int {
-       return when(playtime) {
+        return when (playtime) {
 
-           0 -> {
+            0 -> {
                 R.string.unranked
             }
 
-           in 1..24 -> {
-               R.string.rank_noob
-           }
+            in 1..24 -> {
+                R.string.rank_noob
+            }
 
-           in 25..49 -> {
-               R.string.rank_rookie
-           }
+            in 25..49 -> {
+                R.string.rank_rookie
+            }
 
-           in 50..99 -> {
-               R.string.rank_causal_gamer
-           }
+            in 50..99 -> {
+                R.string.rank_causal_gamer
+            }
 
-           in 100..249 -> {
-               R.string.rank_pro_Gamer
-           }
+            in 100..249 -> {
+                R.string.rank_pro_Gamer
+            }
 
-           in 250..499 -> {
-               R.string.rank_mvp
-           }
+            in 250..499 -> {
+                R.string.rank_mvp
+            }
 
-           in 500..999 -> {
-               R.string.rank_masterchief
-           }
+            in 500..999 -> {
+                R.string.rank_masterchief
+            }
 
-           else -> {
-               R.string.rank_no_lifer
-           }
-       }
+            else -> {
+                R.string.rank_no_lifer
+            }
+        }
+    }
+
+    fun toastMaker(context: Context, string: String) {
+        val nomNomNom = SpannableString(string)
+        nomNomNom.setSpan(
+            AlignmentSpan.Standard(Layout.Alignment.ALIGN_CENTER),
+            0,
+            nomNomNom.length,
+            Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        Toast.makeText(context, nomNomNom, Toast.LENGTH_LONG).show()
     }
 
 }
