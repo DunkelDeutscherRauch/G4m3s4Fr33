@@ -38,15 +38,6 @@ class EasterEgg : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (!viewModel.user.value!!.achievement) {
-            viewModel.updateUserAchievement()
-            Toast.makeText(
-                requireContext(),
-                R.string.toast_achievement_text,
-                Toast.LENGTH_LONG
-            ).show()
-        }
-
         val handler = Handler(Looper.getMainLooper())
         val delayMillis = 30L
         val colors = listOf(
@@ -59,6 +50,15 @@ class EasterEgg : Fragment() {
         val firstStringList = resources.getStringArray(R.array.game_categories).toList()
         val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
         val finalStringList = firstStringList + secondStringList
+
+        if (!viewModel.user.value!!.achievement) {
+            viewModel.updateUserAchievement()
+            Toast.makeText(
+                requireContext(),
+                R.string.toast_achievement_text,
+                Toast.LENGTH_LONG
+            ).show()
+        }
 
         endlessMucke()
         leDeathClock(colors, delayMillis)
