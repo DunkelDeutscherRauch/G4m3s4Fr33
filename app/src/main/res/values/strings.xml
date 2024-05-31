@@ -52,6 +52,7 @@
 
     <string name="api_by_www_freetogame_com">Api by: www.freetogame.com</string>
     <string name="suno_ai_link">Klick here for <font color='red'>free</font> playlist!</string>
+    <string name="github_link">Go to <font color='red'>GitHub</font> here!</string>
 
     <!-- special strings for game detail -->
 
@@ -77,7 +78,7 @@
     <string name="rank_masterchief">Rank: <font color='#735FCC'>Master Chief</font></string>
     <string name="rank_no_lifer">Rank: <font color='#B660CA'>No Lifer</font></string>
 
-    <!-- string-array for autocompletion -->
+    <!-- string-array for autocompletion and easterEgg -->
 
     <string-array name="game_categories">
         <item>mmorpg</item>
@@ -125,5 +126,15 @@
         <item>tower-defense</item>
         <item>horror</item>
         <item>mmorts</item>
+    </string-array>
+
+    <!-- string-array for easterEgg -->
+
+    <string-array name="randomStringsForRandomList">
+        <item>party hard</item>
+        <item>design nightmare</item>
+        <item>lul</item>
+        <item>pwnd</item>
+        <item>kekw</item>
     </string-array>
 </resources>

@@ -45,14 +45,18 @@ class EasterEgg : Fragment() {
             R.color.vwBlackMetallic
         )
 
+        val firstStringList = resources.getStringArray(R.array.game_categories).toList()
+        val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
+        val finalStringList = firstStringList + secondStringList
+
         endlessMucke()
         leDeathClock(colors, delayMillis)
-        leDeathClockTower()
+        leDeathClockTower(finalStringList)
 
         handler.postDelayed(object : Runnable {
             override fun run() {
                 val randomColor = colors.random()
-                binding.textView2.setBackgroundColor(
+                binding.root.setBackgroundColor(
                     ContextCompat.getColor(
                         requireContext(),
                         randomColor
@@ -62,11 +66,20 @@ class EasterEgg : Fragment() {
             }
         }, delayMillis)
 
-        binding.textView5.setOnClickListener {
+        binding.tvCommercial.setOnClickListener {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse("https://suno.com/playlist/bc9ae8b4-a9b2-43ee-975e-45adc87c684a")
+                )
+            )
+        }
+
+        binding.tvGitHub.setOnClickListener {
+            startActivity(
+                Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://github.com/DunkelDeutscherRauch?tab=repositories")
                 )
             )
         }
@@ -87,19 +100,19 @@ class EasterEgg : Fragment() {
     private fun leDeathClock(colorList: List<Int>, delay: Long) {
         deathClock = object : CountDownTimer(30000, delay) {
             override fun onTick(millisUntilFinished: Long) {
-                binding.textView3.setTextColor(
+                binding.tvCommercial.setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
                         colorList.random()
                     )
                 )
-                binding.textView4.setTextColor(
+                binding.tvRandomList.setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
                         colorList.random()
                     )
                 )
-                binding.textView5.setTextColor(
+                binding.tvGitHub.setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
                         colorList.random()
@@ -113,18 +126,15 @@ class EasterEgg : Fragment() {
         }.start()
     }
 
-    private fun leDeathClockTower() {
+    private fun leDeathClockTower(stringList: List<String>) {
         deathClockTower = object : CountDownTimer(25000, 2500) {
             override fun onTick(millisUntilFinished: Long) {
-                val text = resources.getStringArray(R.array.game_categories).toList().random()
-                binding.textView3.text = text
-                val otherText =
-                    listOf("PARTY HARD", "DESIGN NIGHTMARE", "LULZ", "PWND", "KEKW").random()
-                binding.textView4.text = otherText
+                val text = stringList.random().uppercase()
+                binding.tvRandomList.text = text
             }
 
             override fun onFinish() {
-                leDeathClockTower()
+                leDeathClockTower(stringList)
             }
         }.start()
     }
