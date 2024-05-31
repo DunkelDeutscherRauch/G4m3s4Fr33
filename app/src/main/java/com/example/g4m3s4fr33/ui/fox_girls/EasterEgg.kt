@@ -94,7 +94,13 @@ class EasterEgg : Fragment() {
     }
 
     private fun endlessMucke() {
-        val muckeList = listOf(R.raw.song_one, R.raw.song_two, R.raw.song_three, R.raw.song_four)
+        val muckeList = listOf(
+            R.raw.song_one,
+            R.raw.song_two,
+            R.raw.song_three,
+            R.raw.song_four,
+            R.raw.song_five
+        )
         mucke = MediaPlayer.create(requireContext(), muckeList.random())
         mucke?.start()
 
