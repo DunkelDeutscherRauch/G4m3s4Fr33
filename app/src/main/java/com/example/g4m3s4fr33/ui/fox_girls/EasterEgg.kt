@@ -24,6 +24,7 @@ class EasterEgg : Fragment() {
     private var mucke: MediaPlayer? = null
     private var deathClock: CountDownTimer? = null
     private var deathClockTower: CountDownTimer? = null
+    private var deathClockTowerClock: CountDownTimer? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +40,9 @@ class EasterEgg : Fragment() {
 
         val handler = Handler(Looper.getMainLooper())
         val delayMillis = 30L
+
+        val gifListBig = listOf(R.drawable.dancing_fox_girl, R.drawable.dancing_anime_girl)
+        val gifListSmall = listOf(R.drawable.dancing_anime_girls, R.drawable.dancing_fox_girl_two)
         val colors = listOf(
             R.color.testColor,
             R.color.imBlue,
@@ -47,7 +51,7 @@ class EasterEgg : Fragment() {
             R.color.vwBlackMetallic
         )
         val firstStringList = resources.getStringArray(R.array.game_categories).toList()
-        val secondStringList = resources.getStringArray(R.array.randomStringsForRandomList).toList()
+        val secondStringList = resources.getStringArray(R.array.random_strings_for_random_list).toList()
         val finalStringList = firstStringList + secondStringList
 
         if (!viewModel.user.value!!.achievement) {
@@ -60,6 +64,7 @@ class EasterEgg : Fragment() {
         endlessMucke()
         leDeathClock(colors, delayMillis)
         leDeathClockTower(finalStringList)
+        leDeathClockTowerClock(gifListBig, gifListSmall)
 
         handler.postDelayed(object : Runnable {
             override fun run() {
@@ -153,15 +158,68 @@ class EasterEgg : Fragment() {
         }.start()
     }
 
+    private fun leDeathClockTowerClock(gifList: List<Int>, anotherGIFList: List<Int>) {
+        deathClockTowerClock = object : CountDownTimer(250000, 25000) {
+            override fun onTick(millisUntilFinished: Long) {
+                wetDreams(gifList, anotherGIFList)
+            }
+
+            override fun onFinish() {
+                leDeathClockTowerClock(gifList, anotherGIFList)
+            }
+        }.start()
+    }
+
+    private fun wetDreams(gifList: List<Int>, anotherGIFList: List<Int>) {
+        val randomIndex = 0..1
+        val randomGIF = gifList.elementAt(randomIndex.random())
+        val randomGIFTwo = anotherGIFList.elementAt(randomIndex.random())
+
+        binding.gifIVFoxGirlAbove.setImageResource(randomGIF)
+        binding.gifIVFoxGirlBelow.setImageResource(randomGIF)
+
+        binding.gifIVTopOne.setImageResource(randomGIFTwo)
+        binding.gifIVTopTwo.setImageResource(randomGIFTwo)
+        binding.gifIVTopThree.setImageResource(randomGIFTwo)
+        binding.gifIVTopFour.setImageResource(randomGIFTwo)
+
+        binding.gifIVTopMiddleLeftOne.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleLeftTwo.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleLeftThree.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleLeftFour.setImageResource(randomGIFTwo)
+
+        binding.gifIVTopMiddleRightOne.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleRightTwo.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleRightThree.setImageResource(randomGIFTwo)
+        binding.gifIVTopMiddleRightFour.setImageResource(randomGIFTwo)
+
+        binding.gifIVMiddleLeftOne.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleLeftTwo.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleLeftThree.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleLeftFour.setImageResource(randomGIFTwo)
+
+        binding.gifIVMiddleRightOne.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleRightTwo.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleRightThree.setImageResource(randomGIFTwo)
+        binding.gifIVMiddleRightFour.setImageResource(randomGIFTwo)
+
+        binding.gifIVBottomOne.setImageResource(randomGIFTwo)
+        binding.gifIVBottomTwo.setImageResource(randomGIFTwo)
+        binding.gifIVBottomThree.setImageResource(randomGIFTwo)
+        binding.gifIVBottomFour.setImageResource(randomGIFTwo)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         mucke?.stop()
         mucke?.release()
-        mucke = null
         deathClock?.cancel()
-        deathClock = null
         deathClockTower?.cancel()
+        deathClockTowerClock?.cancel()
+        mucke = null
         deathClockTower = null
+        deathClockTower = null
+        deathClockTowerClock = null
     }
 
 }

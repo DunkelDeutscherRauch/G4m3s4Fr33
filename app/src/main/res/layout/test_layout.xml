@@ -235,12 +235,12 @@
             android:scaleType="fitCenter"
             android:src="@drawable/dancing_fox_girl"
             app:layout_constraintBottom_toTopOf="@+id/tvGitHub"
-            app:layout_constraintEnd_toStartOf="@+id/gifImageView4"
-            app:layout_constraintStart_toEndOf="@+id/gifImageView2"
+            app:layout_constraintEnd_toStartOf="@+id/gifIVMiddleRightOne"
+            app:layout_constraintStart_toEndOf="@+id/gifIVMiddleLeftOne"
             app:layout_constraintTop_toBottomOf="@+id/tvRandomList" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView2"
+            android:id="@+id/gifIVMiddleLeftOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -254,7 +254,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRandomList" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifIMageView10"
+            android:id="@+id/gifIVMiddleLeftTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -264,12 +264,12 @@
             android:maxHeight="77dp"
             android:scaleType="fitCenter"
             android:src="@drawable/dancing_fox_girl_two"
-            app:layout_constraintBottom_toTopOf="@+id/gifImageView3"
+            app:layout_constraintBottom_toTopOf="@+id/gifIVMiddleLeftThree"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gifImageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/gifIVMiddleLeftOne" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView3"
+            android:id="@+id/gifIVMiddleLeftThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -278,12 +278,12 @@
             android:maxHeight="77dp"
             android:scaleType="fitCenter"
             android:src="@drawable/dancing_fox_girl_two"
-            app:layout_constraintBottom_toTopOf="@+id/gifImageView"
+            app:layout_constraintBottom_toTopOf="@+id/gifIVMiddleLeftFour"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gifIMageView10" />
+            app:layout_constraintTop_toBottomOf="@id/gifIVMiddleLeftTwo" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView"
+            android:id="@+id/gifIVMiddleLeftFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -297,7 +297,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView4"
+            android:id="@+id/gifIVMiddleRightOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -311,7 +311,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRandomList" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView11"
+            android:id="@+id/gifIVMiddleRightTwo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -320,12 +320,12 @@
             android:maxHeight="77dp"
             android:scaleType="fitCenter"
             android:src="@drawable/dancing_fox_girl_two"
-            app:layout_constraintBottom_toTopOf="@+id/gifImageView6"
+            app:layout_constraintBottom_toTopOf="@+id/gifIVMiddleRightThree"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gifImageView4" />
+            app:layout_constraintTop_toBottomOf="@+id/gifIVMiddleRightOne" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView6"
+            android:id="@+id/gifIVMiddleRightThree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -334,12 +334,12 @@
             android:maxHeight="77dp"
             android:scaleType="fitCenter"
             android:src="@drawable/dancing_fox_girl_two"
-            app:layout_constraintBottom_toTopOf="@+id/gifImageView5"
+            app:layout_constraintBottom_toTopOf="@+id/gifIVMiddleRightFour"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gifImageView11" />
+            app:layout_constraintTop_toBottomOf="@id/gifIVMiddleRightTwo" />
 
         <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/gifImageView5"
+            android:id="@+id/gifIVMiddleRightFour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

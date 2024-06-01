@@ -134,7 +134,7 @@
 
     <!-- string-array for easterEgg -->
 
-    <string-array name="randomStringsForRandomList">
+    <string-array name="random_strings_for_random_list">
         <item>party hard</item>
         <item>design nightmare</item>
         <item>lul</item>

@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         when(clickTimer) {
             in 0..8 -> {
                 clickTimer += 1
-                Log.wtf("Ωlul", "$clickTimer")
             }
             9 -> {
                 findNavController(R.id.fragmentContainerView).navigate(R.id.easterEgg)
