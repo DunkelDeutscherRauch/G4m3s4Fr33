@@ -104,7 +104,8 @@ class EasterEgg : Fragment() {
             R.raw.song_two,
             R.raw.song_three,
             R.raw.song_four,
-            R.raw.song_five
+            R.raw.song_five,
+            R.raw.song_six
         )
         mucke = MediaPlayer.create(requireContext(), muckeList.random())
         mucke?.start()

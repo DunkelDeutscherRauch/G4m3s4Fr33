@@ -41,7 +41,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.tvToolbarTitle.setOnClickListener {
-            easterEgg()
+            if (viewModel.user.value!!.achievement) {
+                findNavController(R.id.fragmentContainerView).navigate(R.id.easterEgg)
+            } else {
+                easterEgg()
+            }
         }
 
         binding.ivToolbar.setOnClickListener {
