@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        viewModel.errorMessage.observe(this) {
+            viewModel.toastMaker(this, getString(R.string.ho_lee_fuk))
+        }
+
         binding.tvToolbarTitle.setOnClickListener {
             if (viewModel.user.value!!.achievement) {
                 findNavController(R.id.fragmentContainerView).navigate(R.id.easterEgg)

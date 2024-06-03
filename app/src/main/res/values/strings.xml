@@ -8,6 +8,7 @@
     <string name="toast_favorite_text">%1$s\nadded to favorites</string>
     <string name="toast_achievement_text">Achievement reached:\nGIGA CHAD</string>
     <string name="sum_ting_wong">Oops! Something went wrong…</string>
+    <string name="ho_lee_fuk">Oops! Error requesting the Api…</string>
 
     <!-- strings for textView and editText -->
 
