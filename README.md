@@ -1,5 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/8ShhLLpa)
-<img src="images/page_one.png" width="100%" heigth="100%"/>
+<img src="images/page_one_two.png" width="100%" heigth="100%"/>
 <br>
 <img src="images/page_two.png" width="100%" heigth="100%"/>
 
