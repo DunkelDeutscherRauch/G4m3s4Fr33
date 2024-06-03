@@ -1,6 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/8ShhLLpa)
-<img alt="page_one" img height="100%" img width="100%" src=images/page_one.png>
-<img alt="page_two" img height="100%" img width="100%" scr=images/page_two.png>
+<img src="images/page_one.png" width="100%" heigth="100%"/>
+<br>
+<img src="images/page_two.png" width="100%" heigth="100%"/>
 
 <a href="SError@gmx.de">E-Mail</a>
 <br>
