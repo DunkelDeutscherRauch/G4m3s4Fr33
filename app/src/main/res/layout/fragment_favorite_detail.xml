@@ -33,44 +33,70 @@
         app:layout_constraintTop_toBottomOf="@+id/tvFavDetailTitle"
         app:srcCompat="@drawable/test_frog_five" />
 
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/imBlue"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivFavDetail" />
+
     <TextView
         android:id="@+id/tvGameFavDateAdded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/date_game_added_to_favorites"
         android:textColor="@color/mySilver"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFavDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider2" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/imBlue"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameFavDateAdded" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etFavDetailPlayTime"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:background="@drawable/edit_text_shape"
-        android:padding="8dp"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/edit_text_shape"
+        android:focusableInTouchMode="false"
         android:hint="@string/playtime_in_hours"
+        android:inputType="number"
+        android:padding="8dp"
         android:textColor="@color/mySilver"
         android:textColorHint="@color/mySilver"
-        android:inputType="number"
         android:textSize="16sp"
-        android:focusableInTouchMode="false"
+        app:layout_constraintBottom_toTopOf="@id/tvFavDetailRank"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvGameFavDateAdded" />
+        app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
 
     <TextView
         android:id="@+id/tvFavDetailRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:text="@string/bob"
         android:textColor="@color/mySilver"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etFavDetailPlayTime" />
 
